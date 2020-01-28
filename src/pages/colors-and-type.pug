@@ -6,10 +6,17 @@ html
     meta(name='keywords' content='colors, types')
     meta(name='description' content='Colors and types')
     title Colors and type
-    link(rel='stylesheet' href='main.sass')
+    link(rel='stylesheet' href='main.scss')
   body
     include ../components/color-intro/color-intro.pug
     
-    h1 Hello, world!
-    +color-intro('color-intro__color-block_dark-shade-5')
+    h1 Hello, world!111
+    p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+    +color-intro('color-intro__color-block_dark-shade-5', 'Dark Shade 100%', '#1F2041')
+    +color-intro('color-intro__color-block_dark-shade-25')
+    +color-intro('color-intro__color-block_dark-shade-50')
+    +color-intro('color-intro__color-block_dark-shade-75')
+    +color-intro('color-intro__color-block_dark-shade-100')
+    +color-intro('color-intro__color-block_green')
+    +color-intro('color-intro__color-block_purple')
     

@@ -1,0 +1,14 @@
+.color-intro__label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.1875rem;
+  &_head {
+    font-family: Quicksand, Arial, sans-serif;
+    font-weight: bold;
+  }  
+  &_code {
+    font-family: Quicksand, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+  }  
+}
