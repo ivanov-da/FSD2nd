@@ -2,5 +2,6 @@ include __color-block/color-intro__color-block.pug
 include __label/color-intro__label.pug
 
 mixin color-intro(colormod, color, code)
-  +color-block(colormod)
-  +label(color, code)
+  .color-intro
+    +color-block(colormod)
+    +label(color, code)
