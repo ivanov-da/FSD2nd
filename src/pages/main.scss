@@ -35,6 +35,15 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family:'Open Sans';
+  src: url('../fonts/open sans/OpenSans-Bold.woff') format('woff'),
+    url('../fonts/open sans/OpenSans-Bold.ttf') format('truetype'),
+    url('../fonts/open sans/OpenSans-Bold.svg#OpenSans-Bold') format('svg');
+  font-style: normal;
+  font-weight: bold;
+}
+
 //глобальные
 html {
   background-color: white;
@@ -47,3 +56,4 @@ html {
 // UI Kit
 // все стили компонентов
 @import '../components/color-intro/color-intro.scss';
+@import '../components/text-intro/__text-label/text-intro__text-label.scss';
