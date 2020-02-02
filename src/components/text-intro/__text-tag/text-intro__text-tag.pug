@@ -1,0 +1,8 @@
+mixin text-intro__text-tag(options)
+  //- options.mod - модификатор для подписи: h1, h2, h3, body, соответствует тексту внутри 
+  
+  -
+    var textLabelMod =" text-intro__text-tag_" + options.mod
+    textLabelMod = options.mod == "" ? "" : textLabelMod
+      
+  p(class="text-intro__text-tag" + textLabelMod)= options.text 

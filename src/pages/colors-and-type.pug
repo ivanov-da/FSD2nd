@@ -9,14 +9,16 @@ html
     link(rel='stylesheet' href='main.scss')
   body
     include ../components/color-intro/color-intro.pug
-    include ../components/text-intro/__text-label/text-intro__text-label.pug
+    include ../components/text-intro/text-intro.pug
     
     h1 Hello, world!111
     p This is the body text which is used for most of the design, like paragraphs, lists, etc.
     +color-intro('color-intro__color-block_dark-shade-100', 'Dark Shade 100%', '#1F2041')
 
 
-    +text-intro__text-label({mod: "h1", text: "пример текста"})
-
+    +text-intro({mod: "h1", text: "This one is the sub-section or widget title"})
+    +text-intro({mod: "h2", text: "Next one is the item title inside widgets"})
+    +text-intro({mod: "h3", text: "This is a label or CTA text"})
+    +text-intro({mod: "body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
     
     

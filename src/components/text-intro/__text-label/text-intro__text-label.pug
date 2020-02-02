@@ -1,10 +1,10 @@
 mixin text-intro__text-label(options)
   //-
-    options.mod - модификатор для подписи
+    options.mod - модификатор для подписи: h1, h2, h3, "" - по умолчанию body
     options.text - текст в подписи  
-  .text-intro__text-label
-    -
-      var textLabelMod =" text-intro__text-label_" + options.mod
-      textLabelMod = options.mod == "" ? "" : textLabelMod
+  
+  -
+    var textLabelMod =" text-intro__text-label_" + options.mod
+    textLabelMod = options.mod == "" ? "" : textLabelMod
       
-    p(class="text-intro__text-label" + textLabelMod)= options.text 
+  p(class="text-intro__text-label" + textLabelMod)= options.text 

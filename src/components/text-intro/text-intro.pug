@@ -1,0 +1,7 @@
+include __text-label/text-intro__text-label.pug
+include __text-tag/text-intro__text-tag.pug
+
+mixin text-intro(options)
+  .text-intro
+    +text-intro__text-tag({mod: options.mod, text: options.mod})
+    +text-intro__text-label({mod: options.mod, text: options.text})
