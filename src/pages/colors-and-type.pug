@@ -11,16 +11,37 @@ html
     
     include ../components/color-intro/color-intro.pug
     include ../components/text-intro/text-intro.pug
+    include ../components/logo/logo.pug
     
 
-    .content
+    .content-uikit
+      .content-uikit__logo
+        +logo({type: "uikit"})
+      .content-uikit__color-block
+        +color-intro('color-intro__color-block_dark-shade-100', 'Dark Shade 100%', '#1F2041')
+        .content-uikit__color-intro
+          +color-intro('color-intro__color-block_dark-shade-75', 'Dark Shade 75%', '#1F2041')
+        .content-uikit__color-intro
+          +color-intro('color-intro__color-block_dark-shade-50', 'Dark Shade 50%', '#1F2041')
+        .content-uikit__color-intro
+          +color-intro('color-intro__color-block_dark-shade-25', 'Dark Shade 25%', '#1F2041')
+        .content-uikit__color-intro
+          +color-intro('color-intro__color-block_dark-shade-5', 'Dark Shade 5%', '#1F2041')
+        .content-uikit__color-intro
+          +color-intro('color-intro__color-block_purple', 'Purple', '#BC9CFF')
+        .content-uikit__color-intro
+          +color-intro('color-intro__color-block_green', 'Green', '#6FCF97')
+      .content-uikit__text-block
+        .content-uikit__text-intro-h1
+          +text-intro({mod: "h1", text: "This one is the sub-section or widget title"})
+        .content-uikit__text-intro-h2
+          +text-intro({mod: "h2", text: "Next one is the item title inside widgets"})
+        .content-uikit__text-intro-h3
+          +text-intro({mod: "h3", text: "This is a label or CTA text"})
+        .content-uikit__text-intro-body
+          +text-intro({mod: "body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})  
+
+
       
-      +color-intro('color-intro__color-block_dark-shade-100', 'Dark Shade 100%', '#1F2041')
-
-
-      +text-intro({mod: "h1", text: "This one is the sub-section or widget title"})
-      +text-intro({mod: "h2", text: "Next one is the item title inside widgets"})
-      +text-intro({mod: "h3", text: "This is a label or CTA text"})
-      +text-intro({mod: "body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})  
       
     
