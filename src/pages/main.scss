@@ -55,5 +55,6 @@ html {
 
 // UI Kit
 // все стили компонентов
+@import '../components/content/content.scss';
 @import '../components/color-intro/color-intro.scss';
 @import '../components/text-intro/text-intro.scss';
