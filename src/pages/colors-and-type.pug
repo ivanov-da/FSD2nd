@@ -1,3 +1,6 @@
+include ../components/color-intro/color-intro.pug
+include ../components/text-intro/text-intro.pug
+include ../components/logo/logo.pug
 doctype
 html
   head
@@ -6,14 +9,8 @@ html
     meta(name='keywords' content='colors, types')
     meta(name='description' content='Colors and types')
     title Colors and type
-    link(rel='stylesheet' href='main.scss')
+    link(rel='stylesheet' href='colors-and-type.scss')
   body
-    
-    include ../components/color-intro/color-intro.pug
-    include ../components/text-intro/text-intro.pug
-    include ../components/logo/logo.pug
-    
-
     .content-uikit
       .content-uikit__logo
         +logo({type: "uikit"})
