@@ -1,0 +1,29 @@
+.text-field {
+  min-width: 320px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  vertical-align: top;
+  color: rgba(31, 32, 65, 0.75);
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 12px 14px 12px 14px;
+  &::placeholder {
+    color: rgba(31, 32, 65, 0.25);
+    line-height: 1.125rem;
+    
+  }
+  &:hover,&:focus {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+  }
+  &_focused-hovered {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    padding: 11px 14px 7px 14px;
+    line-height: 1.5rem;
+    &::placeholder {
+      color: rgba(31, 32, 65, 0.75);
+    }
+  }
+
+}
