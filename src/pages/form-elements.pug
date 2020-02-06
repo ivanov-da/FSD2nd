@@ -1,4 +1,5 @@
 include ../components/text-field/text-field.pug
+include ../components/checkbox-button/checkbox-button.pug
 doctype
 html
   head
@@ -12,3 +13,4 @@ html
     +text-field({type: "text",
                  placeholder: "Email" 
                 })
+    +checkbox-button({name: "check1", value: "smoking", label: 'курение разрешено'})               
