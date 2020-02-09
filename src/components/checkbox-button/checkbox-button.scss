@@ -1,8 +1,9 @@
 .checkbox-button {
-  max-width: 266px;
+  max-width: 222px;
+  margin-top: 10px;
 }
 
-// описание
+//подпись
 .checkbox-button__title {
   font-family: Montserrat, Arial, sans-serif;
   font-style: normal;
@@ -10,41 +11,70 @@
   font-size: 0.875rem;
   line-height: 1.125rem;
   color: rgba(31, 32, 65, 0.5);
-  padding-left: 10px;
 }
 
-.checkbox-button input[type="checkbox"] {
-  opacity: 0;
-}
-
-//внешний стилизируемый checkbox
-.checkbox-button label::before {
+//скрытие стандартного чекбокса
+.checkbox-button input[type="checkbox"]:checked,
+.checkbox-button input[type="checkbox"]:not(:checked) {
   position: absolute;
-  top: 3px;
-  content: "";
+  left: -9999px;
+}
+
+//отступы и курсор к подписи
+.checkbox-button input[type="checkbox"]:checked+span,
+.checkbox-button input[type="checkbox"]:not(:checked)+span {
   display: inline-block;
-  height: 20px;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+//стилизованные чекбоксы
+.checkbox-button input[type="checkbox"]:checked+span:before,
+.checkbox-button input[type="checkbox"]:not(:checked)+span:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
   width: 20px;
+  height: 20px;
   border: 1px solid rgba(31, 32, 65, 0.25);
+  background-color: #ffffff;
   box-sizing: border-box;
   border-radius: 4px;
 }
 
-//галка
-.checkbox-button span::after {
+//рамка чекбокса при нажатии
+.checkbox-button input[type="checkbox"]:checked+span:before {
+  border: 1px solid #BC9CFF;
+}
+
+
+//галки
+.checkbox-button input[type="checkbox"]:checked+span:after,
+.checkbox-button input[type="checkbox"]:not(:checked)+span:after {
+  content: "";
   position: absolute;
   left: 6px;
-  top: 9px;
-  content: "";
-  display: inline-block;
-  height: 4px;
+  top: 6px;
   width: 6px;
+  height: 4px;
+  border-radius: 1px;
   border-left: 2px solid #BC9CFF;
   border-bottom: 2px solid #BC9CFF;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
-.checkbox-button label {
-  position: relative;
-  display: inline-block;
+//скрытие галки в неактивном чекбоксе
+.checkbox-button input[type="checkbox"]:not(:checked)+span:after {
+  opacity: 0;
+}
+
+//показ галки в активном чекбоксе
+.checkbox-button input[type="checkbox"]:checked+span:after {
+  opacity: 1;
 }
