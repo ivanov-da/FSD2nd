@@ -1,5 +1,5 @@
 .checkbox-button {
-  max-width: 222px;
+  max-width: 266px;
   margin-top: 10px;
 }
 
@@ -10,6 +10,25 @@
   font-weight: normal;
   font-size: 0.875rem;
   line-height: 1.125rem;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+//подпись rich checkbox
+.checkbox-button__title_rich {
+  font-weight: bold;
+}
+
+//описание для rich checkbox
+.checkbox-button__desc {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
   color: rgba(31, 32, 65, 0.5);
 }
 
