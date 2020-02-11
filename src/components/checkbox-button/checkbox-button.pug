@@ -1,0 +1,12 @@
+mixin checkbox-button(options)
+  -
+    var checkTitleClass = "checkbox-button__title"
+    var rich = options.isRich
+    checkTitleClass += rich == "true" ? " checkbox-button__title_rich" : ""
+  .checkbox-button
+    label
+      input(class='checkbox-button__input', type='checkbox', name=options.name, value=options.value)
+      span(class=checkTitleClass) #{options.label}
+      case rich
+        when "true"
+          p.checkbox-button__desc #{options.desc}

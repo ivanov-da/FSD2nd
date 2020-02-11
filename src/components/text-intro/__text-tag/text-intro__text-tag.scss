@@ -1,0 +1,25 @@
+.text-intro__text-tag {
+  font-family: Montserrat, Arial, sans-serif;;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: rgba(31, 32, 65, 0.25);
+  margin: 0;
+  text-align: right;
+  &_h3 {
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    text-transform: uppercase;
+  }
+  &_h2 {
+    font-size: 1.1875rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+  }
+  &_h1 {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    text-transform: uppercase;
+  }
+}

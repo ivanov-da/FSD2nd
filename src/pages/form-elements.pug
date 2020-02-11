@@ -1,0 +1,22 @@
+include ../components/text-field/text-field.pug
+include ../components/checkbox-button/checkbox-button.pug
+doctype
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='form, elements')
+    meta(name='description' content='Form Elements')
+    title Form Elements
+    link(rel='stylesheet' href='form-elements.scss')
+  body
+    +text-field({type: "text",
+                 placeholder: "Email" 
+                })
+    +checkbox-button({name: "check1",
+                      value: "smoking",
+                      label: 'Широкий коридор',
+                      isRich: 'true',
+                      desc: 'Ширина коридоров в номере не менее 91 см.'})
+    +checkbox-button({name: "check1", value: "smoking", label: 'Можно пригласить гостей (до 10 человек)'})
+    +checkbox-button({name: "check1", value: "smoking", label: 'помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист и проводит до номера'})

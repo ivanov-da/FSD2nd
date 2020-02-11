@@ -1,0 +1,16 @@
+.color-intro__label {
+  font-size: 1.1875rem;
+  line-height: 1.8125rem;
+  margin: 0;
+  font-family: Quicksand, "Open Sans", Arial, sans-serif;
+  &_head {  
+    font-weight: bold;
+    padding-top: 7px;
+    padding-left: 40px;
+  }  
+  &_code {
+    text-transform: uppercase;
+    font-weight: normal;
+    padding-left: 40px;
+  }  
+}
