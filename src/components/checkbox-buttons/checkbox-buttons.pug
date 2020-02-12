@@ -1,0 +1,7 @@
+include ../checkbox-button/checkbox-button.pug
+mixin checkboxButtons(options)
+  .checkbox-buttons
+    p(class='checkbox-buttons__title') checkbox buttons
+    +checkbox-button({name:"smoking", value: "smoking", label: "Можно курить"})
+    +checkbox-button({name:"pets", value: "pets", label: "Можно с питомцами"})
+    +checkbox-button({name:"guests", value: "guests", label: "Можно пригласить гостей (до 10 человек)"})
