@@ -5,3 +5,9 @@ mixin checkboxButtons(options)
     +checkbox-button({name:"smoking", value: "smoking", label: "Можно курить"})
     +checkbox-button({name:"pets", value: "pets", label: "Можно с питомцами"})
     +checkbox-button({name:"guests", value: "guests", label: "Можно пригласить гостей (до 10 человек)"})
+
+mixin richCheckboxButtons(options)
+  .rich-checkbox-buttons
+    p(class='rich-checkbox-buttons__title') rich checkbox buttons
+    +checkbox-button({name:"hall", value: "hall", label: "Широкий коридор", isRich: "true", desc:"Ширина коридоров в номере не менее 91 см."})
+    +checkbox-button({name:"invalid", value: "invalid", label: "Помощник для инвалидов", isRich: "true", desc:"На 1 этаже вас встретит специалист и проводит до номера."})
