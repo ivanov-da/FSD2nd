@@ -1,0 +1,45 @@
+.radio {
+  max-width: 221px;
+
+  //скрытие стандартного элемента
+  input[type="radio"]:checked,
+  input[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  // отступы
+  input[type="radio"]:checked+span,
+  input[type="radio"]:not(:checked)+span {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+  }
+
+  //отступ 2 radio
+  input[type="radio"]:not(:checked)+span:nth-child(n+2),
+  input[type="radio"]:not(:checked)+span:nth-child(n+2) {
+    padding-left: 49.74px;
+  }
+
+  //стилизованный эоемент
+  input[type="radio"]:checked+span:before,
+  input[type="radio"]:not(:checked)+span:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #BC9CFF;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 100%;
+  }
+
+  input[type="radio"]:checked+span:before:nth-child(n+2),
+  input[type="radio"]:not(:checked)+span:before:nth-child(n+2) {
+    left: 19.74px;
+  }
+}
