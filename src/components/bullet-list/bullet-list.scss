@@ -1,9 +1,36 @@
 .bullet-list {
   &__title {
     text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #1f2041;
+    margin-bottom: 8px;
+    margin-top: 0;
   }
 
   &__list {
     font-family: Montserrat, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      padding-left: 20.86px;
+      position: relative;
+    }
+    li:nth-child(n + 2) {
+      margin-top: 10px;
+    }
+    li:before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 0;
+      height: 10px;
+      width: 10.43px;
+      border-radius: 50%;
+      background: rgba(31, 32, 65, 0.25);
+    }
   }
 }
