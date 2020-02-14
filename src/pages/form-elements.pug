@@ -1,5 +1,8 @@
 include ../components/text-field/text-field.pug
-include ../components/checkbox-button/checkbox-button.pug
+include ../components/checkbox-buttons/checkbox-buttons.pug
+include ../components/bullet-list/bullet-list.pug
+include ../components/radio/radio.pug
+include ../components/toggle/toggle.pug
 doctype
 html
   head
@@ -10,13 +13,11 @@ html
     title Form Elements
     link(rel='stylesheet' href='form-elements.scss')
   body
-    +text-field({type: "text",
-                 placeholder: "Email" 
-                })
-    +checkbox-button({name: "check1",
-                      value: "smoking",
-                      label: 'Широкий коридор',
-                      isRich: 'true',
-                      desc: 'Ширина коридоров в номере не менее 91 см.'})
-    +checkbox-button({name: "check1", value: "smoking", label: 'Можно пригласить гостей (до 10 человек)'})
-    +checkbox-button({name: "check1", value: "smoking", label: 'помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист и проводит до номера'})
+    +checkboxButtons()
+    +richCheckboxButtons()
+    +radio({name: 'test1'})
+    +radio({name: 'test2'})
+    +radio({name: 'test3'})
+    +toggle({name: 'offer'})
+
+    <i class="material-icons">home</i>
