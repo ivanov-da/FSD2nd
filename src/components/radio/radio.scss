@@ -1,5 +1,5 @@
 .radio {
-  max-width: 221px;
+  max-width: 220px;
 
   //скрытие стандартного элемента
   input[type="radio"]:checked,
@@ -17,19 +17,18 @@
     cursor: pointer;
   }
 
-  //отступ 2 radio
-  input[type="radio"]:not(:checked)+span:nth-child(n+2),
-  input[type="radio"]:not(:checked)+span:nth-child(n+2) {
-    padding-left: 49.74px;
+  //неактивный текст
+  input[type="radio"]:not(:checked)+span {
+    color: rgba(31, 32, 65, 0.5);
   }
 
-  //стилизованный эоемент
+  //стилизованный элемент
   input[type="radio"]:checked+span:before,
   input[type="radio"]:not(:checked)+span:before {
     content: "";
     position: absolute;
     left: 0px;
-    top: 2px;
+    top: 3px;
     width: 20px;
     height: 20px;
     border: 1px solid #BC9CFF;
@@ -38,8 +37,40 @@
     border-radius: 100%;
   }
 
-  input[type="radio"]:checked+span:before:nth-child(n+2),
-  input[type="radio"]:not(:checked)+span:before:nth-child(n+2) {
-    left: 19.74px;
+  //неактивный элемент
+  input[type="radio"]:not(:checked)+span:before {
+    border: 1px solid rgba(31, 32, 65, 0.25);
   }
+
+  //кружочек выбора 
+  input[type="radio"]:checked+span:after,
+  input[type="radio"]:not(:checked)+span:after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  //скрытие показ
+  input[type="radio"]:not(:checked)+span:after {
+    opacity: 0;
+  }
+
+  input[type="radio"]:checked+span:after {
+    opacity: 1;
+  }
+
+}
+
+.radio {
+  display: flex;
+  justify-content: space-between;
 }
