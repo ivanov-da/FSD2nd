@@ -2,9 +2,9 @@ mixin radio(options)
   .radio
     label.radio__label
       .radio__input-wrapper
-        input(class='radio__input', type='radio', name='radio', value='male')
+        input(class='radio__input', type='radio', name=options.name, value='male', checked)
         span.radio__title Мужчина
     label.radio__label
       .radio__input-wrapper
-        input(class='radio__input', type='radio', name='radio', value='female')
+        input(class='radio__input', type='radio', name=options.name, value='female')
         span.radio__title Женщина
