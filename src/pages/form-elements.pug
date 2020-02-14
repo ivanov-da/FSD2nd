@@ -2,6 +2,7 @@ include ../components/text-field/text-field.pug
 include ../components/checkbox-buttons/checkbox-buttons.pug
 include ../components/bullet-list/bullet-list.pug
 include ../components/radio/radio.pug
+include ../components/toggle/toggle.pug
 doctype
 html
   head
@@ -14,4 +15,7 @@ html
   body
     +checkboxButtons()
     +richCheckboxButtons()
-    +radio
+    +radio({name: 'test1'})
+    +radio({name: 'test2'})
+    +radio({name: 'test3'})
+    +toggle({name: 'offer'})
