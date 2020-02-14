@@ -2,15 +2,15 @@
   max-width: 220px;
 
   //скрытие стандартного элемента
-  input[type="radio"]:checked,
-  input[type="radio"]:not(:checked) {
+  .radio__input:checked,
+  .radio__input:not(:checked) {
     position: absolute;
     left: -9999px;
   }
 
   // отступы
-  input[type="radio"]:checked+span,
-  input[type="radio"]:not(:checked)+span {
+  .radio__input:checked + .radio__title,
+  .radio__input:not(:checked) + .radio__title {
     display: inline-block;
     position: relative;
     padding-left: 30px;
@@ -18,33 +18,33 @@
   }
 
   //неактивный текст
-  input[type="radio"]:not(:checked)+span {
+  .radio__input:not(:checked) + .radio__title {
     color: rgba(31, 32, 65, 0.5);
   }
 
   //стилизованный элемент
-  input[type="radio"]:checked+span:before,
-  input[type="radio"]:not(:checked)+span:before {
+  .radio__input:checked + .radio__title:before,
+  .radio__input:not(:checked) + .radio__title:before {
     content: "";
     position: absolute;
     left: 0px;
     top: 3px;
     width: 20px;
     height: 20px;
-    border: 1px solid #BC9CFF;
+    border: 1px solid #bc9cff;
     background-color: #ffffff;
     box-sizing: border-box;
     border-radius: 100%;
   }
 
   //неактивный элемент
-  input[type="radio"]:not(:checked)+span:before {
+  .radio__input:not(:checked) + .radio__title:before {
     border: 1px solid rgba(31, 32, 65, 0.25);
   }
 
-  //кружочек выбора 
-  input[type="radio"]:checked+span:after,
-  input[type="radio"]:not(:checked)+span:after {
+  //кружочек выбора
+  .radio__input:checked + .radio__title:after,
+  .radio__input:not(:checked) + .radio__title:after {
     content: "";
     position: absolute;
     left: 4px;
@@ -52,7 +52,7 @@
     width: 12px;
     height: 12px;
     border-radius: 100%;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -60,14 +60,13 @@
   }
 
   //скрытие показ
-  input[type="radio"]:not(:checked)+span:after {
+  .radio__input:not(:checked) + .radio__title:after {
     opacity: 0;
   }
 
-  input[type="radio"]:checked+span:after {
+  .radio__input:checked + .radio__title:after {
     opacity: 1;
   }
-
 }
 
 .radio {
