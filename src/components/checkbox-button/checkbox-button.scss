@@ -1,100 +1,99 @@
 .checkbox-button {
   max-width: 266px;
   margin-top: 10px;
-}
 
-//подпись
-.checkbox-button__title {
-  font-family: Montserrat, Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  color: rgba(31, 32, 65, 0.5);
-}
+  //подпись
+  &__title {
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: rgba(31, 32, 65, 0.5);
 
-//подпись rich checkbox
-.checkbox-button__title_rich {
-  font-weight: bold;
-  color: rgba(31, 32, 65, 0.75);
-}
+    //подпись rich checkbox
+    &_rich {
+      font-weight: bold;
+      color: rgba(31, 32, 65, 0.75);
+    }
+  }
 
-//описание для rich checkbox
-.checkbox-button__desc {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-  margin-top: 5px;
-  font-family: Montserrat, Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  color: rgba(31, 32, 65, 0.5);
-}
+  //описание для rich checkbox
+  &__desc {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    margin-top: 5px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    color: rgba(31, 32, 65, 0.5);
+  }
 
-//скрытие стандартного чекбокса
-.checkbox-button input[type="checkbox"]:checked,
-.checkbox-button input[type="checkbox"]:not(:checked) {
-  position: absolute;
-  left: -9999px;
-}
+  //скрытие стандартного чекбокса
+  &__input:checked,
+  &__input:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
 
-//отступы и курсор к подписи
-.checkbox-button input[type="checkbox"]:checked+span,
-.checkbox-button input[type="checkbox"]:not(:checked)+span {
-  display: inline-block;
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-}
+  //отступы и курсор к подписи
+  &__input:checked+span,
+  &__input:not(:checked)+span {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+  }
 
-//стилизованные чекбоксы
-.checkbox-button input[type="checkbox"]:checked+span:before,
-.checkbox-button input[type="checkbox"]:not(:checked)+span:before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 20px;
-  height: 20px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  background-color: #ffffff;
-  box-sizing: border-box;
-  border-radius: 4px;
-}
+  //стилизованные чекбоксы
+  &__input:checked+span:before,
+  &__input:not(:checked)+span:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
 
-//рамка чекбокса при нажатии
-.checkbox-button input[type="checkbox"]:checked+span:before {
-  border: 1px solid #BC9CFF;
-}
+  //рамка чекбокса при нажатии
+  &__input:checked+span:before {
+    border: 1px solid #BC9CFF;
+  }
 
+  //галки
+  &__input:checked+span:after,
+  &__input:not(:checked)+span:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 6px;
+    height: 4px;
+    border-radius: 1px;
+    border-left: 2px solid #BC9CFF;
+    border-bottom: 2px solid #BC9CFF;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
 
-//галки
-.checkbox-button input[type="checkbox"]:checked+span:after,
-.checkbox-button input[type="checkbox"]:not(:checked)+span:after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 6px;
-  width: 6px;
-  height: 4px;
-  border-radius: 1px;
-  border-left: 2px solid #BC9CFF;
-  border-bottom: 2px solid #BC9CFF;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
+  //скрытие галки в неактивном чекбоксе
+  &__input:not(:checked)+span:after {
+    opacity: 0;
+  }
 
-//скрытие галки в неактивном чекбоксе
-.checkbox-button input[type="checkbox"]:not(:checked)+span:after {
-  opacity: 0;
-}
-
-//показ галки в активном чекбоксе
-.checkbox-button input[type="checkbox"]:checked+span:after {
-  opacity: 1;
+  //показ галки в активном чекбоксе
+  &__input:checked+span:after {
+    opacity: 1;
+  }
 }
