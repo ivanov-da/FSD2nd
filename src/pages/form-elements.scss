@@ -1,6 +1,6 @@
-@import 'normalize.scss';
-@import 'global.scss';
-@import 'fonts.scss';
+@import 'common/normalize.scss';
+@import 'common/global.scss';
+@import 'common/fonts.scss';
 @import '../components/text-field/text-field.scss';
 @import '../components/checkbox-buttons/checkbox-buttons.scss';
 @import '../components/bullet-list/bullet-list.scss';
