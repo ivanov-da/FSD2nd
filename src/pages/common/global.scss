@@ -7,10 +7,34 @@ html {
 }
 
 body {
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: $montserrat;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: rgba(31, 32, 65, 0.75);
+  font-size: 0.875rem;
+  color: $dark75;
+}
+
+h1 {
+  font-family: $quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: $dark100;
+}
+
+h2 {
+  font-family: $quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.1875rem;
+  color: $dark100;
+}
+
+h3 {
+  font-family: $quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.75rem;
+  color: $montserrat;
+  text-transform: uppercase;
 }
