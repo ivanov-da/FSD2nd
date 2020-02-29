@@ -1,0 +1,22 @@
+mixin rate-button(options)
+  - 
+    var i=0
+    rate=options.rate
+    if (options.rate > 5) {
+      starsRate=5
+      starsBorder=0
+    } else if (options.rate < 0) {
+      starsRate=0
+      starsBorder=5
+    } else {
+      starsRate=options.rate
+      starsBorder= 5-options.rate
+    }
+  .rate-button
+    while i < starsRate 
+      .material-icons.rate-button__star star
+      - i++
+    - i=0
+    while i < starsBorder
+      .material-icons.rate-button__star star_border
+      - i++ 
