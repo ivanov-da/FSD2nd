@@ -36,7 +36,7 @@
   &__input:checked,
   &__input:not(:checked) {
     position: absolute;
-    left: -9999px;
+    left: -9999rem;
   }
 
   //отступы и курсор к подписи
@@ -53,8 +53,8 @@
   &__input:not(:checked)+span:before {
     content: "";
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 1.25rem;
     height: 1.25rem;
     border: 1px solid $dark25;
