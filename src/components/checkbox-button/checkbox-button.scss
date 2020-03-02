@@ -14,7 +14,7 @@
     //подпись rich checkbox
     &_rich {
       font-weight: bold;
-      color: rgba(31, 32, 65, 0.75);
+      color: $dark75;
     }
   }
 
@@ -57,7 +57,7 @@
     top: 0px;
     width: 1.25rem;
     height: 1.25rem;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: 1px solid $dark25;
     background-color: #ffffff;
     box-sizing: border-box;
     border-radius: 0.25rem;
@@ -65,7 +65,7 @@
 
   //рамка чекбокса при нажатии
   &__input:checked+span:before {
-    border: 1px solid #BC9CFF;
+    border: 1px solid $purple;
   }
 
   //галки
@@ -78,8 +78,8 @@
     width: 0.375rem;
     height: 0.25rem;
     border-radius: 1px;
-    border-left: 2px solid #BC9CFF;
-    border-bottom: 2px solid #BC9CFF;
+    border-left: 2px solid $purple;
+    border-bottom: 2px solid $purple;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);

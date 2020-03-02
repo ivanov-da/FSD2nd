@@ -4,22 +4,22 @@
   font-size: 0.875rem;
   line-height: 1.125rem;
   vertical-align: top;
-  color: rgba(31, 32, 65, 0.75);
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  color: $dark75;
+  border: 1px solid $dark25;
   box-sizing: border-box;
   border-radius: 4px;
   padding: 12px 14px 12px 14px;
 
   &::placeholder {
-    color: rgba(31, 32, 65, 0.25);
+    color: $dark25;
   }
 
   &:hover,
   &:focus {
-    border: 1px solid rgba(31, 32, 65, 0.5);
+    border: 1px solid $dark50;
   }
   // Модификатор для фокуса/ховера, возможно сделаю в стилях контейнера
   //&_focused-hovered {
-  //  border: 1px solid rgba(31, 32, 65, 0.5);
+  //  border: 1px solid $dark50;
   //}
 }
