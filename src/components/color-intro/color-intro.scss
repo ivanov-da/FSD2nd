@@ -1,15 +1,58 @@
-@import '__color-block/color-intro__color-block.scss';
-@import '__color-block/_dark-shade-100/color-intro__color-block_dark-shade-100.scss';
-@import '__color-block/_dark-shade-75/color-intro__color-block_dark-shade-75.scss';
-@import '__color-block/_dark-shade-50/color-intro__color-block_dark-shade-50.scss';
-@import '__color-block/_dark-shade-25/color-intro__color-block_dark-shade-25.scss';
-@import'__color-block/_dark-shade-5/color-intro__color-block_dark-shade-5.scss';
-@import '__color-block/_green/color-intro__color-block_green.scss';
-@import '__color-block/_purple/color-intro__color-block_purple.scss';
-
-@import '__label/color-intro__label.scss';
-
 .color-intro {
   display: flex;
   width: 269.26px;
+
+  &__label {
+    font-size: 1.1875rem;
+    line-height: 1.8125rem;
+    margin: 0;
+    font-family: Quicksand, "Open Sans", Arial, sans-serif;
+
+    &_head {
+      font-weight: bold;
+      padding-top: 7px;
+      padding-left: 40px;
+    }
+
+    &_code {
+      text-transform: uppercase;
+      font-weight: normal;
+      padding-left: 40px;
+    }
+  }
+
+  &__color-block {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    background: $dark100;
+
+    &_dark-shade-5 {
+      background: $dark5;
+    }
+
+    &_dark-shade-25 {
+      background: $dark25;
+    }
+
+    &_dark-shade-50 {
+      background: $dark50;
+    }
+
+    &_dark-shade-75 {
+      background: $dark75;
+    }
+
+    &_dark-shade-100 {
+      background: $dark100;
+    }
+
+    &_green {
+      background: $green;
+    }
+
+    &_purple {
+      background: $purple;
+    }
+  }
 }
