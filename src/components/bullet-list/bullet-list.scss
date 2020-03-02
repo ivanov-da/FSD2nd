@@ -3,6 +3,7 @@
   max-width: 18.25rem;
 
   &__title {
+    font-family: $montserrat;
     text-transform: uppercase;
     font-style: normal;
     font-weight: bold;
@@ -12,7 +13,7 @@
   }
 
   &__list {
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: $montserrat;
     padding: 0;
     margin: 0;
     list-style: none;
