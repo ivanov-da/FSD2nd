@@ -19,7 +19,7 @@
 
   //неактивный текст
   .radio__input:not(:checked) + .radio__title {
-    color: rgba(31, 32, 65, 0.5);
+    color: $dark50;
   }
 
   //стилизованный элемент
@@ -39,7 +39,7 @@
 
   //неактивный элемент
   .radio__input:not(:checked) + .radio__title:before {
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: 1px solid $dark25;
   }
 
   //кружочек выбора

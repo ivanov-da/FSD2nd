@@ -1,0 +1,10 @@
+.rate-button {
+  width: 100%;
+  height: 24px;
+
+  &__star {
+    background: $purple-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

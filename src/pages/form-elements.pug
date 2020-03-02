@@ -3,6 +3,7 @@ include ../components/checkbox-buttons/checkbox-buttons.pug
 include ../components/bullet-list/bullet-list.pug
 include ../components/radio/radio.pug
 include ../components/toggle/toggle.pug
+include ../components/rate-button/rate-button.pug
 doctype
 html
   head
@@ -20,4 +21,6 @@ html
     +radio({name: 'test3'})
     +toggle({name: 'offer'})
 
-    <i class="material-icons">home</i>
+    +rate-button({rate: "4"})
+
+    +bulletList

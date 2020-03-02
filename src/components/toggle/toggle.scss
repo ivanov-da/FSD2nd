@@ -26,7 +26,7 @@
     top: 2px;
     width: 40px;
     height: 20px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: 1px solid $dark25;
     box-sizing: border-box;
     border-radius: 10px;
     background-color: #ffffff;
@@ -34,7 +34,7 @@
 
   //рамка чекбокса при нажатии
   &__input:checked+.toggle__title:before {
-    border: 1px solid #BC9CFF;
+    border: 1px solid $purple;
   }
 
   //кружочки
@@ -59,7 +59,7 @@
   }
 
   &__input:not(:checked)+.toggle__title:after {
-    background: rgba(31, 32, 65, 0.25);
+    background: $dark25;
     left: 4px;
     top: 6px;
   }
