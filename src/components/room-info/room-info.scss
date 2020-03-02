@@ -1,0 +1,23 @@
+.room-info {
+  width: 100%;
+  max-width: 18.1875rem;
+  display: flex;
+  justify-content: space-between;
+
+  &__icon {
+    flex-basis: 3rem;
+    font-size: 3rem;
+    background: $purple-gradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__header {
+    font-weight: bold;
+  }
+
+  &__text-wrapper {
+    flex-basis: 14.5625rem;
+  }
+}
