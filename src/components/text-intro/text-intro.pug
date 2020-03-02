@@ -1,7 +1,21 @@
-include __text-label/text-intro__text-label.pug
-include __text-tag/text-intro__text-tag.pug
-
 mixin text-intro(options)
   .text-intro
-    +text-intro__text-tag({mod: options.mod, text: options.mod})
-    +text-intro__text-label({mod: options.mod, text: options.text})
+    -
+      var textTagClass ="text-intro__text-tag"
+      var tagType= options.type
+      textTagClass += tagType == "h1" ? " text-intro__text-tag_h1" : ""
+      textTagClass += tagType == "h2" ? " text-intro__text-tag_h2" : ""
+      textTagClass += tagType == "h3" ? " text-intro__text-tag_h3" : ""
+      textTagClass += tagType == "body" ? " text-intro__text-tag_body" : ""
+      var textTag = ""
+      textTag += tagType == "h1" ? "h1" : ""
+      textTag += tagType == "h2" ? "h2" : ""
+      textTag += tagType == "h3" ? "h3" : ""
+      textTag += tagType == "body" ? "Body" : ""
+      
+      var textLabelClass ="text-intro__text-label"
+      textLabelClass += tagType == "h1" ? " text-intro__text-label_h1" : ""
+      textLabelClass += tagType == "h2" ? " text-intro__text-label_h2" : ""
+      textLabelClass += tagType == "h3" ? " text-intro__text-label_h3" : ""
+    p(class= textTagClass)= textTag
+    p(class=textLabelClass)= options.text

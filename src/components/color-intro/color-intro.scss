@@ -1,15 +1,59 @@
-@import '__color-block/color-intro__color-block.scss';
-@import '__color-block/_dark-shade-100/color-intro__color-block_dark-shade-100.scss';
-@import '__color-block/_dark-shade-75/color-intro__color-block_dark-shade-75.scss';
-@import '__color-block/_dark-shade-50/color-intro__color-block_dark-shade-50.scss';
-@import '__color-block/_dark-shade-25/color-intro__color-block_dark-shade-25.scss';
-@import'__color-block/_dark-shade-5/color-intro__color-block_dark-shade-5.scss';
-@import '__color-block/_green/color-intro__color-block_green.scss';
-@import '__color-block/_purple/color-intro__color-block_purple.scss';
-
-@import '__label/color-intro__label.scss';
-
 .color-intro {
   display: flex;
-  width: 269.26px;
+  max-width: 16.8588rem;
+  width: 100%;
+
+  &__label {
+    font-size: 1.1875rem;
+    line-height: 1.8125rem;
+    margin: 0;
+    font-family: $quicksand;
+
+    &_head {
+      font-weight: bold;
+      padding-top: 0.4375rem;
+      padding-left: 2.5rem;
+    }
+
+    &_code {
+      text-transform: uppercase;
+      font-weight: normal;
+      padding-left: 2.5rem;
+    }
+  }
+
+  &__color-block {
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 0.375rem;
+    background: $dark100;
+
+    &_dark-shade-5 {
+      background: $dark5;
+    }
+
+    &_dark-shade-25 {
+      background: $dark25;
+    }
+
+    &_dark-shade-50 {
+      background: $dark50;
+    }
+
+    &_dark-shade-75 {
+      background: $dark75;
+    }
+
+    &_dark-shade-100 {
+      background: $dark100;
+    }
+
+    &_green {
+      background: $green;
+    }
+
+    &_purple {
+      background: $purple;
+    }
+  }
 }

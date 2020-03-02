@@ -1,36 +1,38 @@
 .radio {
-  max-width: 220px;
+  max-width: 13.75rem;
+  display: flex;
+  justify-content: space-between;
 
   //скрытие стандартного элемента
   .radio__input:checked,
   .radio__input:not(:checked) {
     position: absolute;
-    left: -9999px;
+    left: -9999rem;
   }
 
   // отступы
-  .radio__input:checked + .radio__title,
-  .radio__input:not(:checked) + .radio__title {
+  .radio__input:checked+.radio__title,
+  .radio__input:not(:checked)+.radio__title {
     display: inline-block;
     position: relative;
-    padding-left: 30px;
+    padding-left: 1.875rem;
     cursor: pointer;
   }
 
   //неактивный текст
-  .radio__input:not(:checked) + .radio__title {
+  .radio__input:not(:checked)+.radio__title {
     color: $dark50;
   }
 
   //стилизованный элемент
-  .radio__input:checked + .radio__title:before,
-  .radio__input:not(:checked) + .radio__title:before {
+  .radio__input:checked+.radio__title:before,
+  .radio__input:not(:checked)+.radio__title:before {
     content: "";
     position: absolute;
-    left: 0px;
-    top: 3px;
-    width: 20px;
-    height: 20px;
+    left: 0;
+    top: 0.1875rem;
+    width: 1.25rem;
+    height: 1.25rem;
     border: 1px solid #bc9cff;
     background-color: #ffffff;
     box-sizing: border-box;
@@ -38,19 +40,19 @@
   }
 
   //неактивный элемент
-  .radio__input:not(:checked) + .radio__title:before {
+  .radio__input:not(:checked)+.radio__title:before {
     border: 1px solid $dark25;
   }
 
   //кружочек выбора
-  .radio__input:checked + .radio__title:after,
-  .radio__input:not(:checked) + .radio__title:after {
+  .radio__input:checked+.radio__title:after,
+  .radio__input:not(:checked)+.radio__title:after {
     content: "";
     position: absolute;
-    left: 4px;
-    top: 7px;
-    width: 12px;
-    height: 12px;
+    left: 0.25rem;
+    top: 0.4375rem;
+    width: 0.75rem;
+    height: 0.75rem;
     border-radius: 100%;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     -webkit-transition: all 0.2s ease;
@@ -60,16 +62,11 @@
   }
 
   //скрытие показ
-  .radio__input:not(:checked) + .radio__title:after {
+  .radio__input:not(:checked)+.radio__title:after {
     opacity: 0;
   }
 
-  .radio__input:checked + .radio__title:after {
+  .radio__input:checked+.radio__title:after {
     opacity: 1;
   }
-}
-
-.radio {
-  display: flex;
-  justify-content: space-between;
 }

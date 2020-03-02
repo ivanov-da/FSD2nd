@@ -1,0 +1,9 @@
+mixin room-detail(options)
+  .room-info__icon.material-icons= options.icon
+  .room-info__text-wrapper
+    p.room-info__header= options.header
+    p.room-info__text= options.text
+
+mixin room-info(options)
+  .room-info
+    +room-detail({icon: 'insert_emoticon', header: 'Комфорт', text: 'Шумопоглощающие стены'})

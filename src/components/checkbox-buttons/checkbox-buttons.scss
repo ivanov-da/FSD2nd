@@ -11,7 +11,11 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     color: $dark100;
-    margin-bottom: 1.035rem;
+    margin-bottom: 0.535rem;
+  }
+
+  &__button:nth-child(n+2) {
+    margin-top: 0.4375rem;
   }
 }
 
@@ -26,6 +30,10 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     color: $dark100;
-    margin-bottom: 1.035rem;
+    margin-bottom: 0.535rem;
+  }
+
+  &__button:nth-child(n+2) {
+    margin-top: 0.3125rem;
   }
 }
