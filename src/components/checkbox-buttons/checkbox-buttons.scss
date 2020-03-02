@@ -2,6 +2,7 @@
 
 .checkbox-buttons {
   width: 100%;
+  max-width: 16.625rem;
 
   &__title {
     font-family: Montserrat, Arial, sans-serif;
@@ -10,12 +11,13 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     color: #1F2041;
-    margin-bottom: 16.56px;
+    margin-bottom: 1.035rem;
   }
 }
 
 .rich-checkbox-buttons {
   width: 100%;
+  max-width: 16.625rem;
 
   &__title {
     font-family: Montserrat, Arial, sans-serif;
@@ -24,6 +26,6 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     color: #1F2041;
-    margin-bottom: 16px;
+    margin-bottom: 1.035rem;
   }
 }
