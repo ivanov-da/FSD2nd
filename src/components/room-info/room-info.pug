@@ -3,7 +3,10 @@ mixin room-detail(options)
   .room-info__text-wrapper
     p.room-info__header= options.header
     p.room-info__text= options.text
-
 mixin room-info(options)
   .room-info
     +room-detail({icon: 'insert_emoticon', header: 'Комфорт', text: 'Шумопоглощающие стены'})
+    .room-info__separator
+    +room-detail({icon: 'location_city', header: 'Удобство', text: 'Окно в каждой из спален'})
+    .room-info__separator
+    +room-detail({icon: 'whatshot', header: 'Уют', text: 'Номер оснащён камином'})

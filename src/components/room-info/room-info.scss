@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 18.1875rem;
   display: flex;
+  flex-flow: wrap;
   justify-content: space-between;
 
   &__icon {
@@ -19,5 +20,12 @@
 
   &__text-wrapper {
     flex-basis: 14.5625rem;
+  }
+
+  &__separator {
+    margin: 1.25rem 0 1.25rem;
+    width: 17.5rem;
+    height: 1px;
+    background: rgba(31, 32, 65, 0.1);
   }
 }
