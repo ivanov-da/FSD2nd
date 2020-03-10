@@ -1,59 +1,45 @@
 .like-button {
-  width: 40px;
+  width: 2.5rem;
 
-  // скрытие стандартной метки
-  &__input:checked,
-  &__input:not(:checked) {
-    position: absolute;
-    left: -9999px;
+  align-items: center;
+  cursor: pointer;
+  height: 1.25rem;
+  border: 0.0625rem solid $dark25;
+  box-sizing: border-box;
+  border-radius: 0.625rem;
+  background-color: #ffffff;
+
+  &_checked {
+    border: 0.0625rem solid $purple;
   }
 
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  &__input:checked+.like-button__container,
-  &__input:not(:checked)+.like-button__container {
-    display: inline-block;
-    position: relative;
-    padding-left: 22px;
-    cursor: pointer;
-    z-index: 999;
-  }
-
-  //стилизованнй чекбокс
-  &__input:checked+.like-button__container:before,
-  &__input:not(:checked)+.like-button__container:before {
-    content: "";
-    position: absolute;
-    left: 0px;
-    top: 2px;
-    width: 40px;
-    height: 20px;
-    border: 1px solid $dark25;
-    box-sizing: border-box;
-    border-radius: 10px;
-    background-color: #ffffff;
-  }
-
-  //рамка чекбокса при нажатии
-  &__input:checked+.like-button__container:before {
-    border: 1px solid $purple;
   }
 
   &__icon {
-    font-size: 10px;
+    display: inline-block;
+    margin-left: -0.125rem;
+    font-size: 0.625rem;
     color: $dark25;
 
-    position: absolute;
-    left: 5px;
-    top: 7px;
+    &_checked {
+      color: $purple;
+    }
   }
 
   &__text {
-    font-size: 10px;
+    display: inline-block;
+    margin-right: 0.25rem;
+    font-size: 0.625rem;
     color: $dark25;
 
-    position: absolute;
-
-    top: 0px;
+    &_checked {
+      color: $purple;
+    }
   }
 
 }
