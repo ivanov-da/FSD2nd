@@ -1,0 +1,7 @@
+mixin like-button(options)
+  .like-button
+    label.like-button__label
+      input(class='like-button__input', type='checkbox', name=options.name, value="like")
+      span.like-button__container
+        span.like-button__icon.material-icons favorite_border
+        span.like-button__text= options.count

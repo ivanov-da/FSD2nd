@@ -6,6 +6,7 @@ include ../components/toggle/toggle.pug
 include ../components/rate-button/rate-button.pug
 include ../components/room-info/room-info.pug
 include ../components/button/button.pug
+include ../components/like-button/like-button.pug
 doctype
 html
   head
@@ -35,3 +36,5 @@ html
             isWithArrow: 'false',
             transparent: 'false',
             isNoBorder: 'true'})
+    
+    +like-button({count: '12'})
