@@ -5,6 +5,8 @@ include ../components/radio/radio.pug
 include ../components/toggle/toggle.pug
 include ../components/rate-button/rate-button.pug
 include ../components/room-info/room-info.pug
+include ../components/button/button.pug
+include ../components/like-button/like-button.pug
 doctype
 html
   head
@@ -15,6 +17,7 @@ html
     title Form Elements
     link(rel='stylesheet' href='form-elements.scss')
   body
+    
     +checkboxButtons()
     +richCheckboxButtons()
     +radio({name: 'test1'})
@@ -27,4 +30,13 @@ html
     +bulletList
 
     +room-info
-    div.material-icons 
+
+    +button({text: 'Click me', 
+            isRegister: 'false',
+            isRegisterRus: 'false',
+            isWithArrow: 'false',
+            transparent: 'false',
+            isNoBorder: 'true'})
+    
+    +like-button({count: '12'})
+    script(src='form-elements.js')

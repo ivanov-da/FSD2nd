@@ -1,0 +1,45 @@
+.like-button {
+  width: 2.5rem;
+
+  align-items: center;
+  cursor: pointer;
+  height: 1.25rem;
+  border: 0.0625rem solid $dark25;
+  box-sizing: border-box;
+  border-radius: 0.625rem;
+  background-color: #ffffff;
+
+  &_checked {
+    border: 0.0625rem solid $purple;
+  }
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__icon {
+    display: inline-block;
+    margin-left: -0.125rem;
+    font-size: 0.625rem;
+    color: $dark25;
+
+    &_checked {
+      color: $purple;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    margin-right: 0.25rem;
+    font-size: 0.625rem;
+    color: $dark25;
+
+    &_checked {
+      color: $purple;
+    }
+  }
+
+}
