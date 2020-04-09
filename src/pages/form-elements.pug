@@ -7,6 +7,7 @@ include ../components/rate-button/rate-button.pug
 include ../components/room-info/room-info.pug
 include ../components/button/button.pug
 include ../components/like-button/like-button.pug
+include ../components/comment/comment.pug
 doctype
 html
   head
@@ -37,8 +38,13 @@ html
             isWithArrow: 'false',
             transparent: 'false',
             isNoBorder: 'true'})
-    
+
+
     +like-button({count: '12'})
-    +like-button({count: '13'})
-    +like-button({count: '-1'})
+
+    +comment
+
+
+
+
     script(src='form-elements.js')
