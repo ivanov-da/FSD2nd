@@ -39,10 +39,17 @@ html
             transparent: 'false',
             isNoBorder: 'true'})
 
+    .test
+      +like-button({count: '12'})
+      +like-button({count: '1'})
+      +like-button({count: '0'})
 
-    +like-button({count: '12'})
-
-    +comment
+    +comment({text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+              userName: 'Мурад Сарафанов',
+              lastActivity: '5 дней назад',
+              likeCount: '12',
+              imageUrl: '../images/form-elements/image.png',
+              })
 
 
 
