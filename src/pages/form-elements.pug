@@ -8,6 +8,7 @@ include ../components/room-info/room-info.pug
 include ../components/button/button.pug
 include ../components/like-button/like-button.pug
 include ../components/comment/comment.pug
+include ../components/pagination/pagination.pug
 doctype
 html
   head
@@ -17,6 +18,8 @@ html
     meta(name='description' content='Form Elements')
     title Form Elements
     link(rel='stylesheet' href='form-elements.scss')
+    script(src='jquery-for-parcel.js')
+    script(src='../../node_modules/paginationjs/dist/pagination.js')
   body
     
     +checkboxButtons()
@@ -50,6 +53,9 @@ html
               likeCount: '12',
               imageUrl: '../images/form-elements/image.png',
               })
+    br
+    br
+    +pagination
 
 
 
