@@ -21,13 +21,23 @@ $(document).ready(function () {
     autoHidePrevious: true,
     autoHideNext: true,
     pageRange: 1,
-    prevText: "back",
+    nextText: "arrow_forward",
+    prevText: "arrow_back",
+    activeClassName: "paginationjs-active",
+    disableClassName: "paginationjs-disabled",
     //ulClassName: "class-test1",
     //classPrefix: "ololo1",
     callback: function (data, pagination) {
       var html = simpleTemplating(data);
       $("#data-container").html(html);
+      $('.paginationjs-next').addClass('material-icons');
+      $('.paginationjs-prev').addClass('material-icons');
+      let activePageNum = $('.paginationjs-active a').html();
+      console.log(activePageNum);
+      $('.pagination__label').html(`${1 + 12 * (activePageNum - 1)} – ${12 * activePageNum} из 100+ вариантов аренды`);
     },
   });
   console.log("pagination lol");
+
+
 });
