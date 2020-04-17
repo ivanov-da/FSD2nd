@@ -1,0 +1,72 @@
+@import '../../node_modules/paginationjs/dist/pagination.css'
+
+/*
+  paginationjs - блок пагинации
+  paginationjs-pages - блок страниц
+  paginationjs-page - страница
+  active - активная страница. Нужно поменять имя класса
+  disabled - точки. поменять класс
+ paginationjs-next - вперед
+  paginationjs-prev - назад
+*/
+;
+
+.paginationjs {
+  font-family: $montserrat;
+}
+
+.paginationjs-page,
+.paginationjs-next,
+.paginationjs-prev,
+.paginationjs-active,
+.paginationjs-disabled {
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.paginationjs-active {
+  border-radius: 22px;
+}
+
+.paginationjs .paginationjs-pages li {
+  border: none;
+}
+
+.paginationjs .paginationjs-pages li>a {
+  height: 40px;
+  line-height: 40px;
+  background: white;
+  font-size: 12px;
+  color: $dark50;
+  border-radius: 22px;
+}
+
+.paginationjs .paginationjs-pages li:last-child {
+  border: none;
+}
+
+
+.paginationjs .paginationjs-pages li:last-child>a,
+.paginationjs .paginationjs-pages li:first-child,
+.paginationjs .paginationjs-pages li:first-child>a,
+.paginationjs .paginationjs-pages li:last-child {
+  border-radius: 22px;
+}
+
+.paginationjs-active a {
+  background: $purple-gradient !important;
+  color: white !important;
+}
+
+.paginationjs-next a,
+.paginationjs-prev a {
+  font-size: 24px !important;
+  background: $green-gradient !important;
+  color: white !important;
+}
+
+.pagination__label {
+  margin-left: 5px;
+  margin-top: 8.56px;
+}

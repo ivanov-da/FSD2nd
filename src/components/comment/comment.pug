@@ -1,0 +1,13 @@
+include ../like-button/like-button.pug
+
+mixin comment(options)
+  .comment
+    .comment__person
+      div.comment__image(style=`background-image: url(${options.imageUrl});`)
+      .comment__user-info
+        p.comment__user-name= options.userName
+        p.comment__last-activity= options.lastActivity
+    .comment__review
+      .comment__button
+        +like-button({count: options.likeCount})
+      p.comment__info= options.text
