@@ -1,16 +1,16 @@
 function simpleTemplating(data) {
-  var html = '<ul>';
+  var html = "<ul>";
   $.each(data, function (index, item) {
-    html += '<li>' + item + '</li>';
+    html += "<li>" + item + "</li>";
   });
-  html += '</ul>';
+  html += "</ul>";
   return html;
 }
 
 $(document).ready(function () {
-  $('#pagination-container').pagination({
+  $("#pagination-container").pagination({
     dataSource: function (done) {
-      var result = [];
+      let result = [];
       for (var i = 1; i < 180; i++) {
         result.push(i);
       }
@@ -21,10 +21,13 @@ $(document).ready(function () {
     autoHidePrevious: true,
     autoHideNext: true,
     pageRange: 1,
+    prevText: "back",
+    //ulClassName: "class-test1",
+    //classPrefix: "ololo1",
     callback: function (data, pagination) {
       var html = simpleTemplating(data);
-      $('#data-container').html(html);
-    }
-  })
-  console.log('pagination lol')
+      $("#data-container").html(html);
+    },
+  });
+  console.log("pagination lol");
 });
