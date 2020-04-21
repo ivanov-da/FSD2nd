@@ -19,9 +19,7 @@ html
     title Form Elements
     link(rel='stylesheet' href='form-elements.scss')
     script(src='jquery-for-parcel.js')
-    script(src='../../node_modules/paginationjs/dist/pagination.js')
-    script(src='../../node_modules/jquery.maskedinput/src/jquery.maskedinput.js')
-    
+    script(src='form-elements.js')
   body
     
     +checkboxButtons()
@@ -65,11 +63,11 @@ html
     br
 
     +text-field({type: "text",
-                 placeholder: "Email" ,
+                 placeholder: "ДД.ММ.ГГГГ" ,
                  isMasked: 'true',
                 })
 
 
 
 
-    script(src='form-elements.js')
+
