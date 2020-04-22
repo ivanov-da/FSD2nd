@@ -1,6 +1,6 @@
 jQuery(function () {
 
-  $(".text-field").mask("99.99.9999", {
+  $(".js-text-field_masked").mask("99.99.9999", {
     placeholder: "ДД.ММ.ГГГГ"
   });;
 
