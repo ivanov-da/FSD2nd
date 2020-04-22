@@ -1,0 +1,17 @@
+include ../checkbox-button/checkbox-button.pug
+
+mixin exp-checkbox(options)
+  -
+    let list = options.list;
+    let arrowType1= 'ololo';
+    let arrowType = (options.type == 'open') ? 'expand_less' : '';
+    arrowType += (options.type == 'closed') ? 'expand_more' : '';
+    let buttonsClassName = (options.type == 'closed') ? 'exp-checkbox__buttons exp-checkbox__buttons_hidden' : 'exp-checkbox__buttons';
+  .exp-checkbox
+    .exp-checkbox__title
+      p.exp-checkbox__text expandable checkbox list
+      .exp-checkbox__arrow.material-icons= arrowType
+    div(class= buttonsClassName)
+      each val in list
+        .exp-checkbox__button
+          +checkbox-button({name: val.label, value: val.label, label: val.label, checked: val.checked, isRich: val.isRich})    

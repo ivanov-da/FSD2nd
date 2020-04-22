@@ -1,0 +1,63 @@
+@import '../../node_modules/ion-rangeslider/css/ion.rangeSlider.min.css';
+
+.slider {
+  max-width: 266px;
+  position: relative;
+
+  &__label {
+    width: 266px;
+    position: absolute;
+    top: -2px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    line-height: 15px;
+    ;
+  }
+
+  &__title {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $dark100;
+  }
+
+  &__prices {
+    color: $dark50;
+  }
+
+  &__footer {
+    position: absolute;
+    color: $dark50;
+    font-size: 12px;
+    top: 55.56px;
+  }
+
+}
+
+.irs--round {
+  height: 0px;
+}
+
+
+.irs--round .irs-line {
+  height: 4px;
+  background-color: white;
+  border: 1px solid $dark25;
+  border-radius: 3px;
+}
+
+.irs--round .irs-handle {
+  top: 31px;
+  width: 16px;
+  height: 16px;
+  background: $green-gradient;
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: none
+}
+
+.irs--round .irs-bar {
+  height: 6px;
+  background: $green-gradient;
+}

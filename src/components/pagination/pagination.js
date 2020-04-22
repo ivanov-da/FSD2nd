@@ -30,14 +30,14 @@ $(document).ready(function () {
     callback: function (data, pagination) {
       var html = simpleTemplating(data);
       $("#data-container").html(html);
-      $('.paginationjs-next').addClass('material-icons');
-      $('.paginationjs-prev').addClass('material-icons');
-      let activePageNum = $('.paginationjs-active a').html();
-      console.log(activePageNum);
-      $('.pagination__label').html(`${1 + 12 * (activePageNum - 1)} – ${12 * activePageNum} из 100+ вариантов аренды`);
+      $(".paginationjs-next").addClass("material-icons");
+      $(".paginationjs-prev").addClass("material-icons");
+      let activePageNum = $(".paginationjs-active a").html();
+      $(".pagination__label").html(
+        `${1 + 12 * (activePageNum - 1)} – ${
+          12 * activePageNum
+        } из 100+ вариантов аренды`
+      );
     },
   });
-  console.log("pagination lol");
-
-
 });
