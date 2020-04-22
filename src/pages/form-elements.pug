@@ -9,6 +9,7 @@ include ../components/button/button.pug
 include ../components/like-button/like-button.pug
 include ../components/comment/comment.pug
 include ../components/pagination/pagination.pug
+include ../components/slider/slider.pug
 doctype
 html
   head
@@ -71,6 +72,7 @@ html
     br
     br
     +sub-text-field({type: 'email', placeholder: 'Email', isMasked: 'false', link: 'fake.html'})
+    +slider({footer: 'Стоимость за сутки пребывания в номере'})
     br
     br
     br

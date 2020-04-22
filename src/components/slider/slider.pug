@@ -1,0 +1,10 @@
+mixin slider(options)
+  .slider
+    .slider__label
+      p.slider__title range slider
+      .slider__prices
+        span.slider__from.js-slider-from
+        span.slider__separator -
+        span.slider__to.js-slider-to
+    <input type="text" class="js-range-slider" name="my_range" value="" />
+    p.slider__footer= options.footer
