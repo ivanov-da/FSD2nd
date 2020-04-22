@@ -1,0 +1,41 @@
+@import '../checkbox-button/checkbox-button.scss';
+
+.exp-checkbox {
+  width: 266px;
+  ;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark100;
+    cursor: pointer;
+  }
+
+  &__arrow {
+    width: 44px;
+    text-align: center;
+    cursor: pointer;
+    ;
+  }
+
+  &__button:nth-child(n+2) {
+    margin-top: 7px;
+  }
+
+  &__buttons {
+    margin-top: 9.44px;
+
+    &_hidden {
+      display: none;
+    }
+
+  }
+
+
+}

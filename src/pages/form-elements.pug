@@ -10,6 +10,7 @@ include ../components/like-button/like-button.pug
 include ../components/comment/comment.pug
 include ../components/pagination/pagination.pug
 include ../components/slider/slider.pug
+include ../components/exp-checkbox/exp-checkbox.pug
 doctype
 html
   head
@@ -61,6 +62,19 @@ html
     br
     br
     br
+    +exp-checkbox({
+      type: 'closed',
+      list: [
+        { label: "Завтрак", checked: false, isRich: 'false' },
+        { label: "Письменный стол", checked: true, isRich: 'false' },
+        { label: "Стул для кормления", checked: true, isRich: 'false' },
+        { label: "Кроватка", checked: true, isRich: 'false' },
+        { label: "Телевизор", checked: false, isRich: 'false' },
+        { label: "Шампунь", checked: false, isRich: 'false' },
+        { label: "Телевизор", checked: false, isRich: 'false' },
+        { label: "Шампунь", checked: false, isRich: 'false' },
+      ],
+    }) 
     br
     
     +text-field({type: "text",
@@ -75,8 +89,3 @@ html
     +slider({footer: 'Стоимость за сутки пребывания в номере'})
     br
     br
-    br
-
-
-
-
