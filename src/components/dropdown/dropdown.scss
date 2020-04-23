@@ -12,7 +12,7 @@
   box-sizing: border-box;
   padding: 0 14px;
 
-  //надпись
+  //надпись инпута
   .iqdropdown-selection {
     font-family: $montserrat;
     font-style: normal;
@@ -54,13 +54,56 @@
     box-sizing: border-box;
     box-shadow: 0px 10px 20px $dark5;
     top: 44px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 
 
-    &-option {}
+    &-option {
+      align-items: flex-start;
+      height: 37px;
+      padding-right: 6px;
+    }
 
-    &-close {}
+
   }
 
+  //Подпись итема
+  &-item {
+    font-family: $montserrat;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: &dark100;
+    ;
+  }
+
+  & .iqdropdown-footer {
+    margin-top: 19px;
+    margin-bottom: 12px;
+    font-family: $montserrat;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+
+    &-erase {
+      color: $dark50;
+      margin-left: 14px;
+    }
+
+    &-apply {
+      color: $purple;
+      margin-right: 6px;
+    }
+  }
+}
+
+//отступы для подписи итема
+.iqdropdown-content {
+  margin-top: 12px;
 }
 
 
@@ -69,16 +112,49 @@
 
 // кнопки управления
 .iqdropdown .iqdropdown-item-controls {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  width: 92px;
+  height: 30px;
+  margin-top: 5px;
+  justify-content: space-between;
+
   .counter {
     border: none;
+    //padding: 8px 13px 0 12px;
+    padding: 8px 0 0 0;
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    height: 30px;
+
+
   }
 
-  .button {
-    &.button-decrement {
+  button {
+
+    &.button-decrement,
+    &.button-increment {
       width: 30px;
       height: 30px;
+      padding: 0;
+      border: 1px solid $dark25;
+      box-sizing: border-box;
+      border-radius: 50%;
     }
 
-    &.button-increment {}
+    & .button-decrement-minus {
+      margin: auto;
+    }
+
+    & .button-increment-plus {
+      margin: auto;
+
+    }
   }
 }
