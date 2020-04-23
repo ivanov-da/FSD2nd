@@ -11,6 +11,7 @@ include ../components/comment/comment.pug
 include ../components/pagination/pagination.pug
 include ../components/slider/slider.pug
 include ../components/exp-checkbox/exp-checkbox.pug
+include ../components/dropdown/dropdown.pug
 doctype
 html
   head
@@ -23,69 +24,7 @@ html
     script(src='jquery-for-parcel.js')
     script(src='form-elements.js')
   body
-    
-    +checkboxButtons()
-    +richCheckboxButtons()
-    +radio({name: 'test1'})
-    +radio({name: 'test2'})
-    +radio({name: 'test3'})
-    +toggle({name: 'offer'})
-
-    +rate-button({rate: "4"})
-
-    +bulletList
-
-    +room-info
-
-    +button({text: 'Click me', 
-            isRegister: 'false',
-            isRegisterRus: 'false',
-            isWithArrow: 'false',
-            transparent: 'false',
-            isNoBorder: 'true'})
-
-    .test
-      +like-button({count: '12'})
-      +like-button({count: '1'})
-      +like-button({count: '0'})
-
-    +comment({text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-              userName: 'Мурад Сарафанов',
-              lastActivity: '5 дней назад',
-              likeCount: '12',
-              imageUrl: '../images/form-elements/image.png',
-              })
-    br
-    br
-    +pagination
-
-    br
-    br
-    br
-    +exp-checkbox({
-      type: 'closed',
-      list: [
-        { label: "Завтрак", checked: false, isRich: 'false' },
-        { label: "Письменный стол", checked: true, isRich: 'false' },
-        { label: "Стул для кормления", checked: true, isRich: 'false' },
-        { label: "Кроватка", checked: true, isRich: 'false' },
-        { label: "Телевизор", checked: false, isRich: 'false' },
-        { label: "Шампунь", checked: false, isRich: 'false' },
-        { label: "Телевизор", checked: false, isRich: 'false' },
-        { label: "Шампунь", checked: false, isRich: 'false' },
-      ],
-    }) 
-    br
-    
-    +text-field({type: "text",
-                 placeholder: "ДД.ММ.ГГГГ" ,
-                 isMasked: 'true',
-                })
-
-    br
-    br
-    br
-    +sub-text-field({type: 'email', placeholder: 'Email', isMasked: 'false', link: 'fake.html'})
-    +slider({footer: 'Стоимость за сутки пребывания в номере'})
-    br
-    br
+    div(style="height: 500px; display: flex; justify-content: center; align-items: center;")
+      +dropdown({
+        items: ['Взрослые', 'Дети', 'Младенцы']
+      })

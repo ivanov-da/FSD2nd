@@ -1,0 +1,10 @@
+mixin dropdown(options)
+  .dropdown
+    .iqdropdown
+      p.iqdropdown-selection
+      .iqdropdown-menu
+        each val in options.items
+          .iqdropdown-menu-option(data-id=val)
+            div.qdropdown-item-container
+              p.iqdropdown-item= val
+

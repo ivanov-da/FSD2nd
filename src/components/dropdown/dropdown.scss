@@ -1,0 +1,84 @@
+@import '../../node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
+
+.dropdown {
+  width: 320px;
+}
+
+//инпут
+.iqdropdown {
+  height: 44px;
+  background: #FFFFFF;
+  border: 1px solid &dark25;
+  box-sizing: border-box;
+  padding: 0 14px;
+
+  //надпись
+  .iqdropdown-selection {
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark75;
+
+    &::after {
+      background-image: none;
+      font-family: 'Material Icons';
+      content: 'expand_more';
+      font-size: 24px;
+      right: 7px;
+      top: 0px;
+    }
+
+  }
+
+  //инпут при открытии
+  &.menu-open {
+    border-color: $dark50;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    .iqdropdown-selection::after {
+      background-image: none;
+      font-family: 'Material Icons';
+      content: 'expand_less';
+      font-size: 24px;
+      right: 7px;
+      top: 0px;
+    }
+  }
+
+  //меню
+  .iqdropdown-menu {
+    border: 1px solid $dark50;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px $dark5;
+    top: 44px;
+
+
+    &-option {}
+
+    &-close {}
+  }
+
+}
+
+
+
+
+
+// кнопки управления
+.iqdropdown .iqdropdown-item-controls {
+  .counter {
+    border: none;
+  }
+
+  .button {
+    &.button-decrement {
+      width: 30px;
+      height: 30px;
+    }
+
+    &.button-increment {}
+  }
+}
