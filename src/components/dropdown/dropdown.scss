@@ -92,11 +92,13 @@
     &-erase {
       color: $dark50;
       margin-left: 14px;
+      cursor: pointer;
     }
 
     &-apply {
       color: $purple;
       margin-right: 6px;
+      cursor: pointer;
     }
   }
 }
