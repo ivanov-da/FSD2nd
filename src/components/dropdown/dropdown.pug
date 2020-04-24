@@ -4,10 +4,10 @@ mixin dropdown(options)
       p.iqdropdown-selection
       .iqdropdown-menu
         each val in options.items
-          .iqdropdown-menu-option(data-id=val)
+          .iqdropdown-menu-option(data-id=val.id, data-group=val.group)
             div.qdropdown-item-container
-              p.iqdropdown-item= val
-        .iqdropdown-footer
-          p.iqdropdown-footer-erase очистить
-          p.iqdropdown-footer-apply применить
+              p.iqdropdown-item= val.item
+        p.iqdropdown-footer
+          span.iqdropdown-footer-erase очистить
+          span.iqdropdown-footer-apply применить
 

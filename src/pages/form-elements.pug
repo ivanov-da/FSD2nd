@@ -25,6 +25,12 @@ html
     script(src='form-elements.js')
   body
     div(style="height: 500px; display: flex; justify-content: center; align-items: center;")
+      - 
+        let dropArrayGuests = [
+          {item: 'Взрослые', id: 'adults', group: 'true',},
+          {item: 'Дети', id: 'kids', group: 'true',},
+          {item: 'Младенцы', id: 'babies', group: 'false',},
+        ];
       +dropdown({
-        items: ['Взрослые', 'Дети', 'Младенцы']
+        items: dropArrayGuests,
       })

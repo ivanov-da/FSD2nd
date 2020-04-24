@@ -1,4 +1,4 @@
-@import '../../node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
+@import "../../node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.css";
 
 .dropdown {
   width: 320px;
@@ -7,7 +7,7 @@
 //инпут
 .iqdropdown {
   height: 44px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid &dark25;
   box-sizing: border-box;
   padding: 0 14px;
@@ -23,13 +23,12 @@
 
     &::after {
       background-image: none;
-      font-family: 'Material Icons';
-      content: 'expand_more';
+      font-family: "Material Icons";
+      content: "expand_more";
       font-size: 24px;
       right: 7px;
       top: 0px;
     }
-
   }
 
   //инпут при открытии
@@ -40,8 +39,8 @@
 
     .iqdropdown-selection::after {
       background-image: none;
-      font-family: 'Material Icons';
-      content: 'expand_less';
+      font-family: "Material Icons";
+      content: "expand_less";
       font-size: 24px;
       right: 7px;
       top: 0px;
@@ -57,14 +56,11 @@
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
 
-
     &-option {
       align-items: flex-start;
       height: 37px;
       padding-right: 6px;
     }
-
-
   }
 
   //Подпись итема
@@ -75,12 +71,11 @@
     line-height: 15px;
     text-transform: uppercase;
     color: &dark100;
-    ;
   }
 
   & .iqdropdown-footer {
     margin-top: 19px;
-    margin-bottom: 12px;
+    padding-bottom: 12px;
     font-family: $montserrat;
     font-weight: bold;
     font-size: 12px;
@@ -108,10 +103,6 @@
   margin-top: 12px;
 }
 
-
-
-
-
 // кнопки управления
 .iqdropdown .iqdropdown-item-controls {
   font-family: Montserrat;
@@ -134,8 +125,6 @@
     line-height: 15px;
     text-align: center;
     height: 30px;
-
-
   }
 
   button {
@@ -150,13 +139,23 @@
       border-radius: 50%;
     }
 
+    &.button-decrement_null {
+      border: 1px solid $dark5;
+      cursor: default;
+
+      &:hover {
+        background-color: white;
+      }
+    }
+
     & .button-decrement-minus {
+      color: $dark50;
       margin: auto;
     }
 
     & .button-increment-plus {
       margin: auto;
-
+      color: $dark50;
     }
   }
 }
