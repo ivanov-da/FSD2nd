@@ -1,6 +1,6 @@
 $(document).ready(() => {
   $(".iqdropdown").iqDropdown({
-    textNull: "Сколько гостей",
+    //textNull: "Сколько гостей",
     //setSelectionText: (itemCount, totalItems),
   });
   $('<p class="button-decrement-minus">-</p>').replaceAll(

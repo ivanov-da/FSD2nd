@@ -8,9 +8,14 @@
     selectionText: "item",
     textPlural: "items",
     textNull: "Сколько гостей",
-    maskEnding: [
-      ['Гость']
+    maskArr: [
+      ['guests', 'Гость', 'Гостz', 'Гостей', ],
+      ['adults', 'Взрослый', 'Всзрослых', 'Взрослых'],
+      ['kids', 'Ребенок', 'Ребенка', 'Детей'],
+      ['babies', 'Младенец', 'Младенца', 'Младенцев'],
     ],
+
+
 
     controls: {
       position: "right",
@@ -25,10 +30,23 @@
     setSelectionText(itemCount, totalItems, nonGroupCount) {
       const usePlural = totalItems !== 1 && this.textPlural.length > 0;
       const text = usePlural ? this.textPlural : this.selectionText;
+      let outText = `${totalItems} ${text}`;
+      console.log('из функции', nonGroupCount);
+      console.log(nonGroupCount[0].id);
+      console.log(this.maskArr[1][0])
+      for (let i = 0; i <= nonGroupCount.length - 1; i++) {
+        for (let j = 0; j <= this.maskArr.length - 1; j++) {
+          if (nonGroupCount[i].id == this.maskArr[j][0]) {
+            outText += `${nonGroupCount[i].count} ${nonGroupCount[i].id}`;
+
+          }
+        }
+      }
+
       if (totalItems == 0) {
         return this.textNull;
       } else {
-        return `${totalItems} ${text} ${itemCount['Взрослые']}`;
+        return outText;
       }
     },
   };
@@ -75,8 +93,8 @@
       let nonGroupCount = [];
 
       function updateDisplay() {
-        console.log(valueToIndex(4));
-        $selection.html(settings.setSelectionText(itemCount, totalItems));
+        console.log(nonGroupCount);
+        $selection.html(settings.setSelectionText(itemCount, totalItems, nonGroupCount));
       }
 
       function setItemSettings(id, $item) {
@@ -151,7 +169,7 @@
             }
             $counter.html(itemCount[id]);
             updateDisplay();
-            onChange(id, itemCount[id], totalItems);
+            onChange(id, itemCount[id], totalItems, nonGroupCount);
           }
 
           event.preventDefault();
@@ -186,7 +204,7 @@
               `.iqdropdown-menu-option[data-id=\u0022${id}\u0022] .button-decrement`
             ).removeClass("button-decrement_null");
             updateDisplay();
-            onChange(id, itemCount[id], totalItems);
+            onChange(id, itemCount[id], totalItems, nonGroupCount);
           }
 
           event.preventDefault();
@@ -228,7 +246,7 @@
           });
         }
 
-        console.log(nonGroupCount);
+
 
         totalItems += defaultCount;
         setItemSettings(id, $item);
