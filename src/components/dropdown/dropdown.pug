@@ -1,0 +1,13 @@
+mixin dropdown(options)
+  .dropdown
+    .iqdropdown
+      p.iqdropdown-selection
+      .iqdropdown-menu
+        each val in options.items
+          .iqdropdown-menu-option(data-id=val.id, data-group=val.group)
+            div.qdropdown-item-container
+              p.iqdropdown-item= val.item
+        p.iqdropdown-footer
+          span.iqdropdown-footer-erase очистить
+          span.iqdropdown-footer-apply применить
+
