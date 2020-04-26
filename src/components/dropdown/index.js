@@ -8,6 +8,10 @@
     selectionText: "item",
     textPlural: "items",
     textNull: "Сколько гостей",
+    maskEnding: [
+      ['Гость']
+    ],
+
     controls: {
       position: "right",
       displayCls: "iqdropdown-content",
@@ -18,7 +22,7 @@
     onChange: () => {},
     beforeDecrement: () => true,
     beforeIncrement: () => true,
-    setSelectionText(itemCount, totalItems) {
+    setSelectionText(itemCount, totalItems, nonGroupCount) {
       const usePlural = totalItems !== 1 && this.textPlural.length > 0;
       const text = usePlural ? this.textPlural : this.selectionText;
       if (totalItems == 0) {
@@ -28,6 +32,29 @@
       }
     },
   };
+
+
+
+  function valueToIndex(value) {
+    switch (value) {
+      case 0:
+        return 2;
+      case 1:
+        return 0;
+      case 2:
+      case 3:
+      case 4:
+        return 1;
+      default:
+        if (value > 20) {
+          if (value > 99) {
+            return valueToIndex(value % 100);
+          }
+          return valueToIndex(value % 10);
+        }
+        return 2;
+    }
+  }
 
   $.fn.iqDropdown = function (options) {
     this.each(function () {
@@ -48,7 +75,7 @@
       let nonGroupCount = [];
 
       function updateDisplay() {
-        console.log(itemCount);
+        console.log(valueToIndex(4));
         $selection.html(settings.setSelectionText(itemCount, totalItems));
       }
 
@@ -101,7 +128,7 @@
           decrementClickGroupT = allowClick && totalItems > minItems && itemCount[id] > items[id].minCount;
           decrementClickGroupF = group == false && itemCount[id] > items[id].minCount;
           decrementClick = decrementClickGroupT || decrementClickGroupF;
-          console.log(decrementClickGroupT, decrementClickGroupF, decrementClick);
+
 
           if (decrementClick) {
             itemCount[id] -= 1;
@@ -115,20 +142,15 @@
             }
             if (group == true) {
               totalItems -= 1;
+            } else if (group == false) {
+              nonGroupCount.forEach(function (element, i, nonGroupCount) {
+                if (element.id == id) {
+                  element.count = itemCount[id];
+                }
+              });
             }
-            /* else if (group == false) {
-                         nonGroupCount.forEach(function (element, i, nonGroupCount) {
-                           console.log(this[id]);
-                           if (this[id] == id) {
-
-
-                           }
-                         });
-                       } */
             $counter.html(itemCount[id]);
             updateDisplay();
-            console.log(typeof group);
-            console.log(group, totalItems, itemCount[id]);
             onChange(id, itemCount[id], totalItems);
           }
 
@@ -152,6 +174,12 @@
             itemCount[id] += 1;
             if (group == true) {
               totalItems += 1;
+            } else if (group == false) {
+              nonGroupCount.forEach(function (element, i, nonGroupCount) {
+                if (element.id == id) {
+                  element.count = itemCount[id];
+                }
+              });
             }
             $counter.html(itemCount[id]);
             $(
@@ -187,10 +215,8 @@
 
       $items.each(function () {
         const $item = $(this);
-        console.log($item);
         const id = $item.data("id");
         const group = $item.data("group");
-        console.log(id, group);
         const defaultCount = Number($item.data("defaultcount") || "0");
 
         itemCount[id] = defaultCount;
