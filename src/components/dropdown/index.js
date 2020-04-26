@@ -45,6 +45,7 @@
       const settings = $.extend(true, {}, defaults, dataAttrOptions, options);
       const itemCount = {};
       let totalItems = 0;
+      let nonGroupCount = [];
 
       function updateDisplay() {
         console.log(itemCount);
@@ -61,7 +62,7 @@
         };
       }
 
-      function addControls(id, $item) {
+      function addControls(id, $item, group) {
         const $controls = $("<div />").addClass(settings.controls.controlsCls);
         const $decrementButton = $(`
           <button class="button-decrement button-decrement_null">
@@ -97,23 +98,37 @@
             onChange
           } = settings;
           const allowClick = beforeDecrement(id, itemCount);
+          decrementClickGroupT = allowClick && totalItems > minItems && itemCount[id] > items[id].minCount;
+          decrementClickGroupF = group == false && itemCount[id] > items[id].minCount;
+          decrementClick = decrementClickGroupT || decrementClickGroupF;
+          console.log(decrementClickGroupT, decrementClickGroupF, decrementClick);
 
-          if (
-            allowClick &&
-            totalItems > minItems &&
-            itemCount[id] > items[id].minCount
-          ) {
+          if (decrementClick) {
             itemCount[id] -= 1;
+
+
 
             if (itemCount[id] == 0) {
               $(
                 `.iqdropdown-menu-option[data-id=\u0022${id}\u0022] .button-decrement`
               ).addClass("button-decrement_null");
             }
+            if (group == true) {
+              totalItems -= 1;
+            }
+            /* else if (group == false) {
+                         nonGroupCount.forEach(function (element, i, nonGroupCount) {
+                           console.log(this[id]);
+                           if (this[id] == id) {
 
-            totalItems -= 1;
+
+                           }
+                         });
+                       } */
             $counter.html(itemCount[id]);
             updateDisplay();
+            console.log(typeof group);
+            console.log(group, totalItems, itemCount[id]);
             onChange(id, itemCount[id], totalItems);
           }
 
@@ -135,7 +150,9 @@
             itemCount[id] < items[id].maxCount
           ) {
             itemCount[id] += 1;
-            totalItems += 1;
+            if (group == true) {
+              totalItems += 1;
+            }
             $counter.html(itemCount[id]);
             $(
               `.iqdropdown-menu-option[data-id=\u0022${id}\u0022] .button-decrement`
@@ -172,12 +189,24 @@
         const $item = $(this);
         console.log($item);
         const id = $item.data("id");
+        const group = $item.data("group");
+        console.log(id, group);
         const defaultCount = Number($item.data("defaultcount") || "0");
 
         itemCount[id] = defaultCount;
+
+        if (group == false) {
+          nonGroupCount.push({
+            id,
+            'count': itemCount[id],
+          });
+        }
+
+        console.log(nonGroupCount);
+
         totalItems += defaultCount;
         setItemSettings(id, $item);
-        addControls(id, $item);
+        addControls(id, $item, group);
       });
 
       updateDisplay();
