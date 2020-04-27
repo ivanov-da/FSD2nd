@@ -27,10 +27,15 @@ html
     div(style="height: 500px; display: flex; justify-content: center; align-items: center;")
       - 
         let dropArrayGuests = [
-          {item: 'Взрослые', id: 'adults', group: 'false',},
+          {item: 'Взрослые', id: 'adults', group: 'true',},
           {item: 'Дети', id: 'kids', group: 'true',},
           {item: 'Младенцы', id: 'babies', group: 'false',},
         ];
+      +dropdown({
+        items: dropArrayGuests,
+      })
+      br
+      br
       +dropdown({
         items: dropArrayGuests,
       })

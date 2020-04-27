@@ -9,13 +9,11 @@
     textPlural: "items",
     textNull: "Сколько гостей",
     maskArr: [
-      ['guests', 'Гость', 'Гостz', 'Гостей', ],
-      ['adults', 'Взрослый', 'Всзрослых', 'Взрослых'],
-      ['kids', 'Ребенок', 'Ребенка', 'Детей'],
-      ['babies', 'Младенец', 'Младенца', 'Младенцев'],
+      ["guests", "Гость", "Гостя", "Гостей"],
+      ["adults", "Взрослый", "Всзрослых", "Взрослых"],
+      ["kids", "Ребенок", "Ребенка", "Детей"],
+      ["babies", "Младенец", "Младенца", "Младенцев"],
     ],
-
-
 
     controls: {
       position: "right",
@@ -27,31 +25,69 @@
     onChange: () => {},
     beforeDecrement: () => true,
     beforeIncrement: () => true,
-    setSelectionText(itemCount, totalItems, nonGroupCount) {
+    setSelectionText(itemCount, totalItems, nonGroupCount, totalNonGroupItems) {
       const usePlural = totalItems !== 1 && this.textPlural.length > 0;
       const text = usePlural ? this.textPlural : this.selectionText;
-      let outText = `${totalItems} ${text}`;
-      console.log('из функции', nonGroupCount);
-      console.log(nonGroupCount[0].id);
-      console.log(this.maskArr[1][0])
+
+
+      console.log('ttlnongr', totalNonGroupItems)
+      for (let key in nonGroupCount) {
+        totalNonGroupItems += nonGroupCount[key].count;
+      }
+
+
+      console.log('totalnongroup', totalNonGroupItems);
+
+      let outIndexItems = valueToIndex(totalItems) + 1;
+
+      let outText = `${totalItems}` + ' ' + `${this.maskArr[0][outIndexItems]}`;
+      if (totalItems == 0) {
+        outText = '';
+      } else {
+        if (totalNonGroupItems == 0) {
+          outText = `${totalItems}` + ' ' + `${this.maskArr[0][outIndexItems]}`;
+        } else {
+          outText = `${totalItems}` + ' ' + `${this.maskArr[0][outIndexItems]}` + ', ';
+        }
+        //outText = `${totalItems}` + ' ' + `${this.maskArr[0][outIndexItems]}` + ', ';
+      }
+
+
+
+
       for (let i = 0; i <= nonGroupCount.length - 1; i++) {
         for (let j = 0; j <= this.maskArr.length - 1; j++) {
           if (nonGroupCount[i].id == this.maskArr[j][0]) {
-            outText += `${nonGroupCount[i].count} ${nonGroupCount[i].id}`;
-
+            let outIndex = valueToIndex(nonGroupCount[i].count) + 1;
+            if (nonGroupCount[i].count == 0) {
+              outText += '';
+            } else {
+              outText += `${nonGroupCount[i].count}` + ' ' + `${this.maskArr[j][outIndex]}` + ', ';
+            }
           }
         }
       }
 
-      if (totalItems == 0) {
+      let outTextMasked = outText;
+
+      if (outText[outText.length - 2] == ',') {
+        outTextMasked = outText.slice(0, -2);
+
+      }
+
+      if (outTextMasked.length > 20) {
+        outTextMasked = outText.slice(0, 19) + '...';
+      }
+
+
+
+      if (totalItems == 0 && totalNonGroupItems == 0) {
         return this.textNull;
       } else {
-        return outText;
+        return outTextMasked;
       }
     },
   };
-
-
 
   function valueToIndex(value) {
     switch (value) {
@@ -90,11 +126,17 @@
       const settings = $.extend(true, {}, defaults, dataAttrOptions, options);
       const itemCount = {};
       let totalItems = 0;
+      let totalNonGroupItems = 0;
       let nonGroupCount = [];
 
       function updateDisplay() {
-        console.log(nonGroupCount);
-        $selection.html(settings.setSelectionText(itemCount, totalItems, nonGroupCount));
+        console.log('ItemCount', itemCount);
+        console.log('totalItems', totalItems);
+        console.log('nonGroupCount', nonGroupCount);
+        console.log('totalNonGroupItems', this.totalNonGroupItems);
+        $selection.html(
+          settings.setSelectionText(itemCount, totalItems, nonGroupCount, totalNonGroupItems)
+        );
       }
 
       function setItemSettings(id, $item) {
@@ -143,20 +185,21 @@
             onChange
           } = settings;
           const allowClick = beforeDecrement(id, itemCount);
-          decrementClickGroupT = allowClick && totalItems > minItems && itemCount[id] > items[id].minCount;
-          decrementClickGroupF = group == false && itemCount[id] > items[id].minCount;
+          decrementClickGroupT =
+            allowClick &&
+            totalItems > minItems &&
+            itemCount[id] > items[id].minCount;
+          decrementClickGroupF =
+            group == false && itemCount[id] > items[id].minCount;
           decrementClick = decrementClickGroupT || decrementClickGroupF;
-
 
           if (decrementClick) {
             itemCount[id] -= 1;
 
-
-
             if (itemCount[id] == 0) {
-              $(
+              $this.find(
                 `.iqdropdown-menu-option[data-id=\u0022${id}\u0022] .button-decrement`
-              ).addClass("button-decrement_null");
+              ).last().addClass("button-decrement_null");
             }
             if (group == true) {
               totalItems -= 1;
@@ -200,23 +243,34 @@
               });
             }
             $counter.html(itemCount[id]);
-            $(
+
+
+            $this.find(
               `.iqdropdown-menu-option[data-id=\u0022${id}\u0022] .button-decrement`
-            ).removeClass("button-decrement_null");
+            ).last().removeClass("button-decrement_null");
             updateDisplay();
             onChange(id, itemCount[id], totalItems, nonGroupCount);
           }
+
+
 
           event.preventDefault();
         });
 
         $item.click((event) => event.stopPropagation());
 
-        $(".iqdropdown-footer-erase").click(() => {
+        $this.find(".iqdropdown-footer-erase").last().click(() => {
           totalItems = 0;
           itemCount[id] = 0;
+
+          nonGroupCount.forEach(function (element, i, nonGroupCount) {
+            element.count = 0;
+          });
+
+
           $counter.html(itemCount[id]);
-          $(".button-decrement").addClass("button-decrement_null");
+          $this.find(".button-decrement").addClass("button-decrement_null");
+          //$(".button-decrement").addClass("button-decrement_null");
           updateDisplay();
         });
 
@@ -227,7 +281,12 @@
         $this.toggleClass("menu-open");
       });
 
-      $(".iqdropdown-footer-apply").click(() => {
+
+
+
+
+
+      $this.find(".iqdropdown-footer-apply").last().click(() => {
         $this.toggleClass("menu-open");
       });
 
@@ -242,11 +301,9 @@
         if (group == false) {
           nonGroupCount.push({
             id,
-            'count': itemCount[id],
+            count: itemCount[id],
           });
         }
-
-
 
         totalItems += defaultCount;
         setItemSettings(id, $item);
