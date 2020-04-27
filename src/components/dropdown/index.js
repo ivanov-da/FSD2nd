@@ -197,9 +197,9 @@
             itemCount[id] -= 1;
 
             if (itemCount[id] == 0) {
-              $(
+              $this.find(
                 `.iqdropdown-menu-option[data-id=\u0022${id}\u0022] .button-decrement`
-              ).addClass("button-decrement_null");
+              ).last().addClass("button-decrement_null");
             }
             if (group == true) {
               totalItems -= 1;
@@ -243,9 +243,11 @@
               });
             }
             $counter.html(itemCount[id]);
-            $(
+
+
+            $this.find(
               `.iqdropdown-menu-option[data-id=\u0022${id}\u0022] .button-decrement`
-            ).removeClass("button-decrement_null");
+            ).last().removeClass("button-decrement_null");
             updateDisplay();
             onChange(id, itemCount[id], totalItems, nonGroupCount);
           }
@@ -257,7 +259,7 @@
 
         $item.click((event) => event.stopPropagation());
 
-        $(".iqdropdown-footer-erase").click(() => {
+        $this.find(".iqdropdown-footer-erase").last().click(() => {
           totalItems = 0;
           itemCount[id] = 0;
 
@@ -267,7 +269,8 @@
 
 
           $counter.html(itemCount[id]);
-          $(".button-decrement").addClass("button-decrement_null");
+          $this.find(".button-decrement").addClass("button-decrement_null");
+          //$(".button-decrement").addClass("button-decrement_null");
           updateDisplay();
         });
 
@@ -283,7 +286,7 @@
 
 
 
-      $(".iqdropdown-footer-apply").click(() => {
+      $this.find(".iqdropdown-footer-apply").last().click(() => {
         $this.toggleClass("menu-open");
       });
 
