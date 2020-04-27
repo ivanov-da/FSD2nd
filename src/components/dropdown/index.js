@@ -64,9 +64,19 @@
             } else {
               outText += `${nonGroupCount[i].count}` + ' ' + `${this.maskArr[j][outIndex]}` + ', ';
             }
-            //outText += `${nonGroupCount[i].count}` + ' ' + `${this.maskArr[j][outIndex]}` + ', ';
           }
         }
+      }
+
+      let outTextMasked = outText;
+
+      if (outText[outText.length - 2] == ',') {
+        outTextMasked = outText.slice(0, -2);
+
+      }
+
+      if (outTextMasked.length > 20) {
+        outTextMasked = outText.slice(0, 19) + '...';
       }
 
 
@@ -74,7 +84,7 @@
       if (totalItems == 0 && totalNonGroupItems == 0) {
         return this.textNull;
       } else {
-        return outText;
+        return outTextMasked;
       }
     },
   };
