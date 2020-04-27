@@ -12,6 +12,7 @@ include ../components/pagination/pagination.pug
 include ../components/slider/slider.pug
 include ../components/exp-checkbox/exp-checkbox.pug
 include ../components/dropdown/dropdown.pug
+include ../components/date-dropdown/date-dropdown.pug
 doctype
 html
   head
@@ -25,17 +26,4 @@ html
     script(src='form-elements.js')
   body
     div(style="height: 500px; display: flex; justify-content: center; align-items: center;")
-      - 
-        let dropArrayGuests = [
-          {item: 'Взрослые', id: 'adults', group: 'true',},
-          {item: 'Дети', id: 'kids', group: 'true',},
-          {item: 'Младенцы', id: 'babies', group: 'false',},
-        ];
-      +dropdown({
-        items: dropArrayGuests,
-      })
-      br
-      br
-      +dropdown({
-        items: dropArrayGuests,
-      })
+      +date-dropdown()
