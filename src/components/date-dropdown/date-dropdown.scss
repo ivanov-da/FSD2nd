@@ -27,7 +27,7 @@
 
   //панель навигации
   &--nav {
-    padding: 20px 20.67px 30px 20.2px;
+    padding: 20px 20.67px 29px 20.2px;
     border: none;
 
     &-action {
@@ -46,17 +46,33 @@
 
   &--content {
     border: none;
-    padding: 0 19.94px 0 21.2px;
+    padding: 0 20.94px 0 20.2px;
+
+  }
+
+  &--days {
+    width: 279.39px;
+
   }
 
   &--days-names {
     margin: 0;
+
+
   }
 
   &--day-name {
     width: 39.88px;
     height: 40px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: none;
+    color: $purple;
   }
+
+  &--cells {}
 
   &--cell {
     width: 39.88px;
@@ -65,6 +81,31 @@
     font-size: 12px;
     line-height: 15px;
     text-align: center;
+
+    &.-current- {
+      background: $green-gradient;
+      border-radius: 22px;
+      color: white;
+    }
+
+
+
+    &.-selected- {
+      background: $purple-gradient;
+      border-radius: 22px;
+      color: white;
+    }
+
+    &.-range-from-:after {
+      position: absolute;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      opacity: 0.25;
+    }
+
+
+
   }
 
   &--buttons {
