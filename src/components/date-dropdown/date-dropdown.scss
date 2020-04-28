@@ -1,0 +1,115 @@
+@import '../../node_modules/air-datepicker/dist/css/datepicker.min.css';
+
+.date-dropdown {
+  width: 100%;
+  max-width: 320px;
+
+  &__arrows {
+    color: $purple;
+  }
+}
+
+// настройка внешнего вида
+.datepicker {
+  width: 320px;
+  height: 369px;
+  background: #FFFFFF;
+  border: 1px solid $dark25;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px $dark5;
+  border-radius: 4px;
+
+
+  // убрать треугольный pointer, который нацелен на инпут
+  &--pointer {
+    display: none;
+  }
+
+  //панель навигации
+  &--nav {
+    padding: 20px 20.67px 29px 20.2px;
+    border: none;
+
+    &-action {
+      width: 24px;
+    }
+
+    &-title {
+      font-family: $quicksand;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      text-align: center;
+      color: $dark100;
+    }
+  }
+
+  &--content {
+    border: none;
+    padding: 0 20.94px 0 20.2px;
+
+  }
+
+  &--days {
+    width: 279.39px;
+
+  }
+
+  &--days-names {
+    margin: 0;
+
+
+  }
+
+  &--day-name {
+    width: 39.88px;
+    height: 40px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: none;
+    color: $purple;
+  }
+
+  &--cells {}
+
+  &--cell {
+    width: 39.88px;
+    height: 40px;
+    font-family: $montserrat;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    &.-current- {
+      background: $green-gradient;
+      border-radius: 22px;
+      color: white;
+    }
+
+
+
+    &.-selected- {
+      background: $purple-gradient;
+      border-radius: 22px;
+      color: white;
+    }
+
+    &.-range-from-:after {
+      position: absolute;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      opacity: 0.25;
+    }
+
+
+
+  }
+
+  &--buttons {
+    border: none;
+  }
+
+}
