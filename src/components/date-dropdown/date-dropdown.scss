@@ -19,7 +19,6 @@
   box-shadow: 0px 10px 20px $dark5;
   border-radius: 4px;
 
-
   // убрать треугольный pointer, который нацелен на инпут
   &--pointer {
     display: none;
@@ -47,18 +46,14 @@
   &--content {
     border: none;
     padding: 0 20.94px 0 20.2px;
-
   }
 
   &--days {
     width: 279.39px;
-
   }
 
   &--days-names {
     margin: 0;
-
-
   }
 
   &--day-name {
@@ -77,10 +72,12 @@
   &--cell {
     width: 39.88px;
     height: 40px;
+    color: $dark50;
     font-family: $montserrat;
     font-size: 12px;
     line-height: 15px;
     text-align: center;
+    z-index: 1;
 
     &.-current- {
       background: $green-gradient;
@@ -88,28 +85,44 @@
       color: white;
     }
 
-
-
     &.-selected- {
       background: $purple-gradient;
       border-radius: 22px;
       color: white;
     }
 
-    &.-range-from-:after {
+    &.-range-from-::after {
+      content: "";
+      top: 0;
+      left: 19.94px;
+      z-index: -1;
+      width: 19.94px;
+      height: 40px;
       position: absolute;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0;
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       opacity: 0.25;
     }
 
+    &.-range-to-::after {
+      content: "";
+      top: 0;
+      left: 0px;
+      z-index: -1;
+      width: 19.94px;
+      height: 40px;
+      position: absolute;
 
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      opacity: 0.25;
+    }
 
+    &.-in-range- {
+      background: rgba(188, 156, 255, 0.25);
+      color: $dark50;
+    }
   }
 
   &--buttons {
     border: none;
   }
-
 }
