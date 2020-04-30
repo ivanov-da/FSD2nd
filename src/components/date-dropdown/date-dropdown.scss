@@ -138,6 +138,10 @@
     font-size: 12px;
     text-transform: uppercase;
     color: $dark50;
+
+    &-apply {
+      color: $purple;
+    }
   }
 
 }
