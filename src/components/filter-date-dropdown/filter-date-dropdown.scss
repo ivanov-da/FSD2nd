@@ -1,0 +1,147 @@
+@import '../../node_modules/air-datepicker/dist/css/datepicker.min.css';
+
+.date-dropdown {
+  width: 100%;
+  max-width: 320px;
+
+  &__arrows {
+    color: $purple;
+  }
+}
+
+// настройка внешнего вида
+.datepicker {
+  width: 320px;
+  background: #FFFFFF;
+  border: 1px solid $dark25;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px $dark5;
+  border-radius: 4px;
+
+  // убрать треугольный pointer, который нацелен на инпут
+  &--pointer {
+    display: none;
+  }
+
+  //панель навигации
+  &--nav {
+    padding: 20px 20.67px 29px 20.2px;
+    border: none;
+
+    &-action {
+      width: 24px;
+    }
+
+    &-title {
+      font-family: $quicksand;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      text-align: center;
+      color: $dark100;
+    }
+  }
+
+  &--content {
+    border: none;
+    padding: 0 20.94px 0 20.2px;
+  }
+
+  &--days {
+    width: 279.39px;
+  }
+
+  &--days-names {
+    margin: 0;
+  }
+
+  &--day-name {
+    width: 39.88px;
+    height: 40px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: none;
+    color: $purple;
+  }
+
+  &--cells {}
+
+  &--cell {
+    width: 39.88px;
+    height: 40px;
+    color: $dark50;
+    font-family: $montserrat;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    z-index: 1;
+
+    &.-current- {
+      background: $green-gradient;
+      border-radius: 22px;
+      color: white;
+    }
+
+    &.-selected- {
+      background: $purple-gradient;
+      border-radius: 22px;
+      color: white;
+    }
+
+    &.-range-from-::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 39.88px;
+      height: 40px;
+      border-top-left-radius: 22px;
+      border-bottom-left-radius: 22px;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      opacity: 0.25;
+    }
+
+    &.-range-to-::after {
+      content: "";
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 39.88px;
+      border-top-right-radius: 22px;
+      border-bottom-right-radius: 22px;
+      height: 40px;
+      position: absolute;
+
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      opacity: 0.25;
+    }
+
+    &.-in-range- {
+      background: rgba(188, 156, 255, 0.25);
+      color: $dark50;
+    }
+  }
+
+  &--buttons {
+    border: none;
+    padding-top: 20.44px;
+    padding-bottom: 19px;
+  }
+
+  &--button {
+    height: 15px;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark50;
+
+    &-apply {
+      color: $purple;
+    }
+  }
+
+}
