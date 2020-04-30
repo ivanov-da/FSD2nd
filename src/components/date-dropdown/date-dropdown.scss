@@ -92,13 +92,15 @@
     }
 
     &.-range-from-::after {
+      position: absolute;
       content: "";
       top: 0;
-      left: 19.94px;
+      left: 0;
       z-index: -1;
-      width: 19.94px;
+      width: 39.88px;
       height: 40px;
-      position: absolute;
+      border-top-left-radius: 22px;
+      border-bottom-left-radius: 22px;
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       opacity: 0.25;
     }
@@ -106,9 +108,11 @@
     &.-range-to-::after {
       content: "";
       top: 0;
-      left: 0px;
+      left: 0;
       z-index: -1;
-      width: 19.94px;
+      width: 39.88px;
+      border-top-right-radius: 22px;
+      border-bottom-right-radius: 22px;
       height: 40px;
       position: absolute;
 
