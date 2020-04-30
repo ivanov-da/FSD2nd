@@ -1,20 +1,23 @@
 $(document).ready(() => {
-  $(".js-date-dropdown").datepicker({
+  $(".js-filter-date-dropdown").datepicker({
     clearButton: true,
     range: true,
     multipleDatesSeparator: " - ",
     clearButton: true,
     //inline: true,
-    prevHtml:
-      '<div class="date-dropdown__arrows material-icons">arrow_back</div>',
-    nextHtml:
-      '<div class="date-dropdown__arrows material-icons">arrow_forward</div>',
+    prevHtml: '<div class="date-dropdown__arrows material-icons">arrow_back</div>',
+    nextHtml: '<div class="date-dropdown__arrows material-icons">arrow_forward</div>',
     navTitles: {
       days: "MM yyyy",
     },
+    onSelect: function (fd, d, picker) {
+      $(".js-filter-date-dropdown").val(fd.split("-")[0]);
+      $(".filter-date-dropdown__end").val(fd.split("-")[1]);
+    },
+
   });
 
-  let $dpr = $(".js-date-dropdown").data("datepicker");
+  let $dpr = $(".js-filter-date-dropdown").data("datepicker");
   let $applyButton = $dpr.$datepicker
     .find(".datepicker--button")
     .after(

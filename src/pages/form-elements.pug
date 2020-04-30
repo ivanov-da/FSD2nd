@@ -13,6 +13,7 @@ include ../components/slider/slider.pug
 include ../components/exp-checkbox/exp-checkbox.pug
 include ../components/dropdown/dropdown.pug
 include ../components/date-dropdown/date-dropdown.pug
+include ../components/filter-date-dropdown/filter-date-dropdown.pug
 doctype
 html
   head
@@ -26,4 +27,4 @@ html
     script(src='form-elements.js')
   body
     div(style="height: 500px; display: flex; justify-content: center; align-items: center;")
-      +date-dropdown()
+      +filter-date-dropdown()
