@@ -1,5 +1,6 @@
 include ../filter-date-dropdown/filter-date-dropdown.pug
 include ../dropdown/dropdown.pug
+include ../button/button.pug
 
 - 
   let dropArrayGuests = [
@@ -10,17 +11,24 @@ include ../dropdown/dropdown.pug
 
 mixin search-card(options)
   .search-card
-    p.search-card__title Найдём номера под ваши пожелания
-    .search-card__date-selection
-      .search-card__date-dropdown-title
-        p.search-card__arrival-date-title Прибытие
-        p.search-card__exit-date-title Выезд
-      .search-card__date-dropdown
-        +filter-date-dropdown()
-    .search-card__guests-selection
-      p.search-card__guests-dropdown-title Гости
-      .search-card__gusts-dropdown
-        +dropdown({
-          items: dropArrayGuests,
-        })
-    .search-card__button
+    .search-card__content
+      p.search-card__title Найдём номера под ваши пожелания
+      .search-card__date-selection
+        .search-card__date-dropdown-title
+          p.search-card__arrival-date-title Прибытие
+          p.search-card__exit-date-title Выезд
+        .search-card__date-dropdown
+          +filter-date-dropdown()
+      .search-card__guests-selection
+        p.search-card__guests-dropdown-title Гости
+        .search-card__gusts-dropdown
+          +dropdown({
+            items: dropArrayGuests,
+          })
+      .search-card__button
+        +button({text: 'Подобрать номер', 
+              isRegister: 'false',
+              isRegisterRus: 'false',
+              isWithArrow: 'true',
+              transparent: 'false',
+              isNoBorder: 'false'})
