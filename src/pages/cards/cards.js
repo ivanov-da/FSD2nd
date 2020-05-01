@@ -1,0 +1,1 @@
+import '../../components/search-card/search-card.js';
