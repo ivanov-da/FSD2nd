@@ -5,10 +5,8 @@ $(document).ready(() => {
     multipleDatesSeparator: " - ",
     clearButton: true,
     //inline: true,
-    prevHtml:
-      '<div class="date-dropdown__arrows material-icons">arrow_back</div>',
-    nextHtml:
-      '<div class="date-dropdown__arrows material-icons">arrow_forward</div>',
+    prevHtml: '<div class="date-dropdown__arrows material-icons">arrow_back</div>',
+    nextHtml: '<div class="date-dropdown__arrows material-icons">arrow_forward</div>',
     navTitles: {
       days: "MM yyyy",
     },
@@ -23,5 +21,9 @@ $(document).ready(() => {
 
   $(".datepicker--button-apply").click(() => {
     $dpr.hide();
+  });
+
+  $(".date-dropdown__expand-more").click(() => {
+    $dpr.show();
   });
 });
