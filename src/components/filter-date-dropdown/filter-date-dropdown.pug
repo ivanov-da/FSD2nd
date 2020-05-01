@@ -1,4 +1,6 @@
 mixin filter-date-dropdown(options)
   .filter-date-dropdown
-    input(type = 'text' class = 'date-dropdown js-filter-date-dropdown')
-    input(type = 'text' class = 'filter-date-dropdown__end')
+    input(type = 'text' class = 'date-dropdown js-filter-date-dropdown' placeholder='ДД.ММ.ГГГГ')
+    span.filter-date-dropdown__arrow_first.material-icons expand_more
+    input(type = 'text' class = 'filter-date-dropdown__end' placeholder='ДД.ММ.ГГГГ')
+    span.filter-date-dropdown__arrow_second.material-icons expand_more

@@ -5,10 +5,8 @@ $(document).ready(() => {
     multipleDatesSeparator: " - ",
     clearButton: true,
     //inline: true,
-    prevHtml:
-      '<div class="date-dropdown__arrows material-icons">arrow_back</div>',
-    nextHtml:
-      '<div class="date-dropdown__arrows material-icons">arrow_forward</div>',
+    prevHtml: '<div class="date-dropdown__arrows material-icons">arrow_back</div>',
+    nextHtml: '<div class="date-dropdown__arrows material-icons">arrow_forward</div>',
     navTitles: {
       days: "MM yyyy",
     },
@@ -29,7 +27,7 @@ $(document).ready(() => {
     $dpr.hide();
   });
 
-  $(".filter-date-dropdown__end").click(() => {
+  $(".filter-date-dropdown__end, .filter-date-dropdown__arrow_second, .filter-date-dropdown__arrow_first").click(() => {
     $dpr.show();
   });
 });

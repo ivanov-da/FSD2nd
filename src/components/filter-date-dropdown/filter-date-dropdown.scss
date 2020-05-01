@@ -1,8 +1,61 @@
 @import '../../node_modules/air-datepicker/dist/css/datepicker.min.css';
 
+.filter-date-dropdown {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+
+  &__end {
+    width: 150px;
+    height: 44px;
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark75;
+    padding: 8.56px 32px 11.44px 16px;
+    background: #FFFFFF;
+    border: 1px solid $dark25;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  &__arrow_first {
+    position: absolute;
+    left: 116px;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  &__arrow_second {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+}
+
+
+
 .date-dropdown {
   width: 100%;
   max-width: 150px;
+  height: 44px;
+  width: 150px;
+  height: 44px;
+  font-family: $montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark75;
+  padding: 8.56px 32px 11.44px 14px;
+  background: #FFFFFF;
+  border: 1px solid $dark25;
+  box-sizing: border-box;
+  border-radius: 4px;
 
   &__arrows {
     color: $purple;
