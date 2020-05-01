@@ -7,3 +7,21 @@ mixin registration-card(options)
   .registration-card
     p.registration-card__title Регистрация аккаунта
     form.registration-card__form(action='/mock-address' method='get')
+      .registration-card__name-input
+        +text-field({type: 'text', placeholder: 'Имя'})
+      .registration-card__surname-input
+        +text-field({type: 'text', placeholder: 'Фамилия'})
+      .registration-card__radio
+        //+radio()
+      .registration-card__born-date
+        p.registration-card__born-date-title дата рождения
+        .registration-card__born-date-input
+      .registration-card__entry-datas
+        p.registration-card__entry-title данные для входа в сервис
+        .registration-card__email-input
+        .registration-card__password-input
+        .registration-card__toggle
+      .registration-card__registration-button
+    .registration-card__account-entry
+      p.registration-card__account-title Уже есть аккаунт на Toxin
+      .registration-card__entry-button
