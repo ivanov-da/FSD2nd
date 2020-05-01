@@ -1,0 +1,57 @@
+@import '../filter-date-dropdown/filter-date-dropdown.scss';
+@import '../dropdown/dropdown';
+@import '../button/button';
+
+.search-card {
+  width: 380px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &__content {
+    padding: 39px 29px 30px 29px;
+    margin: 0;
+  }
+
+  &__title {
+    font-family: $quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: $dark100;
+  }
+
+  &__date-selection {
+    margin-top: 16px;
+  }
+
+  &__date-dropdown-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__arrival-date-title,
+  &__exit-date-title,
+  &__guests-dropdown-title {
+    width: 150px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark100;
+  }
+
+  &__date-dropdown {}
+
+  &__guests-selection {
+    margin-top: 17px;
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+}

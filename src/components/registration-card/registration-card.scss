@@ -1,0 +1,97 @@
+@import '../text-field/text-field.scss';
+@import '../radio/radio.scss';
+@import '../toggle/toggle.scss';
+@import '../button/button.scss';
+
+.registration-card {
+  width: 380px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &__content {
+    padding: 39px 29px 30px 29px;
+    margin: 0;
+  }
+
+  &__title {
+    font-family: $quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: $dark100;
+  }
+
+  &__form {
+    margin-top: 20px;
+  }
+
+  &__name-input {}
+
+  &__surname-input {
+    margin-top: 10px;
+  }
+
+  &__radio {
+    margin-top: 8px;
+  }
+
+  &__born-date {
+    margin-top: 18.56px;
+  }
+
+  &__born-date-title,
+  &__entry-title {
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark100;
+  }
+
+  &__entry-title {
+    margin-top: 16px;
+  }
+
+  &__born-date-input {}
+
+  &__entry-datas {}
+
+  &__email-input {}
+
+  &__password-input {
+    margin-top: 10px;
+  }
+
+  &__toggle {
+    margin-top: 7px;
+  }
+
+  &__registration-button {
+    margin-top: 23px;
+  }
+
+  &__account-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  &__account-title {
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: black;
+    align-self: center;
+  }
+
+  &__entry-button {}
+
+
+}

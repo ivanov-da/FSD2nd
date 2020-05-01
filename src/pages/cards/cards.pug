@@ -1,0 +1,18 @@
+include ../../components/search-card/search-card.pug
+include ../../components/registration-card/registration-card.pug
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='cards')
+    meta(name='description' content='Cards')
+    title Form Elements
+    link(rel='stylesheet' href='./cards.scss')
+    script(src='../jquery-for-parcel.js')
+    script(src='./cards.js')
+  body
+    br
+    br
+    br
+    div(style="height: 500px; display: flex; justify-content: center; align-items: center;")
+      +registration-card()

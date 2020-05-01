@@ -1,0 +1,47 @@
+include ../text-field/text-field.pug
+include ../radio/radio.pug
+include ../toggle/toggle.pug
+include ../button/button.pug
+
+mixin registration-card(options)
+  .registration-card
+    .registration-card__content
+      p.registration-card__title Регистрация аккаунта
+      form.registration-card__form(action='/mock-address' method='get')
+        .registration-card__name-input
+          +text-field({type: 'text', placeholder: 'Имя'})
+        .registration-card__surname-input
+          +text-field({type: 'text', placeholder: 'Фамилия'})
+        .registration-card__radio
+          +radio({name: 'gender'})
+        .registration-card__born-date
+          p.registration-card__born-date-title дата рождения
+          .registration-card__born-date-input
+            +text-field({type: "text",
+                placeholder: "ДД.ММ.ГГГГ" ,
+                isMasked: 'true',
+              })
+        .registration-card__entry-datas
+          p.registration-card__entry-title данные для входа в сервис
+          .registration-card__email-input
+            +text-field({type: 'email', placeholder: 'Email'})
+          .registration-card__password-input
+            +text-field({type: 'password', placeholder: 'Пароль'})
+          .registration-card__toggle
+            +toggle({name: 'offer'})
+        .registration-card__registration-button
+          +button({text: 'Перейти к оплате', 
+              isRegister: 'false',
+              isRegisterRus: 'false',
+              isWithArrow: 'true',
+              transparent: 'false',
+              isNoBorder: 'false'})
+      .registration-card__account-entry
+        p.registration-card__account-title Уже есть аккаунт на Toxin
+        .registration-card__entry-button
+            +button({text: 'Войти', 
+              isRegister: 'false',
+              isRegisterRus: 'false',
+              isWithArrow: 'false',
+              transparent: 'true',
+              isNoBorder: 'false'})

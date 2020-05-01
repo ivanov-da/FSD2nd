@@ -1,0 +1,30 @@
+include ../../components/text-field/text-field.pug
+include ../../components/checkbox-buttons/checkbox-buttons.pug
+include ../../components/bullet-list/bullet-list.pug
+include ../../components/radio/radio.pug
+include ../../components/toggle/toggle.pug
+include ../../components/rate-button/rate-button.pug
+include ../../components/room-info/room-info.pug
+include ../../components/button/button.pug
+include ../../components/like-button/like-button.pug
+include ../../components/comment/comment.pug
+include ../../components/pagination/pagination.pug
+include ../../components/slider/slider.pug
+include ../../components/exp-checkbox/exp-checkbox.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/filter-date-dropdown/filter-date-dropdown.pug
+doctype
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='form, elements')
+    meta(name='description' content='Form Elements')
+    title Form Elements
+    link(rel='stylesheet' href='./form-elements.scss')
+    script(src='../jquery-for-parcel.js')
+    script(src='./form-elements.js')
+  body
+    div(style="height: 500px; display: flex; justify-content: center; align-items: center;")
+      +filter-date-dropdown()

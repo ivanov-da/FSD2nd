@@ -1,0 +1,34 @@
+include ../filter-date-dropdown/filter-date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+- 
+  let dropArrayGuests = [
+    {item: 'Взрослые', id: 'adults', group: 'true',},
+    {item: 'Дети', id: 'kids', group: 'true',},
+    {item: 'Младенцы', id: 'babies', group: 'false',},
+  ];
+
+mixin search-card(options)
+  .search-card
+    form.search-card__content(action='/mock-address' method='get')
+      p.search-card__title Найдём номера под ваши пожелания
+      .search-card__date-selection
+        .search-card__date-dropdown-title
+          p.search-card__arrival-date-title Прибытие
+          p.search-card__exit-date-title Выезд
+        .search-card__date-dropdown
+          +filter-date-dropdown()
+      .search-card__guests-selection
+        p.search-card__guests-dropdown-title Гости
+        .search-card__gusts-dropdown
+          +dropdown({
+            items: dropArrayGuests,
+          })
+      .search-card__button
+        +button({text: 'Подобрать номер', 
+              isRegister: 'false',
+              isRegisterRus: 'false',
+              isWithArrow: 'true',
+              transparent: 'false',
+              isNoBorder: 'false'})
