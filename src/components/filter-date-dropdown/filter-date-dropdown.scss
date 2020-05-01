@@ -39,7 +39,7 @@
 
 
 
-.date-dropdown {
+.filter-date-dropdown__start {
   width: 100%;
   max-width: 150px;
   height: 44px;
@@ -56,11 +56,12 @@
   border: 1px solid $dark25;
   box-sizing: border-box;
   border-radius: 4px;
-
-  &__arrows {
-    color: $purple;
-  }
 }
+
+.filter-date-dropdown__arrows {
+  color: $purple;
+}
+
 
 // настройка внешнего вида
 .datepicker {

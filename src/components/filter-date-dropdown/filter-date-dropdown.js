@@ -5,8 +5,8 @@ $(document).ready(() => {
     multipleDatesSeparator: " - ",
     clearButton: true,
     //inline: true,
-    prevHtml: '<div class="date-dropdown__arrows material-icons">arrow_back</div>',
-    nextHtml: '<div class="date-dropdown__arrows material-icons">arrow_forward</div>',
+    prevHtml: '<div class="filter-date-dropdown__arrows material-icons">arrow_back</div>',
+    nextHtml: '<div class="filter-date-dropdown__arrows material-icons">arrow_forward</div>',
     navTitles: {
       days: "MM yyyy",
     },
