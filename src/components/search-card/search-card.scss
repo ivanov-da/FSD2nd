@@ -3,8 +3,6 @@
 @import '../button/button';
 
 .search-card {
-
-
   width: 380px;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -14,7 +12,8 @@
 
   &__content {
     //width: 320px;
-    padding: 39px 29px 29px 29px;
+    padding: 39px 29px 30px 29px;
+    margin: 0;
   }
 
   &__title {
@@ -43,18 +42,17 @@
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
-    //line-height: 15px;
     text-transform: uppercase;
     color: $dark100;
   }
 
-  &__exit-date-title {}
-
   &__date-dropdown {}
 
-  &__guests-selection {}
+  &__guests-selection {
+    margin-top: 17px;
+  }
 
-  &__gusts-dropdown {}
-
-  &__button {}
+  &__button {
+    margin-top: 30px;
+  }
 }
