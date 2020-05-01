@@ -1,0 +1,9 @@
+include ../text-field/text-field.pug
+include ../radio/radio.pug
+include ../toggle/toggle.pug
+include ../button/button.pug
+
+mixin registration-card(options)
+  .registration-card
+    p.registration-card__title Регистрация аккаунта
+    form.registration-card__form(action='/mock-address' method='get')
