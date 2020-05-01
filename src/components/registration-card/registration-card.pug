@@ -30,6 +30,12 @@ mixin registration-card(options)
           .registration-card__toggle
             +toggle({name: 'offer'})
         .registration-card__registration-button
+          +button({text: 'Перейти к оплате', 
+              isRegister: 'false',
+              isRegisterRus: 'false',
+              isWithArrow: 'true',
+              transparent: 'false',
+              isNoBorder: 'false'})
       .registration-card__account-entry
         p.registration-card__account-title Уже есть аккаунт на Toxin
         .registration-card__entry-button
