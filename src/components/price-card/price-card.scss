@@ -18,7 +18,6 @@
   &__title {
     display: flex;
     justify-content: space-between;
-    //height: 30px;
     align-content: center;
   }
 
@@ -84,39 +83,115 @@
 
   &__date-dropdown {}
 
-  &__guests-selection {}
+  &__guests-selection {
+    margin-top: 16px;
+  }
 
 
 
   &__gusts-dropdown {}
 
-  &__details {}
+  &__details {
+    margin-top: 17.56px;
+  }
 
-  &__payment {}
+  &__payment {
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__price-per-day {}
 
   &__count {}
 
-  &__fee {}
+  &__fee {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: relative;
+  }
 
   &__fee-definition {}
+
+  &__fee-definition:after {
+    top: 2px;
+    left: 219px;
+    content: "i";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: $dark25;
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid $dark25;
+    border-radius: 100%;
+    box-sizing: border-box;
+  }
 
   &__fee-discount {}
 
   &__fee-count {}
 
-  &__add-fee {}
+  &__add-fee {
 
-  &__add-fee-definition {}
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  &__add-fee-definition {
+    width: 214px;
+  }
+
+  &__add-fee-definition:after {
+    top: 2px;
+    left: 219px;
+    content: "i";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: $dark25;
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid $dark25;
+    border-radius: 100%;
+    box-sizing: border-box;
+  }
 
   &__add-fee-count {}
 
-  &__total {}
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+
+    font-family: $quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    color: $dark100;
+  }
 
   &__total-definition {}
 
-  &__total-dashes {}
+  &__total-dashes {
+    font-size: 14px;
+    font-weight: normal;
+    width: 182px;
+    height: 1px;
+    border: 1px dashed $dark25;
+    box-sizing: border-box;
+    align-self: flex-end;
+  }
 
   &__total-count {}
 
