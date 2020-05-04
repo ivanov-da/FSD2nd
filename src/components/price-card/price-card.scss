@@ -1,0 +1,48 @@
+@import '../filter-date-dropdown/filter-date-dropdown.scss';
+@import '../dropdown/dropdown';
+@import '../button/button';
+
+.price-card {
+  width: 380px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &__content {
+    padding: 39px 29px 30px 29px;
+    margin: 0;
+  }
+  &__title {}
+  &__room { }
+  &__room-type {}
+  &__price {}
+  &__form {}
+  &__date-selection {}
+  &__date-dropdown-title {}
+  &__arrival-date-title {}
+  &__exit-date-title {}
+  &__date-dropdown{}
+  &__guests-selection {}
+  &__guests-dropdown-title {}
+  &__gusts-dropdown {}
+  &__details {}
+  &__payment {}
+  &__price-per-day {}
+  &__count {}
+  &__fee {}
+  &__fee-definition {}
+  &__fee-discount {}
+  &__fee-count {}
+  &__add-fee {}
+  &__add-fee-definition {}
+  &__add-fee-count {}
+  &__total {}
+  &__total-definition {}
+  &__total-dashes {}
+  &__total-count {}
+  &__button {}
+
+
+}

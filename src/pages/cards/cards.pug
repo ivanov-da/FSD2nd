@@ -1,5 +1,12 @@
 include ../../components/search-card/search-card.pug
 include ../../components/registration-card/registration-card.pug
+include ../../components/price-card/price-card.pug
+- 
+  let dropArrayGuests = [
+    {item: 'Взрослые', id: 'adults', group: 'true',},
+    {item: 'Дети', id: 'kids', group: 'true',},
+    {item: 'Младенцы', id: 'babies', group: 'false',},
+  ];
 html
   head
     meta(charset='utf-8')
@@ -15,4 +22,12 @@ html
     br
     br
     div(style="height: 500px; display: flex; justify-content: center; align-items: center;")
-      +registration-card()
+      //+registration-card({dropdownArray: dropArrayGuests})
+      +price-card({dropdownArray: dropArrayGuests,
+                  number: '888',
+                  type: 'люкс',
+                  price: '9 990',
+                  feeCount: '0',
+                  feeDiscount: '2 179',
+                  addFeeCount: '300',
+      })
