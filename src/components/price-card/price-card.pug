@@ -8,9 +8,11 @@ mixin price-card(options)
   .price-card
     .price-card__content
       .price-card__title
-        p.price-card__room= `№ `+`${options.number} `
+        p.price-card__room= `№ `
+          span.price-card__room-number= `${options.number} `
           span.price-card__room-type= `${options.type}`
-        p.price-card__price= `${options.price}` + `₽ в сутки`
+        p.price-card__price= `${options.price}` + `₽ `
+          span.price-card__price-days в сутки
       form.price-card__form
         .price-card__date-selection
           .price-card__date-dropdown-title

@@ -1,10 +1,10 @@
-@import '../filter-date-dropdown/filter-date-dropdown.scss';
-@import '../dropdown/dropdown';
-@import '../button/button';
+@import "../filter-date-dropdown/filter-date-dropdown.scss";
+@import "../dropdown/dropdown";
+@import "../button/button";
 
 .price-card {
   width: 380px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -14,35 +14,111 @@
     padding: 39px 29px 30px 29px;
     margin: 0;
   }
-  &__title {}
-  &__room { }
-  &__room-type {}
-  &__price {}
-  &__form {}
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    //height: 30px;
+    align-content: center;
+  }
+
+  &__room {
+    font-family: $quicksand;
+    font-weight: bold;
+    font-size: 14px;
+    color: $dark100;
+  }
+
+  &__room-number {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &__room-type {
+    font-family: $montserrat;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $purple;
+  }
+
+  &__price {
+    padding-top: 10px;
+    font-family: $montserrat;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    height: 18px;
+    color: $dark50;
+  }
+
+  &__price-days {
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  &__form {
+    margin-top: 14px;
+  }
+
   &__date-selection {}
-  &__date-dropdown-title {}
-  &__arrival-date-title {}
+
+  &__date-dropdown-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__arrival-date-title,
+  &__exit-date-title,
+  &__guests-dropdown-title {
+    width: 150px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark100;
+  }
+
   &__exit-date-title {}
-  &__date-dropdown{}
+
+  &__date-dropdown {}
+
   &__guests-selection {}
-  &__guests-dropdown-title {}
+
+
+
   &__gusts-dropdown {}
+
   &__details {}
+
   &__payment {}
+
   &__price-per-day {}
+
   &__count {}
+
   &__fee {}
+
   &__fee-definition {}
+
   &__fee-discount {}
+
   &__fee-count {}
+
   &__add-fee {}
+
   &__add-fee-definition {}
+
   &__add-fee-count {}
+
   &__total {}
+
   &__total-definition {}
+
   &__total-dashes {}
+
   &__total-count {}
+
   &__button {}
-
-
 }
