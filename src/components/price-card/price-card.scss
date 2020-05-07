@@ -57,7 +57,7 @@
   }
 
   &__form {
-    margin-top: 14px;
+    margin: 14px 0 0 0;
   }
 
   &__date-selection {}
@@ -188,12 +188,15 @@
     font-weight: normal;
     width: 182px;
     height: 1px;
-    border: 1px dashed $dark25;
+    border-bottom: 1px dotted $dark25;
     box-sizing: border-box;
     align-self: flex-end;
+    margin-bottom: 5px;
   }
 
   &__total-count {}
 
-  &__button {}
+  &__button {
+    margin-top: 19px;
+  }
 }
