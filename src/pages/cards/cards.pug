@@ -2,6 +2,8 @@ include ../../components/search-card/search-card.pug
 include ../../components/registration-card/registration-card.pug
 include ../../components/price-card/price-card.pug
 include ../../components/login-card/login-card.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/calendar/calendar.pug
 - 
   let dropArrayGuests = [
     {item: 'Взрослые', id: 'adults', group: 'true',},
@@ -34,5 +36,6 @@ html
                     addFeeCount: '300',
         })
       //-
+      +calendar()
 
-      +login-card()
+
