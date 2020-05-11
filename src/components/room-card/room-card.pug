@@ -1,0 +1,17 @@
+include ../rate-button/rate-button.pug
+mixin room-card(options)
+  .room-card
+    .room-card__image(style=`background-image: url(${options.imageUrl});`)
+    .room-card__info
+      .room-card__detail
+        p.price-card__room= `№ `
+          span.price-card__room-number= `${options.number} `
+          span.price-card__room-type= `${options.type}`
+        p.price-card__price= `${options.price}` + `₽ `
+          span.price-card__price-days в сутки
+      .room-card__comments
+        .room-card__stars
+          +rate-button({rate: options.starsCount})
+        p.room-card__reviews
+          span.price-card__room-number= options.reviewsCount
+          span.price-card__room-type Отзывов

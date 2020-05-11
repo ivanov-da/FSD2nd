@@ -4,6 +4,7 @@ include ../../components/price-card/price-card.pug
 include ../../components/login-card/login-card.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/calendar/calendar.pug
+include ../../components/room-card/room-card.pug
 - 
   let dropArrayGuests = [
     {item: 'Взрослые', id: 'adults', group: 'true',},
@@ -36,6 +37,16 @@ html
                     addFeeCount: '300',
         })
       //-
-      +calendar()
+      //-+calendar()
+
+      br
+      +room-card({
+        imageUrl: '../../images/cards/image.jpg',
+        number: '888',
+        type: 'люкс',
+        price: '9 990',
+        starsCount: 3,
+        reviewsCount: 2,
+      })
 
 
