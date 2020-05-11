@@ -13,7 +13,7 @@ mixin price-card(options)
           span.price-card__room-type= `${options.type}`
         p.price-card__price= `${options.price}` + `₽ `
           span.price-card__price-days в сутки
-      form.price-card__form
+      form.price-card__form(action='/mock-address' method='get')
         .price-card__date-selection
           .price-card__date-dropdown-title
             p.price-card__arrival-date-title Прибытие
