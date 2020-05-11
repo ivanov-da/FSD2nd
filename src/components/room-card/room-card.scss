@@ -2,10 +2,137 @@
 
 .room-card {
   width: 270px;
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px $dark5;
+  border-radius: 4px;
 
   &__image {
-    //width: 270px;
     height: 151.38px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  &__arrow-back,
+  &__arrow-forward {
+    color: #FFFFFF;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+
+  }
+
+  &__arrow-back {
+    transform: rotate(90deg);
+    top: 53px;
+    left: -10px;
+  }
+
+  &__arrow-forward {
+    right: -10px;
+    top: 53px;
+    transform: rotate(-90deg);
+  }
+
+  &__links {
+    display: flex;
+    position: absolute;
+    top: 129px;
+    right: 15px;
+  }
+
+  &__link {
+    margin-left: 3.75px;
+    cursor: pointer;
+    width: 7.5px;
+    height: 7.49px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100%;
+    box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+  }
+
+  &__link:first-child {
+    background: #FFFFFF;
+  }
+
+  &__info {
+    padding: 24px 17px 18px 20px;
+  }
+
+  &__detail {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__room {
+    font-family: $quicksand;
+    font-weight: bold;
+    color: #1F2041;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__room-number {
+    font-family: $quicksand;
+    color: #1F2041;
+    font-weight: bold;
+    font-size: 18px;
+
+  }
+
+  &__room-type {
+    font-family: $montserrat;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $purple;
+  }
+
+  &__price,
+  &__review-number {
+    //padding-top: 10px;
+    font-family: $montserrat;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    height: 18px;
+    color: $dark50;
+  }
+
+  &__price-days,
+  &__review-count {
+    color: $dark50;
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  &__comments {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+  }
+
+  &__stars {}
+
+  &__separator {
+    margin-top: 11px;
+    width: 230px;
+    height: 1px;
+    background: rgba(31, 32, 65, 0.1);
+  }
+
+  &__reviews {
+    padding-top: 1px;
+    padding-right: 3px;
+  }
+
+  &__review-number {}
+
+  &__review-count {
+    font-size: 14px;
   }
 
 
