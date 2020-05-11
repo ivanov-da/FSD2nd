@@ -1,0 +1,50 @@
+include ../filter-date-dropdown/filter-date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+
+
+mixin price-card(options)
+  .price-card
+    .price-card__content
+      .price-card__title
+        p.price-card__room= `№ `
+          span.price-card__room-number= `${options.number} `
+          span.price-card__room-type= `${options.type}`
+        p.price-card__price= `${options.price}` + `₽ `
+          span.price-card__price-days в сутки
+      form.price-card__form(action='/mock-address' method='get')
+        .price-card__date-selection
+          .price-card__date-dropdown-title
+            p.price-card__arrival-date-title Прибытие
+            p.price-card__exit-date-title Выезд
+          .price-card__date-dropdown
+            +filter-date-dropdown()
+        .price-card__guests-selection
+          p.price-card__guests-dropdown-title Гости
+          .price-card__gusts-dropdown
+            +dropdown({
+              items: options.dropdownArray,
+            })
+        .price-card__details
+          .price-card__payment
+            p.price-card__price-per-day=`${options.price}` + `₽ `+ `x ` + `4 суток`
+            p.price-card__count 39 960₽
+          .price-card__fee
+            p.price-card__fee-definition= `Сбор за услуги: скидка `
+              span.price-card__fee-discount= `${options.feeDiscount}` + `₽`
+            p.price-card__fee-count= `${options.feeCount}` + `₽`
+          .price-card__add-fee
+            p.price-card__add-fee-definition= `Сбор за дополнительные услуги`
+            p.price-card__add-fee-count= `${options.addFeeCount}` + `₽`
+          .price-card__total
+            p.price-card__total-definition Итого
+            .price-card__total-dashes
+            p.price-card__total-count= `38 081₽`
+        .price-card__button
+          +button({text: 'Забронировать', 
+                isRegister: 'false',
+                isRegisterRus: 'false',
+                isWithArrow: 'true',
+                transparent: 'false',
+                isNoBorder: 'false'})

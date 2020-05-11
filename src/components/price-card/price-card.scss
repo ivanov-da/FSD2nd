@@ -1,0 +1,202 @@
+@import "../filter-date-dropdown/filter-date-dropdown.scss";
+@import "../dropdown/dropdown";
+@import "../button/button";
+
+.price-card {
+  width: 380px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &__content {
+    padding: 39px 29px 30px 29px;
+    margin: 0;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  &__room {
+    font-family: $quicksand;
+    font-weight: bold;
+    font-size: 14px;
+    color: $dark100;
+  }
+
+  &__room-number {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &__room-type {
+    font-family: $montserrat;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $purple;
+  }
+
+  &__price {
+    padding-top: 10px;
+    font-family: $montserrat;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    height: 18px;
+    color: $dark50;
+  }
+
+  &__price-days {
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  &__form {
+    margin: 14px 0 0 0;
+  }
+
+  &__date-selection {}
+
+  &__date-dropdown-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__arrival-date-title,
+  &__exit-date-title,
+  &__guests-dropdown-title {
+    width: 150px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark100;
+  }
+
+  &__exit-date-title {}
+
+  &__date-dropdown {}
+
+  &__guests-selection {
+    margin-top: 16px;
+  }
+
+
+
+  &__gusts-dropdown {}
+
+  &__details {
+    margin-top: 17.56px;
+  }
+
+  &__payment {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price-per-day {}
+
+  &__count {}
+
+  &__fee {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  &__fee-definition {}
+
+  &__fee-definition:after {
+    top: 2px;
+    left: 219px;
+    content: "i";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: $dark25;
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid $dark25;
+    border-radius: 100%;
+    box-sizing: border-box;
+  }
+
+  &__fee-discount {}
+
+  &__fee-count {}
+
+  &__add-fee {
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  &__add-fee-definition {
+    width: 214px;
+  }
+
+  &__add-fee-definition:after {
+    top: 2px;
+    left: 219px;
+    content: "i";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: $dark25;
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid $dark25;
+    border-radius: 100%;
+    box-sizing: border-box;
+  }
+
+  &__add-fee-count {}
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+
+    font-family: $quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    color: $dark100;
+  }
+
+  &__total-definition {}
+
+  &__total-dashes {
+    font-size: 14px;
+    font-weight: normal;
+    width: 182px;
+    height: 1px;
+    border-bottom: 1px dotted $dark25;
+    box-sizing: border-box;
+    align-self: flex-end;
+    margin-bottom: 5px;
+  }
+
+  &__total-count {}
+
+  &__button {
+    margin-top: 19px;
+  }
+}

@@ -2,12 +2,6 @@ include ../filter-date-dropdown/filter-date-dropdown.pug
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-- 
-  let dropArrayGuests = [
-    {item: 'Взрослые', id: 'adults', group: 'true',},
-    {item: 'Дети', id: 'kids', group: 'true',},
-    {item: 'Младенцы', id: 'babies', group: 'false',},
-  ];
 
 mixin search-card(options)
   .search-card
@@ -23,7 +17,7 @@ mixin search-card(options)
         p.search-card__guests-dropdown-title Гости
         .search-card__gusts-dropdown
           +dropdown({
-            items: dropArrayGuests,
+            items: options.dropdownArray,
           })
       .search-card__button
         +button({text: 'Подобрать номер', 

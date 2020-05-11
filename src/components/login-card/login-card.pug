@@ -1,0 +1,27 @@
+include ../text-field/text-field.pug
+include ../button/button.pug
+mixin login-card(options)
+  .login-card
+    .login-card__content
+      p.login-card__title Войти
+      form.login-card__form(action='/mock-address' method='get')
+        .login-card__email-input
+          +text-field({type: 'email', placeholder: 'Email'})
+        .login-card__password-input
+          +text-field({type: 'password', placeholder: 'Пароль'})
+        .login-card__login-button
+          +button({text: 'Войти', 
+              isRegister: 'false',
+              isRegisterRus: 'false',
+              isWithArrow: 'true',
+              transparent: 'false',
+              isNoBorder: 'false'})
+        .login-card__account-registration
+          p.login-card__account-title Нет аккаунта на Toxin?
+          .login-card__registration-button
+              +button({text: 'Создать', 
+                isRegister: 'false',
+                isRegisterRus: 'false',
+                isWithArrow: 'false',
+                transparent: 'true',
+                isNoBorder: 'false'})
