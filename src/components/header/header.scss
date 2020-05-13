@@ -12,9 +12,27 @@
     align-items: center;
   }
 
-  &__menu {
+  &__nav {
     display: flex;
+    justify-content: space-between;
+    width: 38.4483%;
   }
+
+  &__link {
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: $dark50;
+    text-decoration-line: none;
+
+    &:focus,
+    &:hover {
+      color: $dark75;
+    }
+  }
+
 
   &__buttons {
     display: flex;

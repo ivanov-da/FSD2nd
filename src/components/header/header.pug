@@ -21,17 +21,15 @@ mixin header(options)
     .header__content
       .header__logo
         +logo({type: 'default'})
-      .header__menu
-      
+      nav.header__nav
         if isRu
           each val in ruMenu
-            .header__menu-item
-              a(href='/mock-adress')= val
+            .header__nav-item
+              a.header__link(href='/mock-adress')= val
         else if isEn
           each val in enMenu
-            .header__menu-item
-              a(href='/mock-adress')= val
-      
+            .header__nav-item
+              a.header__link(href='/mock-adress')= val
       .header__buttons
         .header__login-button
           +button({
