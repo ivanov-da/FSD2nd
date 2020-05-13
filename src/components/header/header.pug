@@ -1,8 +1,8 @@
 include ../logo/logo.pug
 include ../button/button.pug
 -
-  let enMenu = ['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentation',];
-  let ruMenu = ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения',];
+  let enMenu = ['Home', 'About Us', 'Services', 'expand_more', 'Careers', 'News', 'Documentation',];
+  let ruMenu = ['О нас', 'Услуги', 'expand_more', 'Вакансии', 'Новости', 'Соглашения', 'expand_more',];
 
 mixin header(options)
   - 
@@ -19,35 +19,71 @@ mixin header(options)
 
   .header
     .header__content
-      .header__logo
-        +logo({type: 'default'})
       nav.header__nav
-        if isRu
-          each val in ruMenu
-            .header__nav-item
-              a.header__link(href='/mock-adress')= val
-        else if isEn
-          each val in enMenu
-            .header__nav-item
-              a.header__link(href='/mock-adress')= val
-      .header__buttons
-        .header__login-button
-          +button({
-            text: loginButtonText, 
-            isRegister: 'false',
-            isRegisterRus: 'false',
-            isWithArrow: 'false',
-            transparent: 'true',
-            isNoBorder: 'false',
-            isSmall: 'true',
-          })
-        .header__register-button
-          +button({
-            text: registerButtonText, 
-            isRegister: 'true',
-            isRegisterRus: registerButtonRu,
-            isWithArrow: 'false',
-            transparent: 'false',
-            isNoBorder: 'false',
-            isSmall: 'false',
-          })
+        .header__logo
+
+          +logo({type: 'default'})
+        
+        
+        //-
+          if isRu
+            each val in ruMenu
+              .header__nav-item
+                a.header__link(href='/mock-adress')= val
+          else if isEn
+            each val in enMenu
+              .header__nav-item
+                a.header__link(href='/mock-adress')= val
+        - let i = 0;
+          while (i < enMenu.length) 
+            if enMenu[i+1] == 'expand_more'
+              .header__item
+                a.header__link(href='/mock-adress')= enMenu[i]
+                .material-icons.header__icon expand_more
+            else if enMenu[i] == 'expand_more'
+            else
+              .header__item
+                a.header__link(href='/mock-adress')= enMenu[i]
+            - i++;
+            
+            //-
+              if (enMenu[i+1] == 'expand_more') {
+                .header__item
+                  a.header__link(href='/mock-adress')= enMenu[i]
+              } else if (enMenu[i] =='expand_more') {
+                continue
+              }
+              i++;
+            
+          
+            
+            
+          
+
+        
+        .header__item.header__buttons
+          .header__login-button
+            +button({
+              text: loginButtonText, 
+              isRegister: 'false',
+              isRegisterRus: 'false',
+              isWithArrow: 'false',
+              transparent: 'true',
+              isNoBorder: 'false',
+              isSmall: 'true',
+            })
+        .header__item.header__buttons
+          .header__register-button
+            +button({
+              text: registerButtonText, 
+              isRegister: 'true',
+              isRegisterRus: registerButtonRu,
+              isWithArrow: 'false',
+              transparent: 'false',
+              isNoBorder: 'false',
+              isSmall: 'false',
+            })
+
+        .header__toggle
+          a.header__link(href='/mock-adress')
+            i.material-icons.header__burger dehaze
