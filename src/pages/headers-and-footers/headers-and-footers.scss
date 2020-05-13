@@ -2,4 +2,12 @@
 @import '../common/variables.scss';
 @import '../common/global.scss';
 @import '../common/fonts.scss';
-@import '../../components/search-card/search-card.scss';
+@import '../../components/header/header.scss';
+
+.test__container {
+  min-width: 320px;
+  max-width: 1440px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: yellow;
+}

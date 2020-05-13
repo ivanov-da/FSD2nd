@@ -1,0 +1,14 @@
+include ../logo/logo.pug
+include ../button/button.pug
+mixin header(options)
+  .header
+    .header__content
+      +logo({type: 'default'})
+      +button({
+        text: 'login', 
+        isRegister: 'false',
+        isRegisterRus: 'false',
+        isWithArrow: 'false',
+        transparent: 'true',
+        isNoBorder: 'false',
+      })

@@ -1,1 +1,1 @@
-import '../../components/like-button/like-button.js';
+//import '../../components/header/header.js';

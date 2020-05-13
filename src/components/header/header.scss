@@ -1,0 +1,13 @@
+@import '../button/button.scss';
+
+.header {
+  height: 70px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px $dark5;
+  display: flex;
+
+  &__content {
+
+    padding: 15px 140px;
+  }
+}
