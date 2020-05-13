@@ -1,14 +1,55 @@
 include ../logo/logo.pug
 include ../button/button.pug
+-
+  let enMenu = ['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentation',];
+  let ruMenu = ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения',];
+
 mixin header(options)
+  - 
+    let isRu = (options.lang == 'ru');
+    let isEn = (options.lang == 'en');
+    let buttons = {};
+    let registerButtonText = '';
+    registerButtonText += isRu ? 'Зарегистрироваться' : '';
+    registerButtonText += isEn ? 'Register' : '';
+    let loginButtonText = '';
+    loginButtonText += isRu ? 'Войти' : '';
+    loginButtonText += isEn ? 'Login' : '';
+    let registerButtonRu = isRu ? 'true' : 'false';
+
   .header
     .header__content
-      +logo({type: 'default'})
-      +button({
-        text: 'login', 
-        isRegister: 'false',
-        isRegisterRus: 'false',
-        isWithArrow: 'false',
-        transparent: 'true',
-        isNoBorder: 'false',
-      })
+      .header__logo
+        +logo({type: 'default'})
+      .header__menu
+      
+        if isRu
+          each val in ruMenu
+            .header__menu-item
+              a(href='/mock-adress')= val
+        else if isEn
+          each val in enMenu
+            .header__menu-item
+              a(href='/mock-adress')= val
+      
+      .header__buttons
+        .header__login-button
+          +button({
+            text: loginButtonText, 
+            isRegister: 'false',
+            isRegisterRus: 'false',
+            isWithArrow: 'false',
+            transparent: 'true',
+            isNoBorder: 'false',
+            isSmall: 'true',
+          })
+        .header__register-button
+          +button({
+            text: registerButtonText, 
+            isRegister: 'true',
+            isRegisterRus: registerButtonRu,
+            isWithArrow: 'false',
+            transparent: 'false',
+            isNoBorder: 'false',
+            isSmall: 'false',
+          })

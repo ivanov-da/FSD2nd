@@ -4,10 +4,19 @@
   height: 70px;
   background: #FFFFFF;
   box-shadow: 0px 10px 20px $dark5;
-  display: flex;
+
 
   &__content {
-
+    display: flex;
     padding: 15px 140px;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+  }
+
+  &__buttons {
+    display: flex;
   }
 }
