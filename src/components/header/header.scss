@@ -1,0 +1,40 @@
+@import '../button/button.scss';
+
+.header {
+  height: 70px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px $dark5;
+
+
+  &__content {
+    display: flex;
+    padding: 15px 140px;
+    align-items: center;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    width: 38.4483%;
+  }
+
+  &__link {
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: $dark50;
+    text-decoration-line: none;
+
+    &:focus,
+    &:hover {
+      color: $dark75;
+    }
+  }
+
+
+  &__buttons {
+    display: flex;
+  }
+}

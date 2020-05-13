@@ -1,0 +1,16 @@
+include ../../components/header/header.pug
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='headers, footers')
+    meta(name='description' content='headers and footers')
+    title Headers & Footers
+    link(rel='stylesheet' href='./headers-and-footers.scss')
+    script(src='../jquery-for-parcel.js')
+    script(src='./headers-and-footers.js')
+  body
+    .test__container
+      +header({
+        lang: 'ru',
+      })

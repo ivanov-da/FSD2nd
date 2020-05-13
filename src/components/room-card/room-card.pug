@@ -1,0 +1,25 @@
+include ../rate-button/rate-button.pug
+mixin room-card(options)
+  .room-card
+    .room-card__image(style=`background-image: url(${options.imageUrl});`)
+    .room-card__arrow-back.material-icons expand_more
+    .room-card__arrow-forward.material-icons expand_more
+    .room-card__links
+      .room-card__link
+      .room-card__link
+      .room-card__link
+      .room-card__link
+    .room-card__info
+      .room-card__detail
+        p.room-card__room= `№ `
+          span.room-card__room-number= `${options.number} `
+          span.room-card__room-type= `${options.type}`
+        p.room-card__price= `${options.price}` + `₽ `
+          span.room-card__price-days в сутки
+      .room-card__separator
+      .room-card__comments
+        .room-card__stars
+          +rate-button({rate: options.starsCount})
+        p.room-card__reviews
+          span.room-card__review-number= options.reviewsCount
+          span.room-card__review-count= ' Отзывов'
