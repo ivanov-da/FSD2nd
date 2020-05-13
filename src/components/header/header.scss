@@ -31,20 +31,19 @@
   }
 
   &__item {
-    display: flex;
     width: 100%;
     text-align: center;
     order: 3;
     display: none;
 
     @media(min-width: 900px) {
-      display: block;
+      display: flex;
       width: auto;
       order: 1;
     }
 
     &_active {
-      display: block;
+      display: flex;
     }
   }
 

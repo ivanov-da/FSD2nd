@@ -35,32 +35,31 @@ mixin header(options)
               .header__nav-item
                 a.header__link(href='/mock-adress')= val
         - let i = 0;
-          while (i < enMenu.length) 
-            if enMenu[i+1] == 'expand_more'
+        if isRu
+          while (i < ruMenu.length) 
+            if ruMenu[i+1] == 'expand_more'
               .header__item
-                a.header__link(href='/mock-adress')= enMenu[i]
+                a.header__link(href='/mock-adress')= ruMenu[i]
                 .material-icons.header__icon expand_more
-            else if enMenu[i] == 'expand_more'
+            else if ruMenu[i] == 'expand_more'
             else
               .header__item
-                a.header__link(href='/mock-adress')= enMenu[i]
+                a.header__link(href='/mock-adress')= ruMenu[i]
             - i++;
-            
-            //-
-              if (enMenu[i+1] == 'expand_more') {
+        
+        else if isEn
+          - i = 0;
+          while (i < enMenu.length) 
+              if enMenu[i+1] == 'expand_more'
                 .header__item
                   a.header__link(href='/mock-adress')= enMenu[i]
-              } else if (enMenu[i] =='expand_more') {
-                continue
-              }
-              i++;
-            
-          
-            
-            
-          
+                  .material-icons.header__icon expand_more
+              else if enMenu[i] == 'expand_more'
+              else
+                .header__item
+                  a.header__link(href='/mock-adress')= enMenu[i]
+              - i++;
 
-        
         .header__item.header__buttons
           .header__login-button
             +button({
@@ -85,5 +84,4 @@ mixin header(options)
             })
 
         .header__toggle
-          a.header__link(href='/mock-adress')
             i.material-icons.header__burger dehaze
