@@ -1,13 +1,14 @@
 $(document).ready(function () {
   $(".header__burger").on("click", function () {
-    //$(".test__container").addClass("1");
+
+    console.log(this)
 
     if ($(".header__item").hasClass("header__item_active")) {
       $(".header__item").removeClass("header__item_active");
-      //$(this).find("a").html("<i class='fas fa-bars'></i>");
+      $(this).html('dehaze');
     } else {
       $(".header__item").addClass("header__item_active");
-      //$(this).find("a").html("<i class='fas fa-times'></i>");
+      $(this).html('clear');
     }
   });
 });
