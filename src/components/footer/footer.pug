@@ -1,13 +1,14 @@
 include ../logo/logo.pug
+include ../text-field/text-field.pug
 
 mixin footer(options)
   -
     let isRu = (options.lang == 'ru');
     let isEn = (options.lang == 'en');
-    let enNav = ['Navigation', 'About Us', 'News', 'Support', 'Products',];
-    let ruNav = ['Навигация', 'О нас', 'Новости', 'Служба поддержки', 'Услуги',];
-    let enAbout = ['About Us', 'Who we are', 'Our team', 'Careers', 'Investors',];
-    let ruAbout = ['О нас', 'О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы',];
+    let enNav = ['About Us', 'News', 'Support', 'Products',];
+    let ruNav = ['О нас', 'Новости', 'Служба поддержки', 'Услуги',];
+    let enAbout = ['Who we are', 'Our team', 'Careers', 'Investors',];
+    let ruAbout = ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы',];
     let enSupport = ['Documentation', 'Community', 'Get in Touch',];
     let ruSupport = ['Соглашения', 'Сообщества', 'Связь с нами',];
 
@@ -55,9 +56,27 @@ mixin footer(options)
               .footer__support-item
                 a.footer__support-link(href='/mock-adress')= val
         .footer__subscribe
-          .footer__subscribe-title
-          .footer__subscribe-info
+          if isRu
+            p.footer__subscribe-title Подписка
+          else if isEn
+            p.footer__subscribe-title Subscribe to our newsletter
+          if isRu
+            p.footer__subscribe-info Получайте специальные предложения и новости сервиса
+          else if isEn
+            p.footer__subscribe-info Receive our latest news and promotions in your inbox!
           .footer__subscribe-input
+            +sub-text-field({
+              type: 'email',
+              placeholder: 'Email',
+              isMasked: 'false',
+              link: '/mock-adressl'
+            })
     .footer__wrapper
-      .footer__copyright
+      if isRu
+        p.footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
+      else if isEn
+        p.footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
       .footer__icons
+        a.fab.fa-twitter(href='http://twitter.com' target='_blank' rel='noopener noreferrer')
+        a.fab.fa-facebook-square(href='http://facebook.com' target='_blank' rel='noopener noreferrer')
+        a.fab.fa-instagram(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
