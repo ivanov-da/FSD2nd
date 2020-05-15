@@ -138,6 +138,11 @@
     @media (max-width: 1250px) {
       order: 2;
     }
+
+    @media (max-width: 899px) {
+      flex-basis: 100%;
+
+    }
   }
 
   &__subscribe-title {}
@@ -149,6 +154,11 @@
 
   &__subscribe-input {
     margin-top: 22px;
+
+    @media (max-width: 899px) {
+      padding: 0 auto;
+
+    }
 
   }
 
