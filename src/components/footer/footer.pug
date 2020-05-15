@@ -1,0 +1,98 @@
+include ../logo/logo.pug
+include ../text-field/text-field.pug
+
+mixin footer(options)
+  -
+    let isRu = (options.lang == 'ru');
+    let isEn = (options.lang == 'en');
+    let enNav = ['About Us', 'News', 'Support', 'Products',];
+    let ruNav = ['О нас', 'Новости', 'Служба поддержки', 'Услуги',];
+    let enAbout = ['Who we are', 'Our team', 'Careers', 'Investors',];
+    let ruAbout = ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы',];
+    let enSupport = ['Documentation', 'Community', 'Get in Touch',];
+    let ruSupport = ['Соглашения', 'Сообщества', 'Связь с нами',];
+
+    let isWidgetsType = (options.type == 'widgets');
+    let isCreativeType = (options.type == 'creative');
+
+  if isWidgetsType
+    .footer
+      .footer__main-wrapper
+        .footer__info
+          .footer__info-logo
+            +logo({type: 'default'})
+          if isRu
+            p.footer__info-title Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+          else if isEn
+            p.footer__info-title Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+        .footer__nav
+          if isRu
+            .footer__nav-title Навигация
+            each val in ruNav
+              .footer__nav-item
+                a.footer__nav-link(href='/mock-adress')= val
+          else if isEn
+            .footer__nav-title Navigation
+            each val in enNav
+              .footer__nav-item
+                a.footer__nav-link(href='/mock-adress')= val
+        .footer__about
+          if isRu
+            .footer__about-title О нас
+            each val in ruAbout
+              .footer__about-item
+                a.footer__about-link(href='/mock-adress')= val
+          else if isEn
+            .footer__about-title About us
+            each val in enAbout
+              .footer__about-item
+                a.footer__about-link(href='/mock-adress')= val
+        .footer__support
+          if isRu
+            .footer__support-title Служба поддержки
+            each val in ruSupport
+              .footer__support-item
+                a.footer__support-link(href='/mock-adress')= val
+          else if isEn
+            .footer__support-title Support
+            each val in enSupport
+              .footer__support-item
+                a.footer__support-link(href='/mock-adress')= val
+        .footer__subscribe
+          if isRu
+            p.footer__subscribe-title Подписка
+          else if isEn
+            p.footer__subscribe-title Subscribe to our newsletter
+          if isRu
+            p.footer__subscribe-info Получайте специальные предложения и новости сервиса
+          else if isEn
+            p.footer__subscribe-info Receive our latest news and promotions in your inbox!
+          .footer__subscribe-input
+            +sub-text-field({
+              type: 'email',
+              placeholder: 'Email',
+              isMasked: 'false',
+              link: '/mock-adressl'
+            })
+      .footer__wrapper
+        if isRu
+          p.footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
+        else if isEn
+          p.footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+        .footer__icons
+          a.fab.fa-twitter(href='http://twitter.com' target='_blank' rel='noopener noreferrer')
+          a.fab.fa-facebook-square(href='http://facebook.com' target='_blank' rel='noopener noreferrer')
+          a.fab.fa-instagram(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
+  else if isCreativeType
+    .footer
+      .footer__main-wrapper.footer__main-wrapper_type-creative
+        .footer__info-logo
+          +logo({type: 'default'})
+        if isRu
+          p.footer__info-title.footer__info-title_type-creative Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        else if isEn
+          p.footer__info-title.footer__info-title_type-creative Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+        .footer__icons.footer__icons_type-creative
+          a.fab.fa-twitter(href='http://twitter.com' target='_blank' rel='noopener noreferrer')
+          a.fab.fa-facebook-square(href='http://facebook.com' target='_blank' rel='noopener noreferrer')
+          a.fab.fa-instagram(href='http://instagram.com' target='_blank' rel='noopener noreferrer')

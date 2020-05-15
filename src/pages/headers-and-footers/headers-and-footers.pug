@@ -1,4 +1,5 @@
 include ../../components/header/header.pug
+include ../../components/footer/footer.pug
 html
   head
     meta(charset='utf-8')
@@ -12,5 +13,15 @@ html
   body
     .test__container
       +header({
-        lang: 'ru',
+        lang: 'en',
+        type: 'user',
+        userName: 'Cosmin Negoita',
       })
+      br
+      +footer({
+        lang: 'en',
+        type: 'creative',
+      })
+
+
+
