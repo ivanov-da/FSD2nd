@@ -1,7 +1,6 @@
 .text-field {
-  width: 100%;
   max-width: 320px;
-  min-width: 267px;
+  min-width: 260px;
   font-family: $montserrat;
   font-size: 0.875rem;
   line-height: 1.125rem;
@@ -24,7 +23,8 @@
 }
 
 .sub-text-field {
-  width: 267px;
+
+  min-width: 260px;
   position: relative;
 
   &__button {
