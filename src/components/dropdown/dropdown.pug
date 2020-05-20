@@ -1,5 +1,8 @@
 mixin dropdown(options)
-  .dropdown
+  -
+    let dropClassName = 'dropdown';
+    dropClassName += (options.isSmall == 'true') ? ' dropdown_small' : '';
+  div(class= dropClassName)
     .iqdropdown(data-title= options.textNull, data-mask= options.mask)
       p.iqdropdown-selection
       .iqdropdown-menu
