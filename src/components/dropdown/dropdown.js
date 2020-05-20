@@ -1,8 +1,16 @@
 $(document).ready(() => {
-  $(".iqdropdown").iqDropdown({
-    //textNull: "Сколько гостей",
-    //setSelectionText: (itemCount, totalItems),
-  });
+
+  $('.iqdropdown').each(function (index, element) {
+
+    $title = $(element).data('title');
+    $mask = $(element).data('mask');
+
+    $(element).iqDropdown({
+      textNull: $title,
+      maskArr: $mask,
+    });
+  })
+
   $('<p class="button-decrement-minus">-</p>').replaceAll(
     ".button-decrement .icon-decrement"
   );
