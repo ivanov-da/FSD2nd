@@ -64,7 +64,7 @@ html
                 placeholder: 'Email',
                 isMasked: 'false',
                 })
-            .form-elements__text-field-info
+            .form-elements__text-field-info-hover
               p.form-elements__text-field-title text field
               p.form-elements__text-field-description hover / focus
             .form-elements__text-field-element
@@ -110,11 +110,12 @@ html
                 type: 'email',
                 placeholder: 'Email',
                 isMasked: 'false',
-                link: 'fake.html',
+                isSmall: 'false',
+                link: '/mock-address',
               })
 
-          .form-elements__dropdown
-            .form-elements__dropdown-info
+          .form-elements__dropdown-one
+            .form-elements__dropdown-info.form-elements__dropdown-info_small
               p.form-elements__dropdown-title dropdown
               p.form-elements__dropdown-description deafult
             .form-elements__dropdown-element
@@ -122,9 +123,10 @@ html
                 textNull: 'Удобства',
                 items: dropArrayItems,
                 mask: maskArrItems,
+                isSmall: 'true',
               })
-          .form-elements__dropdown
-            .form-elements__dropdown-info
+          .form-elements__dropdown-two
+            .form-elements__dropdown-info.form-elements__dropdown-info_small
               p.form-elements__dropdown-title dropdown
               p.form-elements__dropdown-description expanded
             .form-elements__dropdown-element
@@ -132,6 +134,7 @@ html
                 textNull: 'Удобства',
                 items: dropArrayItems,
                 mask: maskArrItems,
+                isSmall: 'true',
               })
           .form-elements__expandable-checkbox-list
             +exp-checkbox({
@@ -145,7 +148,7 @@ html
                 { label: 'Шампунь', checked: false, isRich: 'false' },
               ],
             })
-          .form-elements__expandable-checkbox-list
+          .form-elements__expandable-checkbox-list-two
                         +exp-checkbox({
               type: 'open',
               list: [
@@ -170,21 +173,23 @@ html
             .form-elements__toggle-title toggle
             .form-elements__toggle-element
               +toggle({name: 'offer'})
-            .form-elements__toggle-element
+            .form-elements__toggle-element-two
               +toggle({name: 'offer'})
           .form-elements__like-button
             .form-elements__like-button-title like button
-            .form-elements__like-button-element
-              +like-button({count: '2'})
-            .form-elements__like-button-element
-              +like-button({count: '11'})
+            .form-elements__like-button-wrapper
+              .form-elements__like-button-element
+                +like-button({count: '2'})
+              .form-elements__like-button-element
+                +like-button({count: '11'})
           .form-elements__rate-button
             .form-elements__rate-button-title rate button
-            .form-elements__rate-button-element
-              +rate-button({rate: '4'})
-            .form-elements__rate-button-element
-              +rate-button({rate: '5'})
-          .form-elements__dropdown
+            .form-elements__rate-button-wrapper
+              .form-elements__rate-button-element
+                +rate-button({rate: '4'})
+              .form-elements__rate-button-element
+                +rate-button({rate: '5'})
+          .form-elements__dropdown-three
             .form-elements__dropdown-title dropdown
             .form-elements__dropdown-element
               +dropdown({
@@ -271,7 +276,7 @@ html
               .form-elements__pagination-title Pagination
               .form-elements__pagination-element
                 +pagination()
-            .form-elements__dropdown
+            .form-elements__dropdown-four
               .form-elements__dropdown-title dropdown
               .form-elements__dropdown-element
                 +dropdown({
