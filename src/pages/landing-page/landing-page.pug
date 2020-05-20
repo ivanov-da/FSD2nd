@@ -1,0 +1,32 @@
+include ../../components/search-card/search-card.pug
+include ../../components/registration-card/registration-card.pug
+include ../../components/price-card/price-card.pug
+include ../../components/login-card/login-card.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/calendar/calendar.pug
+include ../../components/room-card/room-card.pug
+include ../../components/logo/logo.pug
+- 
+  let dropArrayGuests = [
+    {item: 'Взрослые', id: 'adults', group: 'true',},
+    {item: 'Дети', id: 'kids', group: 'true',},
+    {item: 'Младенцы', id: 'babies', group: 'false',},
+  ];
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='landing page')
+    meta(name='description' content='landing page')
+    title Landing Page
+    link(rel='stylesheet' href='./landing-page.scss')
+    script(src='../jquery-for-parcel.js')
+    script(src='./landing-page.js')
+  body.landing-page
+    .landing-page__wrapper
+      nav.landing-page__header
+      .landing-page__content
+        .landing-page__search-card
+        .landing-page__text
+      .landing-page__footer
+    
