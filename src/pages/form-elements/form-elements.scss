@@ -18,14 +18,27 @@
 @import '../../components/date-dropdown/date-dropdown.scss';
 @import '../../components/filter-date-dropdown/filter-date-dropdown.scss';
 
-&__form-elements {
-  &__content {}
+.form-elements {
+  &__content {
+    max-width: 1440px;
+    min-width: 320px;
+    margin: 0 auto;
+  }
 
-  &__logo {}
+  &__logo {
+    margin: 30px 0 0 30px;
+  }
 
-  &__main-wrapper {}
+  &__main-wrapper {
+    display: flex;
+    padding: 62px 141px 131px 140px;
+  }
 
-  &__left-wrapper {}
+  &__left-wrapper,
+  &__right-wrapper,
+  &__center-wrapper {
+    flex-basis: 320px;
+  }
 
   &__text-field {}
 
@@ -143,7 +156,9 @@
 
   &__bullet-list {}
 
-  &__bottom-wrapper {}
+  &__bottom-wrapper {
+    flex-basis: 100%;
+  }
 
   &__room-info {}
 

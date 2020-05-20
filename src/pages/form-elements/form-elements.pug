@@ -1,3 +1,4 @@
+include ../../components/logo/logo.pug
 include ../../components/text-field/text-field.pug
 include ../../components/checkbox-buttons/checkbox-buttons.pug
 include ../../components/bullet-list/bullet-list.pug
@@ -14,6 +15,17 @@ include ../../components/exp-checkbox/exp-checkbox.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/filter-date-dropdown/filter-date-dropdown.pug
+- 
+  let dropArrayGuests = [
+        {item: 'Взрослые', id: 'adults', group: 'true',},
+        {item: 'Дети', id: 'kids', group: 'true',},
+        {item: 'Младенцы', id: 'babies', group: 'false',},
+      ];
+  let dropArrayItems = [
+        {item: 'Спальни', id: 'bedrooms', group: 'false',},
+        {item: 'Кровати', id: 'beds', group: 'false',},
+        {item: 'Ванные комнаты', id: 'bathrooms', group: 'false',},
+      ];
 doctype
 html
   head
@@ -28,41 +40,80 @@ html
   body
     .form-elements__content
       .form-elements__logo
+        +logo({type: 'uikit'})
       .form-elements__main-wrapper
         .form-elements__left-wrapper
           .form-elements__text-field
             .form-elements__text-field-info
-              p.form-elements__text-field-title
-              p.form-elements__text-field-description
+              p.form-elements__text-field-title text field
+              p.form-elements__text-field-description default
             .form-elements__text-field-element
+              +text-field({
+                type: 'email',
+                placeholder: 'Email',
+                isMasked: 'false',
+                })
             .form-elements__text-field-info
-              p.form-elements__text-field-title
-              p.form-elements__text-field-description
+              p.form-elements__text-field-title text field
+              p.form-elements__text-field-description hover / focus
             .form-elements__text-field-element
+              +text-field({
+                type: 'text',
+                placeholder: 'This is pretty awesome',
+                isMasked: 'false',
+                })
           .form-elements__dropdown
             .form-elements__dropdown-info
-              p.form-elements__dropdown-title
-              p.form-elements__dropdown-description
+              p.form-elements__dropdown-title dropdown
+              p.form-elements__dropdown-description default
             .form-elements__dropdown-element
+              +dropdown({
+                items: dropArrayGuests,
+              })
           .form-elements__masked-text-field
             .form-elements__masked-text-field-info
-              p.form-elements__masked-text-field-title
-              p.form-elements__masked-text-field-description
+              p.form-elements__masked-text-field-title masked text field
+              p.form-elements__masked-text-field-description default
             .form-elements__masked-text-field-element
+              +text-field({
+                type: 'text',
+                placeholder: 'ДД.ММ.ГГГГ',
+                isMasked: 'true',
+                })
           .form-elements__filter-date-dropdown
-            p.form-elements__filter-date-dropdown-title
+            .form-elements__filter-date-dropdown-info
+              p.form-elements__filter-date-dropdown-title date dropdown
+              p.form-elements__filter-date-dropdown-title date dropdown
             .form-elements__filter-date-dropdown-element
+              +filter-date-dropdown()
           .form-elements__date-dropdown
-            p.form-elements__date-dropdown-title
+            p.form-elements__date-dropdown-title filter date dropdown
             .form-elements__date-dropdown-element
+              +date-dropdown()
+          .form-elements__sub-text-field
+            p.form-elements__sub-text-field-title subscription text field
+            .form-elements__sub-text-field-element
+              +sub-text-field({
+                type: 'email',
+                placeholder: 'Email',
+                isMasked: 'false',
+                link: 'fake.html',
+              })
+
           .form-elements__dropdown
             .form-elements__dropdown-info
-              p.form-elements__dropdown-title
-              p.form-elements__dropdown-description
-          .form-elements__dropdown-field
-            .form-elements__dropdown-field-info
-              p.form-elements__dropdown-field-title
-              p.form-elements__dropdown-field-description
+              p.form-elements__dropdown-title dropdown
+              p.form-elements__dropdown-description deafult
+            .form-elements__dropdown-element
+              +dropdown({
+                items: dropArrayItems,
+                
+              })
+          .form-elements__dropdown
+            .form-elements__dropdown-info
+              p.form-elements__dropdown-title dropdown
+              p.form-elements__dropdown-description expanded
+            .form-elements__dropdown-element
           .form-elements__expandable-checkbox-list
           .form-elements__expandable-checkbox-list
         .form-elements__center-wrapper
