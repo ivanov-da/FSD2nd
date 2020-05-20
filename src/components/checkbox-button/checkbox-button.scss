@@ -40,8 +40,8 @@
   }
 
   //отступы и курсор к подписи
-  &__input:checked+span,
-  &__input:not(:checked)+span {
+  &__input:checked + span,
+  &__input:not(:checked) + span {
     display: inline-block;
     position: relative;
     padding-left: 1.875rem;
@@ -49,8 +49,8 @@
   }
 
   //стилизованные чекбоксы
-  &__input:checked+span:before,
-  &__input:not(:checked)+span:before {
+  &__input:checked + span:before,
+  &__input:not(:checked) + span:before {
     content: "";
     position: absolute;
     left: 0;
@@ -64,19 +64,19 @@
   }
 
   //рамка чекбокса при нажатии
-  &__input:checked+span:before {
+  &__input:checked + span:before {
     border: 1px solid $purple;
   }
 
   //галки
-  &__input:checked+span:after,
-  &__input:not(:checked)+span:after {
+  &__input:checked + span:after,
+  &__input:not(:checked) + span:after {
     content: "";
     position: absolute;
     left: 0.375rem;
     top: 0.375rem;
-    width: 0.375rem;
-    height: 0.25rem;
+    width: 0.5rem;
+    height: 0.375rem;
     border-radius: 1px;
     border-left: 2px solid $purple;
     border-bottom: 2px solid $purple;
@@ -92,12 +92,12 @@
   }
 
   //скрытие галки в неактивном чекбоксе
-  &__input:not(:checked)+span:after {
+  &__input:not(:checked) + span:after {
     opacity: 0;
   }
 
   //показ галки в активном чекбоксе
-  &__input:checked+span:after {
+  &__input:checked + span:after {
     opacity: 1;
   }
 }

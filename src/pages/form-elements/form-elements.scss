@@ -17,3 +17,329 @@
 @import '../../components/dropdown/dropdown.scss';
 @import '../../components/date-dropdown/date-dropdown.scss';
 @import '../../components/filter-date-dropdown/filter-date-dropdown.scss';
+
+.form-elements {
+  &__content {
+    max-width: 1440px;
+    min-width: 350px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    margin: 30px 0 0 30px;
+  }
+
+  &__main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    padding-top: 55px;
+    padding-left: 141px;
+  }
+
+  &__left-wrapper,
+  &__right-wrapper,
+  &__center-wrapper {
+    flex-basis: 320px;
+  }
+
+  &__left-wrapper {
+    margin-top: 4px;
+  }
+
+  &__center-wrapper {
+    margin-left: 55px;
+  }
+
+  &__right-wrapper {
+    margin-right: 101px;
+    margin-top: 6px;
+  }
+
+  &__bottom-wrapper {
+    margin-top: 94px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text-field {}
+
+  &__text-field-info,
+  &__filter-date-dropdown-info,
+  &__dropdown-info,
+  &__masked-text-field-info,
+  &__text-field-info-hover {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text-field-title,
+  &__dropdown-title,
+  &__masked-text-field-title,
+  &__filter-date-dropdown-title,
+  &__date-dropdown-title,
+  &__radio-buttons-title,
+  &__toggle-title,
+  &__like-button-title,
+  &__rate-button-title,
+  &__buttons-title,
+  &__pagination-title,
+  &__bullet-list-title,
+  &__sub-text-field-title {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark100;
+  }
+
+  &__text-field-description,
+  &__dropdown-description,
+  &__masked-text-field-description,
+  &__dropdown-field-description {
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark50;
+  }
+
+  &__text-field-element {
+    margin-top: 5px;
+  }
+
+  &__text-field-info-hover {
+    margin-top: 20.44px;
+  }
+
+  &__dropdown {
+    margin-top: 21px;
+  }
+
+  &__dropdown-info {
+    &_small {
+      width: 266px;
+    }
+  }
+
+  &__dropdown-title {}
+
+  &__dropdown-description {}
+
+  &__dropdown-element {
+    margin-top: 4px;
+  }
+
+  &__masked-text-field {
+    margin-top: 22.56px;
+  }
+
+  &__masked-text-field-info {}
+
+  &__masked-text-field-title {}
+
+  &__masked-text-field-description {}
+
+  &__masked-text-field-element {
+    margin-top: 5px;
+  }
+
+  &__filter-date-dropdown {
+    margin-top: 40px;
+  }
+
+  &__filter-date-dropdown-info {}
+
+  &__filter-date-dropdown-title {
+    width: 150px;
+  }
+
+  &__filter-date-dropdown-element {
+    margin-top: 5.44px;
+  }
+
+  &__date-dropdown {
+    margin-top: 40.56px;
+  }
+
+  &__date-dropdown-title {}
+
+  &__date-dropdown-element {
+    margin-top: 5px;
+  }
+
+  &__sub-text-field {
+    margin-top: 41px;
+  }
+
+  &__sub-text-field-element {
+    margin-top: 5px;
+  }
+
+  &__dropdown-one {
+    margin-top: 100px;
+  }
+
+  &__dropdown-two {
+    margin-top: 20px;
+  }
+
+
+
+  &__expandable-checkbox-list {
+    margin-top: 169.44px;
+  }
+
+  &__expandable-checkbox-list-two {
+    margin-top: 40px;
+  }
+
+
+
+  &__checkbox-buttons {}
+
+  &__radio-buttons {
+    margin-top: 40.88px;
+  }
+
+  &__radio-buttons-title {}
+
+  &__radio-buttons-element {
+    margin-top: 13px;
+  }
+
+  &__toggle {
+    margin-top: 39.56px;
+  }
+
+  &__toggle-title {}
+
+  &__toggle-element {
+    margin-top: 13px;
+  }
+
+  &__toggle-element-two {
+    margin-top: 10px;
+  }
+
+  &__like-button {
+    margin-top: 43.44px;
+
+  }
+
+  &__like-button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+
+  &__like-button-title {}
+
+  &__like-button-element {}
+
+  &__rate-button {
+    margin-top: 38px;
+  }
+
+  &__rate-button-wrapper {
+    display: flex;
+
+    margin-top: 16px;
+  }
+
+  &__rate-button-title {}
+
+  &__rate-button-element {
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+
+  &__dropdown-three {
+    margin-top: 196px;
+  }
+
+  &__rich-checkbox-buttons {
+    margin-top: 253px;
+  }
+
+  &__right-wrapper {
+    flex-basis: 360px;
+  }
+
+  &__slider {}
+
+  &__buttons {
+    margin-top: 85.56px;
+  }
+
+  &__common-button,
+  &__transparent-button,
+  &__button-with-no-border {
+    display: flex;
+  }
+
+  &__common-button {
+    margin-top: 16px;
+  }
+
+  &__common-button_normal {}
+
+  &__common-button_hover,
+  &__transparent-button_hover,
+  &__button-with-no-border_hover {
+    margin-left: 20px;
+  }
+
+  &__transparent-button {
+    margin-top: 30px;
+  }
+
+  &__transparent-button_normal {}
+
+  &__transparent-button_hover {}
+
+  &__button-with-no-border {
+    margin-top: 27px;
+  }
+
+  &__button-with-no-border_normal {}
+
+  &__button-with-no-border_hover {}
+
+  &__button-wide {
+    margin-top: 25.44px;
+  }
+
+  &__pagination {
+    margin-top: 40px;
+  }
+
+  &__pagination-title {}
+
+  &__pagination-element {
+    margin-top: 16.44px;
+  }
+
+  &__dropdown-four {
+    margin-top: 231px;
+  }
+
+  &__bullet-list {
+    margin-top: 257px;
+  }
+
+  &__bullet-list-element {
+    margin-top: 14px;
+  }
+
+  &__bottom-wrapper {
+    flex-basis: 100%;
+  }
+
+  &__room-info {}
+
+  &__comment {
+    margin-right: 141px;
+    margin-top: 10px;
+  }
+}

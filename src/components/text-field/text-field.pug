@@ -5,7 +5,10 @@ mixin text-field(options)
   input(class= className, type= options.type, placeholder= options.placeholder)
 
 mixin sub-text-field(options)
-  .sub-text-field
+  -
+    let subClassName = 'sub-text-field';
+    subClassName += (options.isSmall == 'true') ? ' sub-text-field_small' : '';
+  div(class= subClassName)
     form.sub-text-field__form(action='get', link='${options.link}')
       +text-field({type: options.type, isMasked: options.isMasked, placeholder: options.placeholder})
       button.sub-text-field__button.material-icons arrow_forward

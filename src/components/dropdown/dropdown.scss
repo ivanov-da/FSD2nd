@@ -1,7 +1,12 @@
 @import "../../../node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.css";
 
 .dropdown {
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
+
+  &_small {
+    max-width: 266px;
+  }
 }
 
 //инпут

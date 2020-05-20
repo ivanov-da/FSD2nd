@@ -1,3 +1,4 @@
+include ../../components/logo/logo.pug
 include ../../components/text-field/text-field.pug
 include ../../components/checkbox-buttons/checkbox-buttons.pug
 include ../../components/bullet-list/bullet-list.pug
@@ -14,6 +15,28 @@ include ../../components/exp-checkbox/exp-checkbox.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/filter-date-dropdown/filter-date-dropdown.pug
+- 
+  let dropArrayGuests = [
+        {item: 'Взрослые', id: 'adults', group: 'true',},
+        {item: 'Дети', id: 'kids', group: 'true',},
+        {item: 'Младенцы', id: 'babies', group: 'false',},
+      ];
+  let maskArrGuests = [
+        ['guests', 'Гость', 'Гостя', 'Гостей'],
+        ['adults', 'Взрослый', 'Всзрослых', 'Взрослых'],
+        ['kids', 'Ребенок', 'Ребенка', 'Детей'],
+        ['babies', 'Младенец', 'Младенца', 'Младенцев'],
+      ];
+  let dropArrayItems = [
+        {item: 'Спальни', id: 'bedrooms', group: 'false',},
+        {item: 'Кровати', id: 'beds', group: 'false',},
+        {item: 'Ванные комнаты', id: 'bathrooms', group: 'false',},
+      ];
+  let maskArrItems = [
+        ['bedrooms', 'Спальня', 'Спальни', 'Спален'],
+        ['beds', 'Кровать', 'Кровати', 'Кроватей'],
+        ['bathrooms', 'Ванная комната', 'Ванные комнаты', 'Ванных комнат'],
+      ];
 doctype
 html
   head
@@ -26,5 +49,253 @@ html
     script(src='../jquery-for-parcel.js')
     script(src='./form-elements.js')
   body
-    div(style="height: 500px; display: flex; justify-content: center; align-items: center;")
-      +filter-date-dropdown()
+    .form-elements__content
+      .form-elements__logo
+        +logo({type: 'uikit'})
+      .form-elements__main-wrapper
+        .form-elements__left-wrapper
+          .form-elements__text-field
+            .form-elements__text-field-info
+              p.form-elements__text-field-title text field
+              p.form-elements__text-field-description default
+            .form-elements__text-field-element
+              +text-field({
+                type: 'email',
+                placeholder: 'Email',
+                isMasked: 'false',
+                })
+            .form-elements__text-field-info-hover
+              p.form-elements__text-field-title text field
+              p.form-elements__text-field-description hover / focus
+            .form-elements__text-field-element
+              +text-field({
+                type: 'text',
+                placeholder: 'This is pretty awesome',
+                isMasked: 'false',
+                })
+          .form-elements__dropdown
+            .form-elements__dropdown-info
+              p.form-elements__dropdown-title dropdown
+              p.form-elements__dropdown-description default
+            .form-elements__dropdown-element
+              +dropdown({
+                textNull: 'Сколько гостей',
+                items: dropArrayGuests,
+                mask: maskArrGuests,
+              })
+          .form-elements__masked-text-field
+            .form-elements__masked-text-field-info
+              p.form-elements__masked-text-field-title masked text field
+              p.form-elements__masked-text-field-description default
+            .form-elements__masked-text-field-element
+              +text-field({
+                type: 'text',
+                placeholder: 'ДД.ММ.ГГГГ',
+                isMasked: 'true',
+                })
+          .form-elements__filter-date-dropdown
+            .form-elements__filter-date-dropdown-info
+              p.form-elements__filter-date-dropdown-title date dropdown
+              p.form-elements__filter-date-dropdown-title date dropdown
+            .form-elements__filter-date-dropdown-element
+              +filter-date-dropdown()
+          .form-elements__date-dropdown
+            p.form-elements__date-dropdown-title filter date dropdown
+            .form-elements__date-dropdown-element
+              +date-dropdown()
+          .form-elements__sub-text-field
+            p.form-elements__sub-text-field-title subscription text field
+            .form-elements__sub-text-field-element
+              +sub-text-field({
+                type: 'email',
+                placeholder: 'Email',
+                isMasked: 'false',
+                isSmall: 'false',
+                link: '/mock-address',
+              })
+
+          .form-elements__dropdown-one
+            .form-elements__dropdown-info.form-elements__dropdown-info_small
+              p.form-elements__dropdown-title dropdown
+              p.form-elements__dropdown-description deafult
+            .form-elements__dropdown-element
+              +dropdown({
+                textNull: 'Удобства',
+                items: dropArrayItems,
+                mask: maskArrItems,
+                isSmall: 'true',
+              })
+          .form-elements__dropdown-two
+            .form-elements__dropdown-info.form-elements__dropdown-info_small
+              p.form-elements__dropdown-title dropdown
+              p.form-elements__dropdown-description expanded
+            .form-elements__dropdown-element
+              +dropdown({
+                textNull: 'Удобства',
+                items: dropArrayItems,
+                mask: maskArrItems,
+                isSmall: 'true',
+              })
+          .form-elements__expandable-checkbox-list
+            +exp-checkbox({
+              type: 'closed',
+              list: [
+                { label: 'Завтрак', checked: false, isRich: 'false' },
+                { label: 'Письменный стол', checked: true, isRich: 'false' },
+                { label: 'Стул для кормления', checked: true, isRich: 'false' },
+                { label: 'Кроватка', checked: true, isRich: 'false' },
+                { label: 'Телевизор', checked: false, isRich: 'false' },
+                { label: 'Шампунь', checked: false, isRich: 'false' },
+              ],
+            })
+          .form-elements__expandable-checkbox-list-two
+                        +exp-checkbox({
+              type: 'open',
+              list: [
+                { label: 'Завтрак', checked: false, isRich: 'false' },
+                { label: 'Письменный стол', checked: true, isRich: 'false' },
+                { label: 'Стул для кормления', checked: true, isRich: 'false' },
+                { label: 'Кроватка', checked: true, isRich: 'false' },
+                { label: 'Телевизор', checked: false, isRich: 'false' },
+                { label: 'Шампунь', checked: false, isRich: 'false' },
+              ],
+            })
+        .form-elements__center-wrapper
+          .form-elements__checkbox-buttons
+            +checkboxButtons()
+          .form-elements__radio-buttons
+            .form-elements__radio-buttons-title radio buttons
+            .form-elements__radio-buttons-element
+              +radio({
+                name: 'gender',
+              })
+          .form-elements__toggle
+            .form-elements__toggle-title toggle
+            .form-elements__toggle-element
+              +toggle({name: 'offer'})
+            .form-elements__toggle-element-two
+              +toggle({name: 'offer'})
+          .form-elements__like-button
+            .form-elements__like-button-title like button
+            .form-elements__like-button-wrapper
+              .form-elements__like-button-element
+                +like-button({count: '2'})
+              .form-elements__like-button-element
+                +like-button({count: '11'})
+          .form-elements__rate-button
+            .form-elements__rate-button-title rate button
+            .form-elements__rate-button-wrapper
+              .form-elements__rate-button-element
+                +rate-button({rate: '4'})
+              .form-elements__rate-button-element
+                +rate-button({rate: '5'})
+          .form-elements__dropdown-three
+            .form-elements__dropdown-title dropdown
+            .form-elements__dropdown-element
+              +dropdown({
+                textNull: 'Сколько гостей',
+                items: dropArrayGuests,
+                mask: maskArrGuests,
+              })
+          .form-elements__rich-checkbox-buttons
+            +richCheckboxButtons()
+        .form-elements__right-wrapper
+          .form-elements__slider
+            +slider({
+              footer: '',
+            })
+          .form-elements__buttons
+            .form-elements__buttons-title Buttons
+            .form-elements__common-button
+              .form-elements__common-button_normal
+                +button({
+                  text: 'Click me', 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isWithArrow: 'false',
+                  transparent: 'false',
+                  isNoBorder: 'false',
+                })
+              .form-elements__common-button_hover
+                +button({
+                  text: 'Click me', 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isWithArrow: 'false',
+                  transparent: 'false',
+                  isNoBorder: 'false',
+                })
+            .form-elements__transparent-button
+              .form-elements__transparent-button_normal
+                +button({
+                  text: 'Click me', 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isWithArrow: 'false',
+                  transparent: 'true',
+                  isNoBorder: 'false',
+                })
+              .form-elements__transparent-button_hover
+                +button({
+                  text: 'Click me', 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isWithArrow: 'false',
+                  transparent: 'true',
+                  isNoBorder: 'false',
+                })
+            .form-elements__button-with-no-border
+              .form-elements__button-with-no-border_normal
+                +button({
+                  text: 'Click me', 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isWithArrow: 'false',
+                  transparent: 'false',
+                  isNoBorder: 'true',
+                })
+              .form-elements__button-with-no-border_hover
+                +button({
+                  text: 'Click me', 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isWithArrow: 'false',
+                  transparent: 'false',
+                  isNoBorder: 'true',
+                })
+            .form-elements__button-wide
+              +button({
+                  text: 'Перейти к оплате', 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isWithArrow: 'true',
+                  transparent: 'false',
+                  isNoBorder: 'false',
+                })
+            .form-elements__pagination
+              .form-elements__pagination-title Pagination
+              .form-elements__pagination-element
+                +pagination()
+            .form-elements__dropdown-four
+              .form-elements__dropdown-title dropdown
+              .form-elements__dropdown-element
+                +dropdown({
+                textNull: 'Сколько гостей',
+                items: dropArrayGuests,
+                mask: maskArrGuests,
+              })
+            .form-elements__bullet-list
+              .form-elements__bullet-list-title bullet list
+              .form-elements__bullet-list-element
+                +bulletList()
+        .form-elements__bottom-wrapper
+          .form-elements__room-info
+            +room-info()
+          .form-elements__comment
+            +comment({
+              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+              userName: 'Мурад Сарафанов',
+              lastActivity: '5 дней назад',
+              likeCount: '12',
+              imageUrl: '../../images/form-elements/image.png',
+            })
