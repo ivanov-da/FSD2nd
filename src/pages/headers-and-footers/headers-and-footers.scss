@@ -5,12 +5,32 @@
 @import '../../components/header/header.scss';
 @import '../../components/footer/footer.scss';
 
+.headers-and-footers {
+  &__content {
+    max-width: 1440px;
+    min-width: 350px;
+    margin: 0 auto;
+    background: #F4F4F6;
+  }
 
 
-.test__container {
-  min-width: 320px;
-  max-width: 1440px;
+  &__logo {
+    margin: 30px 0 0 30px;
+  }
 
-  margin: 0 auto;
-  background-color: yellow;
+  &__header-standard {
+    margin-top: 72px;
+  }
+
+  &__header-standard-logged {
+    margin-top: 40px;
+  }
+
+  &__footer-widgets-copyright {
+    margin-top: 40px;
+  }
+
+  &__footer-crative {
+    margin-top: 40px;
+  }
 }

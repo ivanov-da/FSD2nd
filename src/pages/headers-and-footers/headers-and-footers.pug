@@ -1,5 +1,6 @@
 include ../../components/header/header.pug
 include ../../components/footer/footer.pug
+include ../../components/logo/logo.pug
 html
   head
     meta(charset='utf-8')
@@ -11,17 +12,42 @@ html
     script(src='../jquery-for-parcel.js')
     script(src='./headers-and-footers.js')
   body
-    .test__container
-      +header({
-        lang: 'en',
-        type: 'user',
-        userName: 'Cosmin Negoita',
-      })
-      br
-      +footer({
-        lang: 'en',
-        type: 'creative',
-      })
+    .headers-and-footers__content
+      .headers-and-footers__logo
+        +logo({type: 'uikit'})
+      .headers-and-footers__header-standard
+        +header({
+          lang: 'en',
+          type: 'anon',
+          userName: '',
+        })
+      .headers-and-footers__header-standard-logged
+        +header({
+          lang: 'en',
+          type: 'user',
+          userName: 'Cosmin Negoita',
+        })
+      .headers-and-footers__footer-widgets-copyright
+        +footer({
+          lang: 'en',
+          type: 'widgets',
+        })
+      .headers-and-footers__footer-crative
+        +footer({
+          lang: 'en',
+          type: 'creative',
+        })
+
+.headers-and-footers__content
+      .headers-and-footers__logo
+        
+      .headers-and-footers__header-standard
+
+      .headers-and-footers__header-standard-logged
+
+      .headers-and-footers__footer-widgets-copyright
+
+      .headers-and-footers__footer-crative
 
 
 
