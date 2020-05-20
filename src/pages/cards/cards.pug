@@ -5,6 +5,7 @@ include ../../components/login-card/login-card.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/calendar/calendar.pug
 include ../../components/room-card/room-card.pug
+include ../../components/logo/logo.pug
 - 
   let dropArrayGuests = [
     {item: 'Взрослые', id: 'adults', group: 'true',},
@@ -22,31 +23,53 @@ html
     script(src='../jquery-for-parcel.js')
     script(src='./cards.js')
   body
-    br
-    br
-    br
-    div(style="height: 500px; display: flex; justify-content: center; align-items: center;")
-      //+registration-card({dropdownArray: dropArrayGuests})
-      //-
-        +price-card({dropdownArray: dropArrayGuests,
-                    number: '888',
-                    type: 'люкс',
-                    price: '9 990',
-                    feeCount: '0',
-                    feeDiscount: '2 179',
-                    addFeeCount: '300',
-        })
-      //-
-      //-+calendar()
+    .cards__content
+      .cards__logo
+        +logo({type: 'uikit'})
+      .cards__wrapper
+        .cards__left
+          .cards__search-card
+            +search-card({
+              dropdownArray: dropArrayGuests,
+            })
+          .cards__registration-card
+            +registration-card()
+        .cards__center
+          .cards__price-card
+            +price-card({
+              dropdownArray: dropArrayGuests,
+                number: '888',
+                type: 'люкс',
+                price: '9 990',
+                feeCount: '0',
+                feeDiscount: '2 179',
+                addFeeCount: '300',
+            })
+          .cards__login-card
+            +login-card()
+        .cards__right
+          .cards__calendar
+            +calendar()
+          .cards__room-card
+            +room-card({
+              imageUrl: '../../images/cards/888.jpg',
+              number: '888',
+              type: 'люкс',
+              price: '9 990',
+              starsCount: 5,
+              reviewsCount: 145,
+            })
+          .cards__room-card
+            +room-card({
+              imageUrl: '../../images/cards/840.jpg',
+              number: '840',
+              type: '',
+              price: '9 990',
+              starsCount: 4,
+              reviewsCount: 65,
+            })
 
-      br
-      +room-card({
-        imageUrl: '../../images/cards/image.jpg',
-        number: '888',
-        type: 'люкс',
-        price: '9 990',
-        starsCount: 5,
-        reviewsCount: 145,
-      })
+
+
 
 

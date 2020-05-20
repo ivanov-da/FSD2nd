@@ -9,3 +9,48 @@
 @import '../../components/date-dropdown/date-dropdown.scss';
 @import '../../components/calendar/calendar.scss';
 @import '../../components/room-card/room-card.scss';
+
+.cards {
+  &__content {
+    max-width: 1440px;
+    min-width: 350px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    margin: 30px 0 0 30px;
+  }
+
+  &__wrapper {
+    padding-top: 72px;
+    padding-left: 140px;
+    padding-right: 140px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+  }
+
+  &__left {}
+
+  &__search-card {}
+
+  &__registration-card {
+    margin-top: 40px;
+  }
+
+  &__center {}
+
+  &__price-card {}
+
+  &__login-card {
+    margin-top: 40px;
+  }
+
+  &__right {}
+
+  &__calendar {}
+
+  &__room-card {
+    margin-top: 40px;
+  }
+}
