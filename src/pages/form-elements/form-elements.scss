@@ -21,7 +21,7 @@
 .form-elements {
   &__content {
     max-width: 1440px;
-    min-width: 320px;
+    min-width: 350px;
     margin: 0 auto;
   }
 
@@ -124,7 +124,9 @@
 
   &__rich-checkbox-buttons {}
 
-  &__right-wrapper {}
+  &__right-wrapper {
+    flex-basis: 360px;
+  }
 
   &__slider {}
 
