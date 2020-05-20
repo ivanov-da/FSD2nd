@@ -21,10 +21,21 @@ include ../../components/filter-date-dropdown/filter-date-dropdown.pug
         {item: 'Дети', id: 'kids', group: 'true',},
         {item: 'Младенцы', id: 'babies', group: 'false',},
       ];
+  let maskArrGuests = [
+        ['guests', 'Гость', 'Гостя', 'Гостей'],
+        ['adults', 'Взрослый', 'Всзрослых', 'Взрослых'],
+        ['kids', 'Ребенок', 'Ребенка', 'Детей'],
+        ['babies', 'Младенец', 'Младенца', 'Младенцев'],
+      ];
   let dropArrayItems = [
         {item: 'Спальни', id: 'bedrooms', group: 'false',},
         {item: 'Кровати', id: 'beds', group: 'false',},
         {item: 'Ванные комнаты', id: 'bathrooms', group: 'false',},
+      ];
+  let maskArrItems = [
+        ['bedrooms', 'Спальня', 'Спальни', 'Спален'],
+        ['beds', 'Кровать', 'Кровати', 'Кроватей'],
+        ['bathrooms', 'Ванная комната', 'Ванные комнаты', 'Ванных комнат'],
       ];
 doctype
 html
@@ -68,7 +79,9 @@ html
               p.form-elements__dropdown-description default
             .form-elements__dropdown-element
               +dropdown({
+                textNull: 'Сколько гостей',
                 items: dropArrayGuests,
+                mask: maskArrGuests,
               })
           .form-elements__masked-text-field
             .form-elements__masked-text-field-info
@@ -106,15 +119,34 @@ html
               p.form-elements__dropdown-description deafult
             .form-elements__dropdown-element
               +dropdown({
+                textNull: 'Удобства',
                 items: dropArrayItems,
-                
+                mask: maskArrItems,
               })
           .form-elements__dropdown
             .form-elements__dropdown-info
               p.form-elements__dropdown-title dropdown
               p.form-elements__dropdown-description expanded
             .form-elements__dropdown-element
+              +dropdown({
+                textNull: 'Удобства',
+                items: dropArrayItems,
+                mask: maskArrItems,
+              })
           .form-elements__expandable-checkbox-list
+            +exp-checkbox({
+              type: 'closed',
+              list: [
+                { label: "Завтрак", checked: false, isRich: 'false' },
+                { label: "Письменный стол", checked: true, isRich: 'false' },
+                { label: "Стул для кормления", checked: true, isRich: 'false' },
+                { label: "Кроватка", checked: true, isRich: 'false' },
+                { label: "Телевизор", checked: false, isRich: 'false' },
+                { label: "Шампунь", checked: false, isRich: 'false' },
+                { label: "Телевизор", checked: false, isRich: 'false' },
+                { label: "Шампунь", checked: false, isRich: 'false' },
+              ],
+            })
           .form-elements__expandable-checkbox-list
         .form-elements__center-wrapper
           .form-elements__checkbox-buttons
