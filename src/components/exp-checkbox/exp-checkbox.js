@@ -1,22 +1,25 @@
 $(document).ready(function () {
-  let arrow = $(".exp-checkbox__arrow").html();
-  let isShown
 
-  if (arrow == 'expand_more') {
-    isShown = false;
-  } else if (arrow == 'expand_less') {
-    isShown = true;
-  }
+  $('.exp-checkbox').each(function (index, element) {
+    let $arrow = $(element).find('.exp-checkbox__arrow').html();
+    let isShown;
 
-
-  $(".exp-checkbox__text, .exp-checkbox__arrow").click(function () {
-    if (isShown) {
-      $(".exp-checkbox__buttons").hide("slow");
-      $(".exp-checkbox__arrow").html('expand_more')
-    } else {
-      $(".exp-checkbox__buttons").show("slow");
-      $(".exp-checkbox__arrow").html('expand_less')
+    if ($arrow == 'expand_more') {
+      isShown = false;
+    } else if ($arrow == 'expand_less') {
+      isShown = true;
     }
-    isShown = !isShown;
+
+    $(element).find(".exp-checkbox__title").click(function () {
+      if (isShown) {
+        $(element).find(".exp-checkbox__buttons").hide("slow");
+        $(element).find(".exp-checkbox__arrow").html('expand_more')
+      } else {
+        $(element).find(".exp-checkbox__buttons").show("slow");
+        $(element).find(".exp-checkbox__arrow").html('expand_less')
+      }
+      isShown = !isShown;
+    });
+
   });
 });
