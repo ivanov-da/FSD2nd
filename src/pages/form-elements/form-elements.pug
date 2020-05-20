@@ -143,11 +143,20 @@ html
                 { label: "Кроватка", checked: true, isRich: 'false' },
                 { label: "Телевизор", checked: false, isRich: 'false' },
                 { label: "Шампунь", checked: false, isRich: 'false' },
+              ],
+            })
+          .form-elements__expandable-checkbox-list
+                        +exp-checkbox({
+              type: 'open',
+              list: [
+                { label: "Завтрак", checked: false, isRich: 'false' },
+                { label: "Письменный стол", checked: true, isRich: 'false' },
+                { label: "Стул для кормления", checked: true, isRich: 'false' },
+                { label: "Кроватка", checked: true, isRich: 'false' },
                 { label: "Телевизор", checked: false, isRich: 'false' },
                 { label: "Шампунь", checked: false, isRich: 'false' },
               ],
             })
-          .form-elements__expandable-checkbox-list
         .form-elements__center-wrapper
           .form-elements__checkbox-buttons
           .form-elements__radio-buttons
