@@ -137,47 +137,63 @@ html
             +exp-checkbox({
               type: 'closed',
               list: [
-                { label: "Завтрак", checked: false, isRich: 'false' },
-                { label: "Письменный стол", checked: true, isRich: 'false' },
-                { label: "Стул для кормления", checked: true, isRich: 'false' },
-                { label: "Кроватка", checked: true, isRich: 'false' },
-                { label: "Телевизор", checked: false, isRich: 'false' },
-                { label: "Шампунь", checked: false, isRich: 'false' },
+                { label: 'Завтрак', checked: false, isRich: 'false' },
+                { label: 'Письменный стол', checked: true, isRich: 'false' },
+                { label: 'Стул для кормления', checked: true, isRich: 'false' },
+                { label: 'Кроватка', checked: true, isRich: 'false' },
+                { label: 'Телевизор', checked: false, isRich: 'false' },
+                { label: 'Шампунь', checked: false, isRich: 'false' },
               ],
             })
           .form-elements__expandable-checkbox-list
                         +exp-checkbox({
               type: 'open',
               list: [
-                { label: "Завтрак", checked: false, isRich: 'false' },
-                { label: "Письменный стол", checked: true, isRich: 'false' },
-                { label: "Стул для кормления", checked: true, isRich: 'false' },
-                { label: "Кроватка", checked: true, isRich: 'false' },
-                { label: "Телевизор", checked: false, isRich: 'false' },
-                { label: "Шампунь", checked: false, isRich: 'false' },
+                { label: 'Завтрак', checked: false, isRich: 'false' },
+                { label: 'Письменный стол', checked: true, isRich: 'false' },
+                { label: 'Стул для кормления', checked: true, isRich: 'false' },
+                { label: 'Кроватка', checked: true, isRich: 'false' },
+                { label: 'Телевизор', checked: false, isRich: 'false' },
+                { label: 'Шампунь', checked: false, isRich: 'false' },
               ],
             })
         .form-elements__center-wrapper
           .form-elements__checkbox-buttons
+            +checkboxButtons()
           .form-elements__radio-buttons
-            .form-elements__radio-buttons-title
+            .form-elements__radio-buttons-title radio buttons
             .form-elements__radio-buttons-element
+              +radio({
+                name: 'gender',
+              })
           .form-elements__toggle
-            .form-elements__toggle-title
+            .form-elements__toggle-title toggle
             .form-elements__toggle-element
+              +toggle({name: 'offer'})
             .form-elements__toggle-element
+              +toggle({name: 'offer'})
           .form-elements__like-button
-            .form-elements__like-button-title
+            .form-elements__like-button-title like button
             .form-elements__like-button-element
+              +like-button({count: '2'})
             .form-elements__like-button-element
+              +like-button({count: '11'})
           .form-elements__rate-button
-            .form-elements__rate-button-title
+            .form-elements__rate-button-title rate button
             .form-elements__rate-button-element
+              +rate-button({rate: '4'})
             .form-elements__rate-button-element
+              +rate-button({rate: '5'})
           .form-elements__dropdown
-            .form-elements__dropdown-title
+            .form-elements__dropdown-title dropdown
             .form-elements__dropdown-element
+              +dropdown({
+                textNull: 'Сколько гостей',
+                items: dropArrayGuests,
+                mask: maskArrGuests,
+              })
           .form-elements__rich-checkbox-buttons
+            +richCheckboxButtons()
         .form-elements__right-wrapper
           .form-elements__slider
           .form-elements__buttons

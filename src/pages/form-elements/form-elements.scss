@@ -31,6 +31,8 @@
 
   &__main-wrapper {
     display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
     padding: 62px 141px 131px 140px;
   }
 
