@@ -29,12 +29,12 @@ mixin header(options)
         if isRu
           while (i < ruMenu.length) 
             if ruMenu[i+1] == 'expand_more'
-              .header__item
+              .header__item.header__item_ru
                 a.header__link(href='/mock-adress')= ruMenu[i]
                 .material-icons.header__icon expand_more
             else if ruMenu[i] == 'expand_more'
             else
-              .header__item
+              .header__item.header__item_ru
                 a.header__link(href='/mock-adress')= ruMenu[i]
             - i++;
         
@@ -54,15 +54,27 @@ mixin header(options)
         if type == 'anon'  
           .header__item.header__buttons
             .header__login-button
-              +button({
-                text: loginButtonText, 
-                isRegister: 'false',
-                isRegisterRus: 'false',
-                isWithArrow: 'false',
-                transparent: 'true',
-                isNoBorder: 'false',
-                isSmall: 'true',
-              })
+              if isRu
+                +button({
+                  text: loginButtonText, 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isLoginRus: 'true',
+                  isWithArrow: 'false',
+                  transparent: 'true',
+                  isNoBorder: 'false',
+                  isSmall: 'true',
+                })
+              else if isEn
+                +button({
+                  text: loginButtonText, 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isWithArrow: 'false',
+                  transparent: 'true',
+                  isNoBorder: 'false',
+                  isSmall: 'true',
+                })
 
             
           .header__item.header__buttons

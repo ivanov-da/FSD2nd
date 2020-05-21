@@ -22,16 +22,21 @@
   &_register {
     width: 6.3125rem;
     height: 2.125rem;
+  }
 
-    &-rus {
-      width: 12.25rem;
-      height: 2.125rem;
-    }
+
+  &_register-rus {
+    width: 12.25rem;
+    height: 2.125rem;
   }
 
   &_small {
-    width: 4.9375rem;
-    height: 2.125rem;
+    width: 79px;
+    height: 34px;
+  }
+
+  &_login-rus {
+    width: 87px;
   }
 
   &_with-arrow {

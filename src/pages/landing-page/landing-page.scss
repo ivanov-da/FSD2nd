@@ -1,0 +1,60 @@
+@import '../common/normalize.scss';
+@import '../common/variables.scss';
+@import '../common/global.scss';
+@import '../common/fonts.scss';
+@import '../../components/header/header.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/search-card/search-card.scss';
+
+.landing-page {
+  &__wrapper {
+    max-width: 1440px;
+    min-width: 385px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__header {}
+
+  &__content {
+    background-image: url(../../images/landing-page/image3.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 830px;
+  }
+
+  &__search-card {
+    padding: 70px 0 0 140px;
+
+    @media (max-width: 650px) {
+      align-self: center;
+      padding-left: 0;
+
+    }
+  }
+
+  &__text {
+    width: 297px;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+    color: $dark75;
+    align-self: flex-end;
+    margin: 0 134px 21px 0;
+
+    @media (max-width: 650px) {
+      margin-right: 50px;
+
+
+    }
+  }
+
+  &__footer {}
+}

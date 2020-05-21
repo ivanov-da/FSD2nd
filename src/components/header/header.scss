@@ -53,6 +53,12 @@
       margin-right: 30px;
     }
 
+    &_ru {
+      @media(min-width: 1250px) {
+        margin-right: 20px;
+      }
+    }
+
     &_active {
       display: flex;
     }
