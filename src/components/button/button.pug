@@ -10,11 +10,11 @@ mixin button(options)
     let buttonClass = 'button';
     buttonClass += isRegister == 'true' ? ' button_register' : '';
     buttonClass += isRegisterRus == 'true' ? ' button_register-rus' : '';
-    buttonClass += isLoginRus == 'true' ? ' button_login-rus' : '';
     buttonClass += isWithArrow == 'true' ? ' button_with-arrow' : '';
     buttonClass += isTransparent == 'true' ? ' button_transparent' : '';
     buttonClass += isNoBorder == 'true' ? ' button_with-no-border' : '';
     buttonClass += isSmall == 'true' ? ' button_small' : '';
+    buttonClass += isLoginRus == 'true' ? ' button_login-rus' : '';
   button(class= buttonClass)
     span.button__label
       span.button__text= options.text
