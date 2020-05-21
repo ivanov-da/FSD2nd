@@ -29,12 +29,12 @@ mixin header(options)
         if isRu
           while (i < ruMenu.length) 
             if ruMenu[i+1] == 'expand_more'
-              .header__item
+              .header__item.header__item_ru
                 a.header__link(href='/mock-adress')= ruMenu[i]
                 .material-icons.header__icon expand_more
             else if ruMenu[i] == 'expand_more'
             else
-              .header__item
+              .header__item.header__item_ru
                 a.header__link(href='/mock-adress')= ruMenu[i]
             - i++;
         
