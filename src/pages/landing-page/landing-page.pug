@@ -1,11 +1,6 @@
 include ../../components/search-card/search-card.pug
-include ../../components/registration-card/registration-card.pug
-include ../../components/price-card/price-card.pug
-include ../../components/login-card/login-card.pug
-include ../../components/date-dropdown/date-dropdown.pug
-include ../../components/calendar/calendar.pug
-include ../../components/room-card/room-card.pug
-include ../../components/logo/logo.pug
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
 - 
   let dropArrayGuests = [
     {item: 'Взрослые', id: 'adults', group: 'true',},
@@ -25,8 +20,20 @@ html
   body.landing-page
     .landing-page__wrapper
       nav.landing-page__header
+        +header({
+          lang: 'ru',
+          type: 'anon',
+          userName: '',
+        })
       .landing-page__content
         .landing-page__search-card
-        .landing-page__text
+          +search-card({
+              dropdownArray: dropArrayGuests,
+          })
+        p.landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения
       .landing-page__footer
+        +footer({
+          lang: 'ru',
+          type: 'widgets',
+        })
     
