@@ -1,0 +1,30 @@
+include ../../components/login-card/login-card.pug
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='sign in')
+    meta(name='description' content='sign in')
+    title Sign in
+    link(rel='stylesheet' href='./sign-in.scss')
+    script(src='../jquery-for-parcel.js')
+    script(src='./sign-in.js')
+  body.sign-in
+    .sign-in__wrapper
+      nav.sign-in__header
+        +header({
+          lang: 'ru',
+          type: 'anon',
+          userName: '',
+        })
+      .sign-in__content
+        .sign-in__login-card
+          +login-card()
+      .sign-in__footer
+        +footer({
+          lang: 'ru',
+          type: 'widgets',
+        })
+    

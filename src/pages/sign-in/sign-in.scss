@@ -1,0 +1,41 @@
+@import '../common/normalize.scss';
+@import '../common/variables.scss';
+@import '../common/global.scss';
+@import '../common/fonts.scss';
+@import '../../components/header/header.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/login-card/login-card.scss';
+
+.sign-in {
+  &__wrapper {
+    max-width: 1440px;
+    min-width: 385px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__header {}
+
+  &__content {
+    background-image: url(../../images/sign-in/image.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 702px;
+  }
+
+  &__login-card {
+    align-self: center;
+
+  }
+
+
+
+  &__footer {}
+}
