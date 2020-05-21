@@ -1,0 +1,30 @@
+include ../../components/registration-card/registration-card.pug
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='registration')
+    meta(name='description' content='registration')
+    title Registration
+    link(rel='stylesheet' href='./registration.scss')
+    script(src='../jquery-for-parcel.js')
+    script(src='./registration.js')
+  body.registration
+    .registration__wrapper
+      nav.registration__header
+        +header({
+          lang: 'ru',
+          type: 'anon',
+          userName: '',
+        })
+      .registration__content
+        .registration__registration-card
+          +registration-card()
+      .registration__footer
+        +footer({
+          lang: 'ru',
+          type: 'widgets',
+        })
+    
