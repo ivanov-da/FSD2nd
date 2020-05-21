@@ -1,0 +1,36 @@
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+include ../../components/room-card/room-card.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/pagination/pagination.pug
+include ../../components/slider/slider.pug
+include ../../components/checkbox-buttons/checkbox-buttons.pug
+include ../../components/exp-checkbox/exp-checkbox.pug
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='search room')
+    meta(name='description' content='search room')
+    title Search room
+    link(rel='stylesheet' href='./search-room.scss')
+    script(src='../jquery-for-parcel.js')
+    script(src='./search-room.js')
+  body.search-room
+    .search-room__wrapper
+      nav.search-room__header
+        +header({
+          lang: 'ru',
+          type: 'anon',
+          userName: '',
+        })
+      .search-room__content
+        aside.search-room__aside
+        .search-room__rooms
+      .search-room__footer
+        +footer({
+          lang: 'ru',
+          type: 'widgets',
+        })
+    
