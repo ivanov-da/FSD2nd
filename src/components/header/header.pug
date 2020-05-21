@@ -54,15 +54,27 @@ mixin header(options)
         if type == 'anon'  
           .header__item.header__buttons
             .header__login-button
-              +button({
-                text: loginButtonText, 
-                isRegister: 'false',
-                isRegisterRus: 'false',
-                isWithArrow: 'false',
-                transparent: 'true',
-                isNoBorder: 'false',
-                isSmall: 'true',
-              })
+              if isRu
+                +button({
+                  text: loginButtonText, 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isLoginRus: 'true',
+                  isWithArrow: 'false',
+                  transparent: 'true',
+                  isNoBorder: 'false',
+                  isSmall: 'true',
+                })
+              else if isEn
+                +button({
+                  text: loginButtonText, 
+                  isRegister: 'false',
+                  isRegisterRus: 'false',
+                  isWithArrow: 'false',
+                  transparent: 'true',
+                  isNoBorder: 'false',
+                  isSmall: 'true',
+                })
 
             
           .header__item.header__buttons
