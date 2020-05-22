@@ -77,6 +77,7 @@ html
                 textNull: 'Сколько гостей',
                 items: dropArrayGuests,
                 mask: maskArrGuests,
+                isSmall: 'true',
               })
           .search-room__slider
             +slider({
@@ -90,7 +91,7 @@ html
               title: 'доступность',
             })
           .search-room__items-dropdown
-            p.search-room__items-dropdown-title Удобства
+            p.search-room__items-dropdown-title Удобства номера
             .search-room__items-dropdown-element
               +dropdown({
                 textNull: 'Удобства',
