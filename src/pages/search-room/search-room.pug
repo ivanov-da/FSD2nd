@@ -1,0 +1,135 @@
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+include ../../components/room-card/room-card.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/pagination/pagination.pug
+include ../../components/slider/slider.pug
+include ../../components/checkbox-buttons/checkbox-buttons.pug
+include ../../components/exp-checkbox/exp-checkbox.pug
+
+- 
+  let dropArrayGuests = [
+        {item: 'Взрослые', id: 'adults', group: 'true',},
+        {item: 'Дети', id: 'kids', group: 'true',},
+        {item: 'Младенцы', id: 'babies', group: 'false',},
+      ];
+  let maskArrGuests = [
+        ['guests', 'Гость', 'Гостя', 'Гостей'],
+        ['adults', 'Взрослый', 'Всзрослых', 'Взрослых'],
+        ['kids', 'Ребенок', 'Ребенка', 'Детей'],
+        ['babies', 'Младенец', 'Младенца', 'Младенцев'],
+      ];
+  let dropArrayItems = [
+        {item: 'Спальни', id: 'bedrooms', group: 'false',},
+        {item: 'Кровати', id: 'beds', group: 'false',},
+        {item: 'Ванные комнаты', id: 'bathrooms', group: 'false',},
+      ];
+  let maskArrItems = [
+        ['bedrooms', 'Спальня', 'Спальни', 'Спален'],
+        ['beds', 'Кровать', 'Кровати', 'Кроватей'],
+        ['bathrooms', 'Ванная комната', 'Ванные комнаты', 'Ванных комнат'],
+      ];
+  let roomItems = [
+        {imageUrl: '../../images/search-room/image1.jpg', number: '888', type: 'люкс', price: '9 990', starsCount: 5, reviewsCount: 145,},
+        {imageUrl: '../../images/search-room/image2.jpg', number: '840', type: '', price: '9 990', starsCount: 4, reviewsCount: 65,},
+        {imageUrl: '../../images/search-room/image3.jpg', number: '980', type: 'люкс', price: '8500', starsCount: 3, reviewsCount: 35,},
+        {imageUrl: '../../images/search-room/image4.jpg', number: '856', type: '', price: '7300', starsCount: 5, reviewsCount: 19,},
+        {imageUrl: '../../images/search-room/image5.jpg', number: '740', type: '', price: '6000', starsCount: 4, reviewsCount: 44,},
+        {imageUrl: '../../images/search-room/image6.jpg', number: '982', type: '', price: '5800', starsCount: 3, reviewsCount: 56,},
+        {imageUrl: '../../images/search-room/image7.jpg', number: '678', type: '', price: '5500', starsCount: 5, reviewsCount: 45,},
+        {imageUrl: '../../images/search-room/image8.jpg', number: '450', type: '', price: '5300', starsCount: 4, reviewsCount: 39,},
+        {imageUrl: '../../images/search-room/image9.jpg', number: '350', type: '', price: '5000', starsCount: 3, reviewsCount: 77,},
+        {imageUrl: '../../images/search-room/image10.jpg', number: '666', type: '', price: '5000', starsCount: 5, reviewsCount: 25,},
+        {imageUrl: '../../images/search-room/image11.jpg', number: '444', type: '', price: '5000', starsCount: 4, reviewsCount: 15,},
+        {imageUrl: '../../images/search-room/image12.jpg', number: '352', type: '', price: '5000', starsCount: 3, reviewsCount: 55,},
+      ]
+
+
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='search room')
+    meta(name='description' content='search room')
+    title Search room
+    link(rel='stylesheet' href='./search-room.scss')
+    script(src='../jquery-for-parcel.js')
+    script(src='./search-room.js')
+  body.search-room
+    .search-room__wrapper
+      nav.search-room__header
+        +header({
+          lang: 'ru',
+          type: 'anon',
+          userName: '',
+        })
+      .search-room__content-wrapper
+        aside.search-room__aside
+          .search-room__date-dropdown
+            p.search-room__date-dropdown-title даты пребывания в отеле
+            .search-room__date-dropdown-element
+              +date-dropdown()
+          .search-room__guests-dropdown
+            p.search-room__guests-dropdown-title гости
+            .search-room__guests-dropdown-element
+              +dropdown({
+                textNull: 'Сколько гостей',
+                items: dropArrayGuests,
+                mask: maskArrGuests,
+                isSmall: 'true',
+              })
+          .search-room__slider
+            +slider({
+              footer: 'Стоимость за сутки пребывания в номере',
+              title: 'диапазон цены'
+            })
+          .search-room__checkbox-buttons
+            +checkboxButtons()
+          .search-room__rich-checkbox-buttons
+            +richCheckboxButtons({
+              title: 'доступность',
+            })
+          .search-room__items-dropdown
+            p.search-room__items-dropdown-title Удобства номера
+            .search-room__items-dropdown-element
+              +dropdown({
+                textNull: 'Удобства',
+                items: dropArrayItems,
+                mask: maskArrItems,
+                isSmall: 'true',
+              })
+          .search-room__exp-checkbox-buttons
+            +exp-checkbox({
+              title: 'дополнительные удобства',
+              type: 'closed',
+              list: [
+                { label: 'Завтрак', checked: false, isRich: 'false' },
+                { label: 'Письменный стол', checked: true, isRich: 'false' },
+                { label: 'Стул для кормления', checked: true, isRich: 'false' },
+                { label: 'Кроватка', checked: true, isRich: 'false' },
+                { label: 'Телевизор', checked: false, isRich: 'false' },
+                { label: 'Шампунь', checked: false, isRich: 'false' },
+              ],
+            })
+        .search-room__content
+          h1.search-room__title Номера, которые мы для вас подобрали
+          .search-room__rooms
+            each item in roomItems
+              .search-room__room-card
+                +room-card({
+                  imageUrl: item.imageUrl,
+                  number: item.number,
+                  type: item.type,
+                  price: item.price,
+                  starsCount: item.starsCount,
+                  reviewsCount: item.reviewsCount,
+                })
+          .search-room__pagination
+            +pagination()
+      .search-room__footer
+        +footer({
+          lang: 'ru',
+          type: 'widgets',
+        })
+    

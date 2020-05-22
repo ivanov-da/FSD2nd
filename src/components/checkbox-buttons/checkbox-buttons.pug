@@ -10,8 +10,11 @@ mixin checkboxButtons(options)
       +checkbox-button({name:"guests", value: "guests", label: "Можно пригласить гостей (до 10 человек)"})
 
 mixin richCheckboxButtons(options)
+  -
+    let title = '';
+    title += options.title == undefined ? 'rich checkbox buttons' : options.title;
   .rich-checkbox-buttons
-    p(class='rich-checkbox-buttons__title') rich checkbox buttons
+    p(class='rich-checkbox-buttons__title')= title
     .rich-checkbox-buttons__button
       +checkbox-button({name:"hall", value: "hall", label: "Широкий коридор", isRich: "true", desc:"Ширина коридоров в номере не менее 91 см."})
     .rich-checkbox-buttons__button

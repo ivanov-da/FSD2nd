@@ -7,9 +7,11 @@ mixin exp-checkbox(options)
     let arrowType = (options.type == 'open') ? 'expand_less' : '';
     arrowType += (options.type == 'closed') ? 'expand_more' : '';
     let buttonsClassName = (options.type == 'closed') ? 'exp-checkbox__buttons exp-checkbox__buttons_hidden' : 'exp-checkbox__buttons';
+    let title = '';
+    title += options.title == undefined ? 'expandable checkbox list' : options.title;
   .exp-checkbox
     .exp-checkbox__title
-      p.exp-checkbox__text expandable checkbox list
+      p.exp-checkbox__text= title
       .exp-checkbox__arrow.material-icons= arrowType
     div(class= buttonsClassName)
       each val in list
