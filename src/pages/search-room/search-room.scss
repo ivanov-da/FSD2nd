@@ -7,36 +7,51 @@
 @import '../../components/room-card/room-card.scss';
 
 
-.sign-in {
+.search-room {
   &__wrapper {
     max-width: 1440px;
     min-width: 385px;
     width: 100%;
     margin: 0 auto;
+
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
   }
 
   &__header {}
 
-  &__content {
-    background-image: url(../../images/sign-in/image.jpg);
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: bottom;
-    background-repeat: no-repeat;
-
+  &__content-wrapper {
+    flex: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    height: 702px;
+    flex-flow: column;
   }
 
-  &__login-card {
-    align-self: center;
+  &__room-card {}
 
-  }
+  &__aside {}
 
+  &__date-dropdown {}
 
+  &__guests-dropdown {}
+
+  &__slider {}
+
+  &__checkbox-buttons {}
+
+  &__rich-checkbox-buttons {}
+
+  &__items-dropdown {}
+
+  &__exp-checkbox-buttons {}
+
+  &__content {}
+
+  &__title {}
+
+  &__rooms {}
+
+  &__pagination {}
 
   &__footer {}
 }

@@ -25,9 +25,20 @@ html
           type: 'anon',
           userName: '',
         })
-      .search-room__content
+      .search-room__content-wrapper
         aside.search-room__aside
-        .search-room__rooms
+          .search-room__date-dropdown
+          .search-room__guests-dropdown
+          .search-room__slider
+          .search-room__checkbox-buttons
+          .search-room__rich-checkbox-buttons
+          .search-room__items-dropdown
+          .search-room__exp-checkbox-buttons
+        .search-room__content
+          h1.search-room__title
+          .search-room__rooms
+            .search-room__room-card
+          .search-room__pagination
       .search-room__footer
         +footer({
           lang: 'ru',
