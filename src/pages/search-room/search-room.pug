@@ -7,6 +7,30 @@ include ../../components/pagination/pagination.pug
 include ../../components/slider/slider.pug
 include ../../components/checkbox-buttons/checkbox-buttons.pug
 include ../../components/exp-checkbox/exp-checkbox.pug
+
+- 
+  let dropArrayGuests = [
+        {item: 'Взрослые', id: 'adults', group: 'true',},
+        {item: 'Дети', id: 'kids', group: 'true',},
+        {item: 'Младенцы', id: 'babies', group: 'false',},
+      ];
+  let maskArrGuests = [
+        ['guests', 'Гость', 'Гостя', 'Гостей'],
+        ['adults', 'Взрослый', 'Всзрослых', 'Взрослых'],
+        ['kids', 'Ребенок', 'Ребенка', 'Детей'],
+        ['babies', 'Младенец', 'Младенца', 'Младенцев'],
+      ];
+  let dropArrayItems = [
+        {item: 'Спальни', id: 'bedrooms', group: 'false',},
+        {item: 'Кровати', id: 'beds', group: 'false',},
+        {item: 'Ванные комнаты', id: 'bathrooms', group: 'false',},
+      ];
+  let maskArrItems = [
+        ['bedrooms', 'Спальня', 'Спальни', 'Спален'],
+        ['beds', 'Кровать', 'Кровати', 'Кроватей'],
+        ['bathrooms', 'Ванная комната', 'Ванные комнаты', 'Ванных комнат'],
+      ];
+
 html
   head
     meta(charset='utf-8')
@@ -28,12 +52,50 @@ html
       .search-room__content-wrapper
         aside.search-room__aside
           .search-room__date-dropdown
+            p.search-room__date-dropdown-title даты пребывания в отеле
+            .search-room__date-dropdown-element
+              +date-dropdown()
           .search-room__guests-dropdown
+            p.search-room__guests-dropdown-title гости
+            .search-room__guests-dropdown-element
+              +dropdown({
+                textNull: 'Сколько гостей',
+                items: dropArrayGuests,
+                mask: maskArrGuests,
+              })
           .search-room__slider
+            +slider({
+              footer: 'Стоимость за сутки пребывания в номере',
+              title: 'диапазон цены'
+            })
           .search-room__checkbox-buttons
+            +checkboxButtons()
           .search-room__rich-checkbox-buttons
+            +richCheckboxButtons({
+              title: 'доступность',
+            })
           .search-room__items-dropdown
+            p.search-room__items-dropdown-title Удобства
+            .search-room__items-dropdown-element
+              +dropdown({
+                textNull: 'Удобства',
+                items: dropArrayItems,
+                mask: maskArrItems,
+                isSmall: 'true',
+              })
           .search-room__exp-checkbox-buttons
+            +exp-checkbox({
+              title: 'дополнительные удобства',
+              type: 'closed',
+              list: [
+                { label: 'Завтрак', checked: false, isRich: 'false' },
+                { label: 'Письменный стол', checked: true, isRich: 'false' },
+                { label: 'Стул для кормления', checked: true, isRich: 'false' },
+                { label: 'Кроватка', checked: true, isRich: 'false' },
+                { label: 'Телевизор', checked: false, isRich: 'false' },
+                { label: 'Шампунь', checked: false, isRich: 'false' },
+              ],
+            })
         .search-room__content
           h1.search-room__title
           .search-room__rooms
