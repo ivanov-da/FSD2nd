@@ -1,7 +1,10 @@
 mixin slider(options)
+  -
+    let title='';
+    title += options.title == undefined ? 'range slider' : options.title;
   .slider
     .slider__label
-      p.slider__title range slider
+      p.slider__title= title
       .slider__prices
         span.slider__from.js-slider-from
         span.slider__separator -
