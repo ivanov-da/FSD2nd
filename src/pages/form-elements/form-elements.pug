@@ -198,7 +198,9 @@ html
                 mask: maskArrGuests,
               })
           .form-elements__rich-checkbox-buttons
-            +richCheckboxButtons()
+            +richCheckboxButtons({
+              title: 'доступность',
+            })
         .form-elements__right-wrapper
           .form-elements__slider
             +slider({
