@@ -14,7 +14,7 @@
 
   &__wrapper {
     max-width: 1440px;
-    min-width: 320px;
+    min-width: 380px;
     width: 100%;
     margin: 0 auto;
 
@@ -80,18 +80,33 @@
   &__content-wrapper {
     display: flex;
     justify-content: space-between;
+    flex-flow: wrap;
     flex: 1;
     margin-top: 70px;
     margin-left: 140px;
     margin-bottom: 71px;
+
+    @media (max-width: 1352px) {
+      margin-left: 10px;
+    }
   }
 
   &__content {
     max-width: 711px;
+
+    @media (max-width: 1352px) {
+      margin: 70px auto;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 620px) {
+      margin-top: 10px;
+    }
   }
 
   &__details {
     display: flex;
+    flex-flow: wrap;
     justify-content: space-between;
   }
 
@@ -175,6 +190,10 @@
 
   &__price-card {
     margin-right: 140px;
+
+    @media (max-width: 1240px) {
+      margin: 0 auto;
+    }
   }
 
 }
