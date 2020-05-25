@@ -1,0 +1,91 @@
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+include ../../components/price-card/price-card.pug
+include ../../components/donut-chart/donut-chart.pug
+include ../../components/room-info/room-info.pug
+include ../../components/comment/comment.pug
+include ../../components/bullet-list/bullet-list.pug
+- 
+  let dropArrayGuests = [
+    {item: 'Взрослые', id: 'adults', group: 'true',},
+    {item: 'Дети', id: 'kids', group: 'true',},
+    {item: 'Младенцы', id: 'babies', group: 'false',},
+  ];
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='room details')
+    meta(name='description' content='room details')
+    title Room details
+    link(rel='stylesheet' href='./room-details.scss')
+    script(src='../jquery-for-parcel.js')
+    script(src='./room-details.js')
+  body.room-details
+    .room-details__wrapper
+      nav.room-details__header
+        +header({
+          lang: 'ru',
+          type: 'anon',
+          userName: '',
+        })
+      .room-details__images
+        .room-details__main-image
+        .room-details__second-images
+          .room-details__image_two
+          .room-details__image_three
+      .room-details__content-wrapper
+        .room-details__content
+          .room-details__details
+            .room-details__room-info
+              p.room-details__room-info-title Сведения о номере
+              .room-details__room-info-element
+                +room-info()
+            .room-details__room-feeling
+              .room-details__room-feeling-title Впечатления от номера
+              .room-details__room-feeling-element
+                +donut-chart()
+          .room-details__room-reviews
+            .room-details__room-reviews-info
+              p.room-details__room-reviews-title Отзывы посетителей номера
+              p.room-details__room-reviews-count 2 отзыва
+            .room-details__room-review
+              +comment({
+                text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                userName: 'Мурад Сарафанов',
+                lastActivity: '5 дней назад',
+                likeCount: '12',
+                imageUrl: '../../images/form-elements/image.png',
+              })
+            .room-details__room-review
+              +comment({
+                text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+                userName: 'Патрисия Стёклышкова',
+                lastActivity: 'Неделю назад',
+                likeCount: '2',
+                imageUrl: '../../images/room-details/image4.jpg',
+              })
+          .room-details__additional-info
+            .room-details__rules
+              p.room-details__rules-title Правила
+              .room-details__rules-list
+                +bulletList()
+            .room-details__room-cancel
+              p.room-details__cancel-title Отмена
+              p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        .room-details__price-card
+          +price-card({
+            dropdownArray: dropArrayGuests,
+            number: '888',
+            type: 'люкс',
+            price: '9 990',
+            feeCount: '0',
+            feeDiscount: '2 179',
+            addFeeCount: '300',
+          })
+      .room-details__footer
+        +footer({
+          lang: 'ru',
+          type: 'widgets',
+        })
+    

@@ -1,0 +1,70 @@
+.donut-chart {
+  width: 311px;
+  position: relative;
+
+  &__legend {
+    width: 161px;
+
+    position: absolute;
+    top: 28px;
+    left: 151px;
+  }
+
+  &__item {
+    display: flex;
+
+  }
+
+  &__circle {
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+    border-radius: 100%;
+    align-self: center;
+
+    &_excellent {
+      background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+    }
+
+    &_good {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    }
+
+    &_ok {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+
+    &_bad {
+      background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    }
+  }
+
+  &__text {
+    margin-left: 5px;
+  }
+
+  &__voices-count {
+    font-family: $quicksand;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: $purple;
+
+    position: absolute;
+    top: 37px;
+    left: 42px;
+
+  }
+
+  &__voices-text {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $purple;
+
+    position: absolute;
+    top: 67px;
+    left: 29px;
+  }
+}
