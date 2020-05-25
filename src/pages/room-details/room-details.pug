@@ -5,6 +5,12 @@ include ../../components/donut-chart/donut-chart.pug
 include ../../components/room-info/room-info.pug
 include ../../components/comment/comment.pug
 include ../../components/bullet-list/bullet-list.pug
+- 
+  let dropArrayGuests = [
+    {item: 'Взрослые', id: 'adults', group: 'true',},
+    {item: 'Дети', id: 'kids', group: 'true',},
+    {item: 'Младенцы', id: 'babies', group: 'false',},
+  ];
 html
   head
     meta(charset='utf-8')
@@ -40,16 +46,43 @@ html
               .room-details__room-feeling-element
                 +donut-chart()
           .room-details__room-reviews
-            p.room-details__room-reviews-title Отзывы посетителей номера
+            .room-details__room-reviews-info
+              p.room-details__room-reviews-title Отзывы посетителей номера
+              p.room-details__room-reviews-count 2 отзыва
             .room-details__room-review
+              +comment({
+                text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                userName: 'Мурад Сарафанов',
+                lastActivity: '5 дней назад',
+                likeCount: '12',
+                imageUrl: '../../images/form-elements/image.png',
+              })
             .room-details__room-review
+              +comment({
+                text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+                userName: 'Патрисия Стёклышкова',
+                lastActivity: 'Неделю назад',
+                likeCount: '2',
+                imageUrl: '../../images/room-details/image4.jpg',
+              })
           .room-details__additional-info
             .room-details__rules
-              .room-details__rules-title
+              p.room-details__rules-title Правила
               .room-details__rules-list
+                +bulletList()
             .room-details__room-cancel
-              .room-details__cancel-title
-              .room-details__cancel-text
+              p.room-details__cancel-title Отмена
+              p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        .room-details__price-card
+          +price-card({
+            dropdownArray: dropArrayGuests,
+            number: '888',
+            type: 'люкс',
+            price: '9 990',
+            feeCount: '0',
+            feeDiscount: '2 179',
+            addFeeCount: '300',
+          })
       .room-details__footer
         +footer({
           lang: 'ru',
