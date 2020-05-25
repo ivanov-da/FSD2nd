@@ -1,0 +1,142 @@
+@import '../common/normalize.scss';
+@import '../common/variables.scss';
+@import '../common/global.scss';
+@import '../common/fonts.scss';
+@import '../../components/header/header.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/room-card/room-card.scss';
+@import '../../components/checkbox-buttons/checkbox-buttons.scss';
+@import '../../components/pagination/pagination.scss';
+@import '../../components/slider/slider.scss';
+@import '../../components/exp-checkbox/exp-checkbox.scss';
+@import '../../components/dropdown/dropdown.scss';
+@import '../../components/date-dropdown/date-dropdown.scss';
+@import '../../components/donut-chart/donut-chart.scss';
+
+.search-room {
+  &__wrapper {
+    max-width: 1440px;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px $dark5;
+  }
+
+  &__header {}
+
+  &__content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  &__room-card {}
+
+  &__aside {
+    padding-top: 30px;
+    padding-left: 140px;
+    padding-right: 60px;
+    flex-basis: 1 1 266px;
+
+    @media (max-width: 500px) {
+      padding-left: 50px;
+      padding-right: 0;
+    }
+  }
+
+  &__date-dropdown-title,
+  &__guests-dropdown-title,
+  &__items-dropdown-title {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark100;
+  }
+
+  &__date-dropdown {}
+
+  &__date-dropdown-element {
+    margin-top: 5px;
+  }
+
+  &__guests-dropdown {
+    margin-top: 20.44px;
+  }
+
+  &__guests-dropdown-element {
+    margin-top: 4.56px;
+  }
+
+  &__slider {
+    margin-top: 33.44px;
+  }
+
+  &__checkbox-buttons {
+    margin-top: 95px;
+  }
+
+  &__rich-checkbox-buttons {
+    margin-top: 34px;
+  }
+
+  &__items-dropdown {
+    margin-top: 32.44px;
+  }
+
+  &__items-dropdown-element {
+    margin-top: 4.56px;
+  }
+
+  &__exp-checkbox-buttons {
+    margin-top: 28px;
+  }
+
+  &__content {
+    flex: 1 1 292px;
+  }
+
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 0;
+
+    @media (max-width: 750px) {
+      font-size: 19px;
+      line-height: 24px;
+    }
+
+
+  }
+
+  &__rooms {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    max-width: 834px;
+
+    @media (max-width: 1270px) {
+      justify-content: space-evenly;
+    }
+
+
+  }
+
+  &__room-card {
+    margin-top: 21px;
+  }
+
+
+  &__pagination {
+    margin: 42.94px auto 70px auto;
+    max-width: 360px;
+
+  }
+
+  &__footer {}
+}

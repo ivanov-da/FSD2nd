@@ -1,0 +1,94 @@
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+include ../../components/room-card/room-card.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/pagination/pagination.pug
+include ../../components/slider/slider.pug
+include ../../components/checkbox-buttons/checkbox-buttons.pug
+include ../../components/exp-checkbox/exp-checkbox.pug
+include ../../components/donut-chart/donut-chart.pug
+
+- 
+  let dropArrayGuests = [
+        {item: 'Взрослые', id: 'adults', group: 'true',},
+        {item: 'Дети', id: 'kids', group: 'true',},
+        {item: 'Младенцы', id: 'babies', group: 'false',},
+      ];
+  let maskArrGuests = [
+        ['guests', 'Гость', 'Гостя', 'Гостей'],
+        ['adults', 'Взрослый', 'Всзрослых', 'Взрослых'],
+        ['kids', 'Ребенок', 'Ребенка', 'Детей'],
+        ['babies', 'Младенец', 'Младенца', 'Младенцев'],
+      ];
+  let dropArrayItems = [
+        {item: 'Спальни', id: 'bedrooms', group: 'false',},
+        {item: 'Кровати', id: 'beds', group: 'false',},
+        {item: 'Ванные комнаты', id: 'bathrooms', group: 'false',},
+      ];
+  let maskArrItems = [
+        ['bedrooms', 'Спальня', 'Спальни', 'Спален'],
+        ['beds', 'Кровать', 'Кровати', 'Кроватей'],
+        ['bathrooms', 'Ванная комната', 'Ванные комнаты', 'Ванных комнат'],
+      ];
+  let roomItems = [
+        {imageUrl: '../../images/search-room/image1.jpg', number: '888', type: 'люкс', price: '9 990', starsCount: 5, reviewsCount: 145,},
+        {imageUrl: '../../images/search-room/image2.jpg', number: '840', type: '', price: '9 990', starsCount: 4, reviewsCount: 65,},
+        {imageUrl: '../../images/search-room/image3.jpg', number: '980', type: 'люкс', price: '8500', starsCount: 3, reviewsCount: 35,},
+        {imageUrl: '../../images/search-room/image4.jpg', number: '856', type: '', price: '7300', starsCount: 5, reviewsCount: 19,},
+        {imageUrl: '../../images/search-room/image5.jpg', number: '740', type: '', price: '6000', starsCount: 4, reviewsCount: 44,},
+        {imageUrl: '../../images/search-room/image6.jpg', number: '982', type: '', price: '5800', starsCount: 3, reviewsCount: 56,},
+        {imageUrl: '../../images/search-room/image7.jpg', number: '678', type: '', price: '5500', starsCount: 5, reviewsCount: 45,},
+        {imageUrl: '../../images/search-room/image8.jpg', number: '450', type: '', price: '5300', starsCount: 4, reviewsCount: 39,},
+        {imageUrl: '../../images/search-room/image9.jpg', number: '350', type: '', price: '5000', starsCount: 3, reviewsCount: 77,},
+        {imageUrl: '../../images/search-room/image10.jpg', number: '666', type: '', price: '5000', starsCount: 5, reviewsCount: 25,},
+        {imageUrl: '../../images/search-room/image11.jpg', number: '444', type: '', price: '5000', starsCount: 4, reviewsCount: 15,},
+        {imageUrl: '../../images/search-room/image12.jpg', number: '352', type: '', price: '5000', starsCount: 3, reviewsCount: 55,},
+      ]
+
+
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0, width=device-width')
+    meta(name='keywords' content='room details')
+    meta(name='description' content='room details')
+    title Room details
+    link(rel='stylesheet' href='./room-details.scss')
+    script(src='../jquery-for-parcel.js')
+    script(src='./room-details.js')
+  body.room-details
+    .room-details__wrapper
+      nav.room-details__header
+        +header({
+          lang: 'ru',
+          type: 'anon',
+          userName: '',
+        })
+      .room-details__images
+        .room-details__main-image
+        .room-details__second-images
+          .room-details__image_two
+          .room-details__image_three
+      .room-details__content-wrapper
+        +donut-chart()
+        .room-details__content
+          .room-details__details
+            .room-details__room-info
+            .room-details__room-feeling
+          .room-details__room__reviews
+            .room-details__room__review
+            .room-details__room__review
+          .room-details__room__additional-info
+            .room-details__room__rules
+              .room-details__room__rules-title
+              .room-details__room__rules-list
+            .room-details__room__cancel
+              .room-details__room__cancel-title
+              .room-details__room__cancel-text
+      .room-details__footer
+        +footer({
+          lang: 'ru',
+          type: 'widgets',
+        })
+    
