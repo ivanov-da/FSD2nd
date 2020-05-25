@@ -1,3 +1,20 @@
 mixin donut-chart(options)
   .donut-chart
-    canvas(id='myChart' width='200' )
+    <canvas id="canvas1" width="123" height="124"></canvas>
+    .donut-chart__legend
+      .donut-chart__item
+        .donut-chart__circle.donut-chart__circle_excellent
+        p.donut-chart__text Великолепно
+      .donut-chart__item
+        .donut-chart__circle.donut-chart__circle_good
+        p.donut-chart__text Хорошо
+      .donut-chart__item
+        .donut-chart__circle.donut-chart__circle_ok
+        p.donut-chart__text Удовлетворительно
+      .donut-chart__item
+        .donut-chart__circle.donut-chart__circle_bad
+        p.donut-chart__text Разочарован
+
+
+    .donut-chart__voices-count 260
+    .donut-chart__voices-text голосов
